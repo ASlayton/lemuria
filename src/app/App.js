@@ -1,3 +1,4 @@
+// IMPORT NECCESSARY FILES
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import {Route, BrowserRouter, Redirect, Switch}  from 'react-router-dom';
@@ -6,8 +7,13 @@ import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Home from '../components/Home/Home';
 import GameScreen from '../components/GameScreen/GameScreen';
+import fbConnection from '../firebaseRequests/connection';
 import './App.css';
 
+// START FIREBASE CONNECTION
+fbConnection();
+
+// DEFINE PRIVATE ROUTE
 const PrivateRoute = ({ component: Component, authed, ...rest}) => {
   return (
     <Route
@@ -25,6 +31,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
   );
 };
 
+// DEFINE PUBLIC ROUTE
 const PublicRoute = ({ component: Component, authed, ...rest}) => {
   return (
     <Route
