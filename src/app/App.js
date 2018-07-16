@@ -1,5 +1,5 @@
 // IMPORT NECCESSARY FILES
-import React, { Component } from 'react';
+import React from 'react';
 import firebase from 'firebase';
 import {Route, BrowserRouter, Redirect, Switch}  from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
@@ -23,7 +23,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/Login', state: {from: props.location}}}
+            to={{ pathname: '/Home', state: {from: props.location}}}
           />
         )
       }
@@ -49,7 +49,7 @@ const PublicRoute = ({ component: Component, authed, ...rest}) => {
   );
 };
 
-class App extends Component {
+class App extends React.Component {
   state = {
     authed: false,
   }
@@ -65,7 +65,7 @@ class App extends Component {
   }
 
   componentWillUnmount () {
-    this.removeListener();
+    // this.removeListener();
   }
 
   wentAway = () => {
