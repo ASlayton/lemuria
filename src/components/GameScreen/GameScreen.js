@@ -1,4 +1,4 @@
-import 'GameScreen.css';
+import './GameScreen.css';
 import React from 'react';
 
 class GameScreen extends React.Component {
