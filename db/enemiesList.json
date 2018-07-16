@@ -1,0 +1,239 @@
+{
+  "Foes": [
+    {
+      "name":"Flaeme",
+      "DamageType": "Psyche",
+      "Weapon": "Flame Whip",
+      "Description": "A humanoid spirit that wraps its itself in lava rock, this foe is capable of driving the stoutest minded being into madness",
+      "EncounterText": "You stop, there is a flickering light in the distance. Stealthily, you make your way forward, hoping to find a scout or friendly being. The flickering is moving, coming toward you. Hiding is no use, this thing is clearly coming for you. Stepping out of the brush, you are face to face with what looks to be a burning corpse. On closer look, this thing was never Lemurian. You draw your sword.",
+      "DeathMsg": "Giving a last flare, the flame engulfing the being before you extinguishes and is still. Panting, you clean your weapon and gather yourself together before heading on your way, hoping you never encounter another one of those spirits again.",
+      "Health": 100,
+      "Defense": 15,
+      "ExperienceAwarded":100
+    },
+    {
+      "name": "Aef",
+      "DamageType": "Psyche",
+      "Weapon":	"Branch Blade",
+      "Description": "An air spirit that forms from any debris it can wrap itself in, Aef are formidable foes with a daunting attack.",
+      "EncounterText": "You are tired and decide to rest. You find a nice, dry fallen tree to sit on when suddenly the wind picks up around you. Not a single leaf is moving in the canopy above, but the sticks and debris scattered about the forest floor are being picked up. Covering your eyes, you glance the debris coming together to form a humanoid figure. It is clearly not happy at your presence. You prepare for attack.",
+      "DeathMsg": "With that last strike, the spirit drops the debris it had gathered into a form and swooshes past you with an angry whistle. That was far from pleasant and you feel worse for the wear. You continue on.",
+      "Health": 100,
+      "Defense": 15,
+      "ExperienceAwarded": 100
+    },
+    {
+      "name": "Gnollem",
+      "DamageType": "Psyche",
+      "Weapon": "Club",
+      "Description": "A stout spirit that has gathered a body of stone and dirt, the Gnollem is in general a peaceful spirit, unless disturbed from its rest, In which case, is a frightful foe with incredible defenses.",
+      "EncounterText": "As you walk, the ground beneath your feet begins to shake. You stop, looking about you. The dirt and stones you are standing on rise, shifting and joining. You jump back. Before you is a mighty Gnollem, your heart sinks as it lets loose a roar like a landslide.",
+      "DeathMsg":
+      "The rocks making up the Gnollem fall apart, leaving no trace other than an oddly shaped stack of rocks and dirt. Angrily, you grab the rocks and throw them into the forest in opposite directions as hard as you can. You know it accomplishes nothing, but makes you feel better anyway. You continue on.",
+      "Health":	100,
+      "Defense": 15,
+      "ExperienceAwarded": 100
+    },
+    {
+      "name": "Dewdora",
+      "DamageType":	"Psyche",
+      "Weapon":	"Sharp stick",
+      "Description": "Dewdora are water spirits that dwell within trees. Hardly malicious in nature, they are fiercly territorial.",
+      "EncounterText": "You decide to sleep for the night. All is uneventful. As you stretch in the sunlight, you catch something stirring out of the corner of your eye. Did that bush just move. You gather your bedroll up and prepare to set off, to find yourself surrounded by bush which seems to be growing by the second. A muttering like the groaning of wood fills your ears. You prepare for attack.",
+      "DeathMsg": "With a last cut, you notice the bush is no longer growing back or striking back at you. You give the remaining brush a whack with your sword, just to make sure that it is gone. Gathering your things together, you hurry out of that area. You will eat your rations on the move.",
+      "Health":	100,
+      "Defense": 15,
+      "ExperienceAwarded": 100
+    },
+    {
+      "name": "Skirmish Master",
+      "DamageType":	"Health",
+      "Weapon":	"Claws",
+      "Description": "A forgotten relic of a bygone age, the skirmish master is a clockwork machine, sent out into the wilds to clear the forests of the dangers that lurk within. Unfortunatly, that means you.",
+      "EncounterText": "You are stopped in your tracks by what appears to be man with his back turned to you. Loud clicking and ticking emanate from his body.  It turns, its movements awkward and jerky. It has no face. It moves as though to grab you. Startled, you jump back, drawing your weapon.",
+      "DeathMsg": "The skirmish master screeches, falling to the ground, that infernal ticking finally falling silent.",
+      "Health":	20,
+      "Defense": 10,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Briar Lotusfalls",
+      "DamageType":	"Health",
+      "Weapon":	"Sword",
+      "Description": "A small brownie, Briar hates the Lemurians, just out of principle.",
+      "EncounterText": "",
+      "DeathMsg":	"Visibly wounded, Briar spits at you, turns and runs. “You are dead”, he screams behind him as he runs. “I’ll get you yet.” Tired, you let him go.",
+      "Health":	20,
+      "Defense": 12,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Liri Whitestone",
+      "DamageType":	"health",
+      "Weapon":	"Katana",
+      "Description": "Though Lemurian, Liri was stolen as a child by the forest beings who raised her as their own. She will do anything to prevent the destruction of her home, even if it means destroying her own kind.",
+      "EncounterText": "You see someone ahead. Heartened at seeing another being, you hurry forward, your hand raised in greeting. The figure crouches, their arm also goes up. They slash forward as you get within range, the katana in her hand whistling as it flashes before your face. You jump back in surprise, but just as quickly gather your wits about you as you pull your own weapon free from its sheath.",
+      "DeathMsg": "Feebly, Liri strikes out at you, flailing widely. With a snarl, she turns and runs into the forest. Is that laughter you hear? Disconcerted, you wipe your blade and sheath it. You get the feeling this wasn’t the last time you see Liri Whitestone.",
+      "Health":	50,
+      "Defense": 17,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name":	"StonePlume",
+      "DamageType": "health",
+      "Weapon":	"Teeth",
+      "Description": "A creature that typically lives in the roots of motherTrees, stone plumes are small, rodent-like beings with a nasty bite.",
+      "EncounterText": "",
+      "DeathMsg":	"The stoneplume falls to the ground, lifeless.",
+      "Health": 20,
+      "Defense": 12,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Nightvine",
+      "DamageType":	"health",
+      "Weapon":	"Venomous Whip",
+      "Description": "A creeping vine that lives in the branches of trees, preying on the critters below.",
+      "EncounterText": "Unwinding from the tree above, a leafy tendril drops down, draping over your shoulder. Before you realize what is happening, the vine wraps about your neck and lifts you. Choking, you grasp the knife from your belt and swipe at the creeper, making it drop you. Another, much larger tendril drops before you.",
+      "DeathMsg":	"Crumpling to the ground, the nightvine thrashes about. You run your sword through it one last time to make certain it is dead. The tree above is still. Wary, you hurry on your way.",
+      "Health": 23,
+      "Defense": 14,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Stenchling",
+      "DamageType":
+      "health",
+      "Weapon":
+      "teeth",
+      "Description": "A small swamp imp-like creature. It likes to drag Lemurians into its swampy lair for its dinner.",
+      "EncounterText": "",
+      "DeathMsg": "With a yelp, the stenchling crumples beneath your blow. In the distance you hear laughter, you need to move on.",
+      "Health": 25,
+      "Defense": 12,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Spectral Beast",
+      "DamageType":	"Health",
+      "Weapon": "sword",
+      "Description": "A being stuck between being and not being, the spectral being attacks the living in an envious rage.",
+      "EncounterText": "Something comes at you from the brush to the left. Startled you draw your sword, just in time as a blade swings down on you.",
+      "DeathMsg":	"The beast’s lips curve upwards in a smile as it drops its weapon to the ground. Is that gratitude you see in its eyes? Its flesh dissolves, dropping the shreds of its clothing to the ground in a rotten pile. You shudder, hoping to never encounter such a beast again.",
+      "Health":	20,
+      "Defense": 12,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Hollow man",
+      "DamageType":	"health",
+      "Weapon": "Axe",
+      "Description": "The remains of Lemurians devoured by Dedira, all that remains is a hollow shell of a man.",
+      "EncounterText": "Ahead, you see the silhouette of a Lemurian. You rush forward, glad of company, but as you do, it turns. You are struck by its eyes. Its pupils dart back and forth, it cannot focus on anything. He snarls at you and lunges.",
+      "DeathMsg": "The hollow man falls to the ground. You look at the body for a moment before turning away to retch.",
+      "Health":	42,
+      "Defense": 13,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Haunlich",
+      "DamageType":	"health",
+      "Weapon":	"Claws",
+      "Description": "A rather large insectoid with large grasping claws, capable of snapping a man in two.",
+      "EncounterText": "A haunlich drops down from above, almost causing you to fall backward. You recover and draw your sword.",
+      "DeathMsg":
+      "Collapsing to the ground, the haunlich’s last breath escapes with a hiss.",
+      "Health": 23,
+      "Defense": 10,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Infernal Cat",
+      "DamageType": "health",
+      "Weapon": "Claws",
+      "Description": "A small panther-like creature with razor sharp teeth and claws. With stalk its prey for miles before attacking.",
+      "EncounterText": "",
+      "DeathMsg": "The cat yrowls at you, clearly bested. Licking its wound, it bounds off into the forest, quickly losing itself in the trees. You need to be more mindful of travelling in the dark.",
+      "health": 18,
+      "Defense": 13,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Bonecatch",
+      "DamageType":"health",
+      "Weapon":"Acid Web",
+      "Description": "What is a good adventure without a giant man-eating spider?",
+      "EncounterText": "As you walk along, you see a glimmer in front of you. Squinting, you try to catch a glimpse of what you had just seen. Before you realize it, you feel a tickling across your face. “Ugh, spiderwebs” you wipe your face before flailing your arms around like a crazy person trying to get rid of the web. You don’t notice the figure rising above you until the venomous spittle hits the back of your neck.",
+      "DeathMsg": "With a hiss, the spider spasms, flipping onto its back in a death seizure. Wary of getting any closer to it, to hurry away, glad to be alive and eager to get back home where spiders are just annoying pests that like to make webs across your doorway rather than giant man-eating monsters.",
+      "Health": 10,
+      "Defense": 14,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name":"Mist Claw",
+      "DamageType": "health",
+      "Weapon": "Claw",
+      "Description": "A humanoid wolf with long reaching arms and shorter back legs, you do not want to get caught in its grasp.",
+      "EncounterText": "It doesn’t seem you get too far without some sort of beastie rushing at you. You hear twigs snapping as the Mist Claw comes charging out of the trees at you, with snapping teeth.",
+      "DeathMsg":"The MistClaw crumples to the ground. You sigh a sigh of relief, thanking your stars you were able to come out on the other side of this encounter.",
+      "Health": 15,
+      "Defense": 13,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name":"Wisp",
+      "DamageType": "health",
+      "Weapon":"Talons",
+      "Description":"A grey-skinned faerie-being that stalks the deepest parts of the forest. They see themselves as protectors of their lands and will stand no intruders.",
+      "EncounterText":"A tall humanoid creature steps out from around a tree, glowering at you with glowing yellow eyes like flame. It raises a hand, the sun that makes it through the leaves overhead glints off the talons that tip each incredibly long finger. It snarls, revealing an even-more incredible mouth with rows of small pointy teeth. You seems you cannot raise your sword fast enough before it attacks.",
+      "DeathMsg":"The wisp falls to the ground, crying out. The cry echoes through the trees. You glance nervously about. Where one wisp is, there are always more. You better get moving.",
+      "Health":34,
+      "Defense":16,
+      "ExperienceAwarded":50
+    },
+    {
+      "name":"Emberthorn",
+      "DamageType": "health",
+      "Weapon": "Thorns",
+      "Description":"A lizard covered in long red thorns.",
+      "EncounterText": "A creature crawls out of a hole in the ground before you. At the sight of you, the scaley spines on its back stand straight up. It eyes you for a moment before deciding it really didn’t like your smell and attacks.",
+      "DeathMsg": "With a sudden spasm, the Emberthorn starts thrashing in the dirt. You back up, wary of the spikes now going every which way. Dead, the body of the creature bursts into flames. You let it burn for a time, before putting the flames out. You wouldn’t want a wildfire burning at your back.",
+      "Health": 45,
+      "Defense": 34,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name": "Onyxchild",
+      "DamageType": "health",
+      "Weapon": "Teeth",
+      "Description": "A creature the size and shape of a Lemurian child, excepting its completely bald, with jet-black skin. Eyeless, it relies on sound to find its prey, with surprising accuracy.",
+      "EncounterText":"You decide to rest a moment against a tree. As you lean back, you catch sight of a shadow moving toward you. You rub your eyes, unsure of what it is you are seeing. A small shadow, no larger than a young child is headed straight for you. Before you can react, it has reached you, less a shadow than a being whose very skin absorbs all light, leaving only darkness. It cocks its head to the side, its large lemurian ears twitching this way and that. It smiles. You catch your breath and it attacks.",
+      "DeathMsg":"Screeching, the Onyxchild drops, lying still in the debris of the forest floor. You feel sick to your stomach and turn away, unable to stand the sight of such a creature much longer.",
+      "Health":	23,
+      "Defense":	13,
+      "ExperienceAwarded":	50
+    },
+    {
+      "name": "Rustpaw",
+      "DamageType": "health",
+      "Weapon":	"Claws",
+      "Description":"A bear-like creature, this creature does not attack unless its spawn is near",
+      "EncounterText":"It is nearing night, you decide to hunker down in a small cavern created by a jumble of large boulders. You do not realize there is already something there, you brace to defend yourself.",
+      "DeathMsg":"With a warning roar, the Rustpaw takes one last swipe at you before running out of the outcropping. You move aside as two young rustpaws cry out and amble out after her. You should be ashamed of yourself. But you aren’t as you settle down into the smelly, but warm nesting in the back of the cave. Hopefully they won’t come back.",
+      "Health":	42,
+      "Defense": 15,
+      "ExperienceAwarded": 50
+    },
+    {
+      "name":"Dedira",
+      "DamageType": "Psyche",
+      "Weapon": "Spirit Drain",
+      "Description": "A nature spirit that thrives on the souls of Lemurians, Dedira is fascinated by you. Your soul is different from that of the Lemurians, older. Though currently less palatable, she preys on you throughout your journey, a beautiful and deadly siren.",
+      "EncounterText": "",
+      "DeathMsg": "With one last cut, you hack through the rose, finally breaking the stem. The flower falls to the ground. A noise like a thousand sirens fills your senses, filling your head. You desperately try to hold onto your senses. The death cry overcomes you and you fall to your knees, crying yourself at the pain of it. Blessedly, you pass out. You wake some time later, confused as to what happened, but with a sense that you have just overcome a significant obstacle.",
+      "Health": 1000,
+      "Defense": 18,
+      "ExperienceAwarded": 1000
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "player": {
+    "userID": "",
+    "profilePic": "",
+    "name": "",
+    "currentHealth": 0,
+    "totalHealth": 0,
+    "currentPsyche": 0,
+    "totalPsyche": 0,
+    "attackModifier": 0,
+    "defense": 0,
+    "strength": 0,
+    "fortitude": 0,
+    "armorClass": 0,
+    "constitution": 0,
+    "gold": 0,
+    "exp": 0,
+    "level": 0,
+    "inventory": []
+  }
+}
