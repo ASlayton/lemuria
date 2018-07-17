@@ -12,46 +12,41 @@ class Navbar extends React.Component {
     };
 
     return (
-      <div className="Navbar">
-        <nav className="navbar navbar-inverse">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span className="test-icon"></span>
-              </button>
-              <Link  to="/" className="navbar-brand">Lemuria</Link>
-            </div>
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              {
-                authed ? (
-                  <ul className="nav navbar-nav navbar-right">
-                    <li>
-                      <Link to="/Home">Save</Link>
-                    </li>
-                    <li>
-                      <Link to="/Home">Quit</Link>
-                    </li>
-                    <li className="navbar-form">
-                      <button
-                        onClick={logoutClickEvent}
-                        className="btn btn-default"
-                      >
-                        Logout
-                      </button>
-                    </li>
-                  </ul>
-                ) : (
-                  <ul className="nav navbar-nav navbar-right">
-                    <li>
-                      <Link to="/login">Login</Link>
-                    </li>
-                  </ul>
-                )
-              }
-            </div>
+      <nav className="navbar">
+        <div className="container-fluid">
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span className="test-icon"></span>
+            </button>
+            <h1>Lemuria</h1>
           </div>
-        </nav>
-      </div>
+          <div className="collapse navbar-collapse" id="myNavbar">
+            {
+              authed ? (
+                <ul className="nav navbar-nav navbar-right">
+                  <li>
+                    <Link to="/CharacterScreen">CharacterScreen</Link>
+                  </li>
+                  <li>
+                    <button
+                      onClick={logoutClickEvent}
+                      className="btn btn-default"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              ) : (
+                <ul className="nav navbar-nav navbar-right">
+                  <li>
+                    <Link to="/login">Login</Link>
+                  </li>
+                </ul>
+              )
+            }
+          </div>
+        </div>
+      </nav>
     );
   }
 }
