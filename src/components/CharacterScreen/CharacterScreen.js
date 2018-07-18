@@ -6,9 +6,13 @@ import ChosenCharacter from '../ChosenCharacter/ChosenCharacter';
 class CharacterScreen extends React.Component {
   render () {
     return (
-      <div>
-        <MyCurrentCharacters />
-        <ChosenCharacter />
+      <div className="row">
+        <MyCurrentCharacters
+          className="col-sm-6"
+        />
+        <ChosenCharacter
+          className="col-sm-6"
+        />
       </div>
     );
   }
