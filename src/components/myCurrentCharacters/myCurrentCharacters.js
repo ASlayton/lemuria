@@ -1,55 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import characterShape from '../../propz/characterProp';
-import characterRequests from '../../firebaseRequests/characters';
-import auth from '../../firebaseRequests/auth';
+import SingleCharacter from '../SingleCharacter/SingleCharacter';
 import './myCurrentCharacters.css';
 
-class myCurrentCharacters extends React.Component {
+class MyCurrentCharacters extends React.Component {
   static propTypes = {
-    character: characterShape,
-    index: PropTypes.number,
-    onSelect: PropTypes.func,
+    character: PropTypes.arrayOf(characterShape),
+    oncharacterSelection: PropTypes.func,
   };
 
-  characterClick = (e) => {
-    e.stopPropagation();
-    const {character, onSelect} = this.props;
-    onSelect(character.id);
-  };
-
-  state = {
-    characters: [],
-  }
-  componentDidMount () {
-    const uid = auth.getUid();
-    characterRequests
-      .getRequest(uid)
-      .then((characters) => {
-        this.setState({characters});
-      })
-      .catch((err) => {
-        console.error('There was an error in Get Character Request', err);
-      });
-  }
   render () {
-    const characterComponents = this.state.characters.map(character => {
+    const {characters, onCharacterSelection} = this.props;
+    const SingleCharacterComponent = characters.map((character, index) => {
       return (
-        <li onClick={this.characterClick}>
-          <img src={character.profilePic} alt={character.name} className="profileImg" />
-          <h3>{character.name}</h3>
-        </li>
+        <SingleCharacter
+          character={characters}
+          index={index}
+          key={character.id}
+          onSelect={onCharacterSelection}
+        />
       );
     });
+
     return (
-      <div>
-        <h1>Current Characters</h1>
+      <div className="currentCharacters">
+        <h2>Existing Characters</h2>
         <ul>
-          {characterComponents}
+          {SingleCharacterComponent}
         </ul>
       </div>
     );
   }
-};
+}
 
-export default myCurrentCharacters;
+export default MyCurrentCharacters;

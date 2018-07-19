@@ -1,7 +1,7 @@
 import axios from 'axios';
 import constants from '../constants';
 
-const getRequest = (uid) => {
+const characterGetRequest = (uid) => {
   return new Promise((resolve, reject) => {
     axios
       .get(`${constants.firebaseConfig.databaseURL}/characters.json?orderBy="uid"&equalTo="${uid}"`)
@@ -21,7 +21,7 @@ const getRequest = (uid) => {
   });
 };
 
-const postRequest = (newCharacter) => {
+const characterPostRequest = (newCharacter) => {
   return new Promise ((resolve, reject) => {
     axios
       .post(`${constants.firebaseConfig.databaseURL}/characters.json`, newCharacter)
@@ -47,7 +47,7 @@ const getSingleCharacterRequest = (id) => {
   });
 };
 
-const deleteRequest = (characterId) => {
+const characterDeleteRequest = (characterId) => {
   return new Promise ((resolve, reject) => {
     axios
       .delete(`${constants.firebaseConfig.databaseURL}/characters/${characterId}.json`)
@@ -60,7 +60,7 @@ const deleteRequest = (characterId) => {
   });
 };
 
-const putRequest = (characterId, updatedcharacter) => {
+const characterPutRequest = (characterId, updatedcharacter) => {
   return new Promise ((resolve, reject) => {
     axios
       .put(`${constants.firebaseConfig.databaseURL}/characters/${characterId}.json`, updatedcharacter)
@@ -73,4 +73,4 @@ const putRequest = (characterId, updatedcharacter) => {
   });
 };
 
-export default { getRequest, postRequest, deleteRequest, putRequest, getSingleCharacterRequest };
+export default { characterGetRequest, characterPostRequest, characterDeleteRequest, characterPutRequest, getSingleCharacterRequest };
