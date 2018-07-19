@@ -5,7 +5,7 @@ import './SingleCharacter.css';
 
 class CharacterItem extends React.Component {
   static propTypes = {
-    character: characterShape,
+    character: characterShape.characterShape,
     index: PropTypes.number,
     onSelect: PropTypes.func,
   };
@@ -14,13 +14,14 @@ class CharacterItem extends React.Component {
     e.stopPropagation();
     const {character, onSelect} = this.props;
     onSelect(character.id);
+    console.error(character.id);
   };
 
   render () {
     const {character} = this.props;
 
     return (
-      <li>
+      <li onClick={this.characterClick}>
         <img src={character.profilePic} alt={character.name} className="profile-image"/>
         <h1>{character.name}</h1>
       </li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import ChosenCharacter from '../../components/ChosenCharacter/ChosenCharacter';
 import MyCurrentCharacters from '../../components/myCurrentCharacters/myCurrentCharacters';
+import CharacterForm from '../../components/CharacterForm/CharacterForm';
 import characterRequest from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
 import './CharacterScreen.css';
@@ -50,6 +51,9 @@ class CharacterScreen extends React.Component {
         />
         <ChosenCharacter
           character={selectedCharacter}
+        />
+        <CharacterForm
+          onSubmit={this.formSubmitEvent}
         />
       </div>
     );

@@ -1,10 +1,10 @@
 import React from 'react';
 import './ChosenCharacter.css';
 // import propTypes from 'prop-types';
-import characterOptionalShape from '../../propz/characterProp';
+// import propz from '../../propz/characterProp';
 
 class ChosenCharacter extends React.Component {
-  static propTypes = { character: characterOptionalShape };
+  // static propTypes = { character: propz.characterOptionalShape };
 
   render () {
     const {character} = this.props;
@@ -33,7 +33,7 @@ class ChosenCharacter extends React.Component {
             </div>
             <div className="row">
               <p>CON: {character.constitution}</p>
-              <p >FOR: {character.fortitude}</p>
+              <p>FOR: {character.fortitude}</p>
             </div>
           </div>
         </div>

@@ -25,7 +25,10 @@ class Navbar extends React.Component {
               authed ? (
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <Link to="/CharacterScreen">CharacterScreen</Link>
+                    <Link
+                      to="/CharacterScreen"
+                      className="btn btn-default"
+                    >CharacterScreen</Link>
                   </li>
                   <li>
                     <button

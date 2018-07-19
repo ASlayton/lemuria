@@ -6,7 +6,7 @@ import './myCurrentCharacters.css';
 
 class MyCurrentCharacters extends React.Component {
   static propTypes = {
-    character: PropTypes.arrayOf(characterShape),
+    character: PropTypes.arrayOf(characterShape.characterShape),
     oncharacterSelection: PropTypes.func,
   };
 
@@ -15,7 +15,7 @@ class MyCurrentCharacters extends React.Component {
     const SingleCharacterComponent = characters.map((character, index) => {
       return (
         <SingleCharacter
-          character={characters}
+          character={character}
           index={index}
           key={character.id}
           onSelect={onCharacterSelection}

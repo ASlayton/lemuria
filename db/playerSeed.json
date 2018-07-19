@@ -11,7 +11,7 @@
     "defense": 10,
     "strength": 10,
     "fortitude": 10,
-    "armorClass": 10,
+    "resilience": 10,
     "constitution": 10,
     "exp": 0,
     "level": 0
@@ -28,7 +28,7 @@
     "defense": 10,
     "strength": 10,
     "fortitude": 10,
-    "armorClass": 10,
+    "resilience": 10,
     "constitution": 10,
     "exp": 0,
     "level": 0
@@ -45,7 +45,7 @@
     "defense": 10,
     "strength": 10,
     "fortitude": 10,
-    "armorClass": 10,
+    "resilience": 10,
     "constitution": 10,
     "exp": 0,
     "level": 0
