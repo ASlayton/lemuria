@@ -4,7 +4,7 @@ class StoryLine extends React.Component {
   render () {
     return (
       <div>
-        <h1>Events</h1>
+        <h1>Story</h1>
       </div>
     );
   }
