@@ -1,20 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import dieroll from '../../helpers/dieroll';
 import './CharacterForm.css';
+
+const rollHealth = dieroll(10, 25);
+const rollPsyche = dieroll(10, 25);
 
 const defaultCharacter = {
   profilePic: '',
   name: '',
-  currentHealth: 0,
-  totalHealth: 0,
-  currentPsyche: 0,
-  totalPsyche: 0,
-  attackModifier: 0,
-  defense: 0,
-  strength: 0,
-  fortitude: 0,
-  resilience: 0,
-  constitution: 0,
+  totalHealth: rollHealth,
+  currentHealth: rollHealth,
+  totalPsyche: rollPsyche,
+  currentPsyche: rollPsyche,
+  defense: dieroll(1, 20),
+  strength: dieroll(1, 20),
+  fortitude: dieroll(1, 20),
+  resilience: dieroll(1, 20),
+  constitution: dieroll(1, 20),
   exp: 0,
   level: 0,
 };
@@ -45,27 +48,8 @@ class CharacterForm extends React.Component {
     const {onSubmit} = this.props;
     const {newCharacter} = this.state;
     e.preventDefault();
-    if (
-      newCharacter.name &&
-      newCharacter.profilePic &&
-      newCharacter.currentHealth &&
-      newCharacter.totalHealth &&
-      newCharacter.currentPsyche &&
-      newCharacter.totalPsyche &&
-      newCharacter.attackModifier &&
-      newCharacter.defense &&
-      newCharacter.strength &&
-      newCharacter.fortitude &&
-      newCharacter.resilience &&
-      newCharacter.constitution &&
-      newCharacter.exp &&
-      newCharacter.level
-    ) {
-      onSubmit(this.state.newCharacter);
-      this.setState({newCharacter: defaultCharacter});
-    } else {
-      alert ('Cannot submit this information');
-    };
+    onSubmit(newCharacter);
+    this.setState({newCharacter: defaultCharacter});
   }
 
   render () {
@@ -96,7 +80,117 @@ class CharacterForm extends React.Component {
               onChange={this.imageChange}
             />
           </fieldset>
-          <button>Save Character Information</button>
+          <fieldset>
+            <label htmlFor="currentHealth">Health:</label>
+            <br/>
+            <h3
+              type="text"
+              id="totalHealth"
+              placeholder="Health"
+            >
+              {defaultCharacter.totalHealth}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="totalPsyche">Psyche:</label>
+            <br/>
+            <h3
+              type="text"
+              id="totalPsyche"
+              placeholder="Psyche"
+            >
+              {defaultCharacter.totalPsyche}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="attackModifier">Attack Modifier:</label>
+            <br/>
+            <h3
+              type="text"
+              id="attackModifier"
+              placeholder="Modifier"
+            >
+              {defaultCharacter.attackModifier}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="defense">Defense:</label>
+            <br/>
+            <h3
+              type="text"
+              id="defense"
+              placeholder=" URL"
+            >
+              {defaultCharacter.defense}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="strength">Strength:</label>
+            <br/>
+            <h3
+              type="text"
+              id="strength"
+              placeholder="Strength"
+            >
+              {defaultCharacter.strength}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="fortitude">Fortitude:</label>
+            <br/>
+            <h3
+              type="text"
+              id="fortitude"
+              placeholder="Fortitude"
+            >
+              {defaultCharacter.fortitude}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="resilience">Resilience:</label>
+            <br/>
+            <h3
+              type="text"
+              id="resilience"
+              placeholder="resilience"
+            >
+              {defaultCharacter.resilience}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="constitution">Constitution:</label>
+            <br/>
+            <h3
+              type="text"
+              id="constitution"
+              placeholder="Constitution"
+            >
+              {defaultCharacter.constitution}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="exp">Experience:</label>
+            <br/>
+            <h3
+              type="text"
+              id="exp"
+              placeholder="experience"
+            >
+              {defaultCharacter.exp}
+            </h3>
+          </fieldset>
+          <fieldset>
+            <label htmlFor="level">Level:</label>
+            <br/>
+            <h3
+              type="text"
+              id="level"
+              placeholder="Level"
+            >
+              {newCharacter.level}
+            </h3>
+          </fieldset>
+          <button>Save Character</button>
         </form>
       </div>
     );

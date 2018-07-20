@@ -16,7 +16,6 @@ class CharacterScreen extends React.Component {
     this.setState({
       selectedCharacterId: id,
     });
-    console.error(id);
   }
 
   componentDidMount () {
@@ -31,6 +30,7 @@ class CharacterScreen extends React.Component {
   }
 
   formSubmitEvent = (newCharacter) => {
+    newCharacter.uid = auth.getUid();
     characterRequest.characterPostRequest(newCharacter)
       .then((characters) => {
         this.setState({characters});
@@ -43,6 +43,15 @@ class CharacterScreen extends React.Component {
   render () {
     const {selectedCharacterId, characters} = this.state;
     const selectedCharacter = characters.find(character => character.id === selectedCharacterId) || {nope: 'nope'};
+    if (characters.length === 0) {
+      return (
+        <div>
+          <CharacterForm
+            onSubmit={this.formSubmitEvent}
+          />
+        </div>
+      );
+    };
     return (
       <div>
         <MyCurrentCharacters
@@ -51,9 +60,6 @@ class CharacterScreen extends React.Component {
         />
         <ChosenCharacter
           character={selectedCharacter}
-        />
-        <CharacterForm
-          onSubmit={this.formSubmitEvent}
         />
       </div>
     );

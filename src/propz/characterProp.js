@@ -8,7 +8,6 @@ const characterShape = PropTypes.shape({
   totalHealth: PropTypes.number.isRequired,
   currentPsyche: PropTypes.number.isRequired,
   totalPsyche: PropTypes.number.isRequired,
-  attackModifier: PropTypes.number.isRequired,
   defense: PropTypes.number.isRequired,
   strength: PropTypes.number.isRequired,
   fortitude: PropTypes.number.isRequired,
