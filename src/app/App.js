@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import Home from '../components/Home/Home';
+import CharacterScreen from '../components/CharacterScreen/CharacterScreen';
 import GameScreen from '../components/GameScreen/GameScreen';
 import fbConnection from '../firebaseRequests/connection';
 import './App.css';
@@ -79,7 +80,7 @@ class App extends React.Component {
           <div>
             <Navbar
               authed={this.state.authed}
-              runAway={this.wentAway}
+              wentAway={this.wentAway}
             />
             <div>
               <Switch>
@@ -98,6 +99,11 @@ class App extends React.Component {
                   path="/GameScreen"
                   authed={this.state.authed}
                   component={GameScreen}
+                />
+                <PrivateRoute
+                  path="/CharacterScreen"
+                  authed={this.state.authed}
+                  component={CharacterScreen}
                 />
               </Switch>
             </div>
