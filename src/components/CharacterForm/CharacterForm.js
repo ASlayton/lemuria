@@ -7,7 +7,7 @@ const rollHealth = dieroll(10, 25);
 const rollPsyche = dieroll(10, 25);
 
 const defaultCharacter = {
-  profilePic: '',
+  profilePic: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg',
   name: '',
   totalHealth: rollHealth,
   currentHealth: rollHealth,
@@ -48,8 +48,15 @@ class CharacterForm extends React.Component {
     const {onSubmit} = this.props;
     const {newCharacter} = this.state;
     e.preventDefault();
-    onSubmit(newCharacter);
-    this.setState({newCharacter: defaultCharacter});
+    if (
+      newCharacter.name &&
+      newCharacter.profilePic
+    ) {
+      onSubmit(this.state.newCharacter);
+      this.setState({newCharacter: defaultCharacter});
+    } else {
+      alert('Fill all fields.');
+    };
   }
 
   render () {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import authRequests from  '../../firebaseRequests/auth';
-import './Navbar';
+import './Navbar.css';
 
 class Navbar extends React.Component {
   render () {
@@ -18,18 +18,12 @@ class Navbar extends React.Component {
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
               <span className="test-icon"></span>
             </button>
-            <h1>Lemuria</h1>
+            <h1 className="app-name">Lemuria</h1>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             {
               authed ? (
                 <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <Link
-                      to="/CharacterScreen"
-                      className="btn btn-default"
-                    >CharacterScreen</Link>
-                  </li>
                   <li>
                     <button
                       onClick={logoutClickEvent}
@@ -42,7 +36,7 @@ class Navbar extends React.Component {
               ) : (
                 <ul className="nav navbar-nav navbar-right">
                   <li>
-                    <Link to="/login">Login</Link>
+                    <Link to="/login">Login!</Link>
                   </li>
                 </ul>
               )

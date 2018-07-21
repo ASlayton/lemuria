@@ -1,10 +1,7 @@
 import React from 'react';
 import './ChosenCharacter.css';
-// import propTypes from 'prop-types';
-// import propz from '../../propz/characterProp';
 
 class ChosenCharacter extends React.Component {
-  // static propTypes = { character: propz.characterOptionalShape };
 
   render () {
     const {character} = this.props;

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import characterShape from '../../propz/characterProp';
 import SingleCharacter from '../SingleCharacter/SingleCharacter';
 import './myCurrentCharacters.css';
@@ -12,9 +13,11 @@ class MyCurrentCharacters extends React.Component {
 
   render () {
     const {characters, onCharacterSelection} = this.props;
+
     const SingleCharacterComponent = characters.map((character, index) => {
       return (
         <SingleCharacter
+          className="col-sm-6"
           character={character}
           index={index}
           key={character.id}
@@ -29,6 +32,7 @@ class MyCurrentCharacters extends React.Component {
         <ul>
           {SingleCharacterComponent}
         </ul>
+        <Link to="/CreateCharacter">Create New Character</Link>
       </div>
     );
   }

@@ -10,6 +10,7 @@ import CharacterScreen from '../components/CharacterScreen/CharacterScreen';
 import GameScreen from '../components/GameScreen/GameScreen';
 import fbConnection from '../firebaseRequests/connection';
 import './App.css';
+import CreateCharacter from '../components/CreateCharacter/CreateCharacter';
 
 // START FIREBASE CONNECTION
 fbConnection();
@@ -24,7 +25,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/Home', state: {from: props.location}}}
+            to={{ pathname: '/CharacterScreen'}}
           />
         )
       }
@@ -42,7 +43,7 @@ const PublicRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/Home', state: {from: props.location}}}
+            to={{ pathname: '/Home'}}
           />
         )
       }
@@ -66,7 +67,7 @@ class App extends React.Component {
   }
 
   componentWillUnmount () {
-    // this.removeListener();
+    this.removeListener();
   }
 
   wentAway = () => {
@@ -91,6 +92,11 @@ class App extends React.Component {
                   component={Register}
                 />
                 <PublicRoute
+                  path="/Home"
+                  authed={this.state.authed}
+                  component={Home}
+                />
+                <PublicRoute
                   path="/login"
                   authed={this.state.authed}
                   component={Login}
@@ -99,6 +105,11 @@ class App extends React.Component {
                   path="/GameScreen"
                   authed={this.state.authed}
                   component={GameScreen}
+                />
+                <PrivateRoute
+                  path="/CreateCharacter"
+                  authed={this.state.authed}
+                  component={CreateCharacter}
                 />
                 <PrivateRoute
                   path="/CharacterScreen"

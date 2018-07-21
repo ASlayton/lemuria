@@ -16,4 +16,13 @@ const getUid = () => {
   return firebase.auth().currentUser.uid;
 };
 
-export default {getUid, loginUser, logoutUser, registerUser};
+let myCharacterId = '';
+
+const setCharacterId = (id) => {
+  myCharacterId = id;
+};
+const getCharacterId = () => {
+  return (myCharacterId);
+};
+
+export default {getUid, loginUser, logoutUser, registerUser, setCharacterId, getCharacterId};

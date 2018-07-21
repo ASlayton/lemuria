@@ -1,7 +1,7 @@
 import React from 'react';
 import ChosenCharacter from '../../components/ChosenCharacter/ChosenCharacter';
 import MyCurrentCharacters from '../../components/myCurrentCharacters/myCurrentCharacters';
-import CharacterForm from '../../components/CharacterForm/CharacterForm';
+import {Redirect} from 'react-router-dom';
 import characterRequest from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
 import './CharacterScreen.css';
@@ -23,35 +23,30 @@ class CharacterScreen extends React.Component {
     characterRequest.characterGetRequest(uid)
       .then((characters) => {
         this.setState({characters});
+        if (characters.length === 0) {
+          return (
+            <Redirect to='/CreateCharacter' />
+          );
+        };
       })
       .catch((err) => {
         console.error('error within Character GET', err);
       });
   }
-
-  formSubmitEvent = (newCharacter) => {
-    newCharacter.uid = auth.getUid();
-    characterRequest.characterPostRequest(newCharacter)
-      .then((characters) => {
-        this.setState({characters});
-      })
-      .catch((err) => {
-        console.error('error with Character POST', err);
-      });
+  setupCharacter = () => {
+    if (this.state.selectedCharacterId === '') {
+      console.error('I am doing things, I swear');
+      auth.setCharacterId(this.state.selectedCharacterId);
+      return (<Redirect to="/GameScreen" />);
+    } else {
+      alert('No Selected Character Id');
+    };
   };
-
   render () {
+
     const {selectedCharacterId, characters} = this.state;
     const selectedCharacter = characters.find(character => character.id === selectedCharacterId) || {nope: 'nope'};
-    if (characters.length === 0) {
-      return (
-        <div>
-          <CharacterForm
-            onSubmit={this.formSubmitEvent}
-          />
-        </div>
-      );
-    };
+
     return (
       <div>
         <MyCurrentCharacters
@@ -61,6 +56,9 @@ class CharacterScreen extends React.Component {
         <ChosenCharacter
           character={selectedCharacter}
         />
+        <button onClick={setupCharacter()}>
+          Start Game
+        </button>
       </div>
     );
   };
