@@ -9,6 +9,7 @@ class GameScreen extends React.Component {
     return (
       <div>
         <h1>Main Screen</h1>
+
         <MyPlayer />
         <Events />
         <StoryLine />

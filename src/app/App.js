@@ -10,6 +10,7 @@ import CharacterScreen from '../components/CharacterScreen/CharacterScreen';
 import GameScreen from '../components/GameScreen/GameScreen';
 import fbConnection from '../firebaseRequests/connection';
 import './App.css';
+import CreateCharacter from '../components/CreateCharacter/CreateCharacter';
 
 // START FIREBASE CONNECTION
 fbConnection();
@@ -99,6 +100,11 @@ class App extends React.Component {
                   path="/GameScreen"
                   authed={this.state.authed}
                   component={GameScreen}
+                />
+                <PrivateRoute
+                  path="/CreateCharacter"
+                  authed={this.state.authed}
+                  component={CreateCharacter}
                 />
                 <PrivateRoute
                   path="/CharacterScreen"

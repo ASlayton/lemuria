@@ -1,7 +1,7 @@
 import React from 'react';
 import ChosenCharacter from '../../components/ChosenCharacter/ChosenCharacter';
 import MyCurrentCharacters from '../../components/myCurrentCharacters/myCurrentCharacters';
-import CharacterForm from '../../components/CharacterForm/CharacterForm';
+import {Redirect} from 'react-router-dom';
 import characterRequest from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
 import './CharacterScreen.css';
@@ -29,27 +29,12 @@ class CharacterScreen extends React.Component {
       });
   }
 
-  formSubmitEvent = (newCharacter) => {
-    newCharacter.uid = auth.getUid();
-    characterRequest.characterPostRequest(newCharacter)
-      .then((characters) => {
-        this.setState({characters});
-      })
-      .catch((err) => {
-        console.error('error with Character POST', err);
-      });
-  };
-
   render () {
     const {selectedCharacterId, characters} = this.state;
     const selectedCharacter = characters.find(character => character.id === selectedCharacterId) || {nope: 'nope'};
     if (characters.length === 0) {
       return (
-        <div>
-          <CharacterForm
-            onSubmit={this.formSubmitEvent}
-          />
-        </div>
+        <Redirect to='/CreateCharacter' />
       );
     };
     return (
