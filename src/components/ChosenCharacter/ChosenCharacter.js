@@ -1,11 +1,7 @@
 import React from 'react';
 import './ChosenCharacter.css';
-import {Link} from 'react-router-dom';
-// import propTypes from 'prop-types';
-// import propz from '../../propz/characterProp';
 
 class ChosenCharacter extends React.Component {
-  // static propTypes = { character: propz.characterOptionalShape };
 
   render () {
     const {character} = this.props;
@@ -38,7 +34,6 @@ class ChosenCharacter extends React.Component {
             </div>
           </div>
         </div>
-        <Link to="/GameScreen">Start Game</Link>
       </div>
     );
   };

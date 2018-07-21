@@ -23,20 +23,30 @@ class CharacterScreen extends React.Component {
     characterRequest.characterGetRequest(uid)
       .then((characters) => {
         this.setState({characters});
+        if (characters.length === 0) {
+          return (
+            <Redirect to='/CreateCharacter' />
+          );
+        };
       })
       .catch((err) => {
         console.error('error within Character GET', err);
       });
   }
-
+  setupCharacter = () => {
+    if (this.state.selectedCharacterId === '') {
+      console.error('I am doing things, I swear');
+      auth.setCharacterId(this.state.selectedCharacterId);
+      return (<Redirect to="/GameScreen" />);
+    } else {
+      alert('No Selected Character Id');
+    };
+  };
   render () {
+
     const {selectedCharacterId, characters} = this.state;
     const selectedCharacter = characters.find(character => character.id === selectedCharacterId) || {nope: 'nope'};
-    if (characters.length === 0) {
-      return (
-        <Redirect to='/CreateCharacter' />
-      );
-    };
+
     return (
       <div>
         <MyCurrentCharacters
@@ -46,6 +56,9 @@ class CharacterScreen extends React.Component {
         <ChosenCharacter
           character={selectedCharacter}
         />
+        <button onClick={setupCharacter()}>
+          Start Game
+        </button>
       </div>
     );
   };

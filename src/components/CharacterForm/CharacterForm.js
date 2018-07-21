@@ -1,16 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import dieroll from '../../helpers/dieroll';
-import characterRequest from '../../firebaseRequests/characters';
-import auth from '../../firebaseRequests/auth';
-import {Redirect} from 'react-router-dom';
 import './CharacterForm.css';
 
 const rollHealth = dieroll(10, 25);
 const rollPsyche = dieroll(10, 25);
 
 const defaultCharacter = {
-  profilePic: '',
+  profilePic: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg',
   name: '',
   totalHealth: rollHealth,
   currentHealth: rollHealth,
@@ -31,19 +28,6 @@ class CharacterForm extends React.Component {
   }
   state = {
     newCharacter: defaultCharacter,
-  };
-
-  formSubmitEvent = (newCharacter) => {
-    newCharacter.uid = auth.getUid();
-    characterRequest.characterPostRequest(newCharacter)
-      .then(() => {
-        return (
-          <Redirect to="/GameScreen" />
-        );
-      })
-      .catch((err) => {
-        console.error('error with Character POST', err);
-      });
   };
 
   formFieldStringState = (name, e) => {
@@ -70,6 +54,8 @@ class CharacterForm extends React.Component {
     ) {
       onSubmit(this.state.newCharacter);
       this.setState({newCharacter: defaultCharacter});
+    } else {
+      alert('Fill all fields.');
     };
   }
 

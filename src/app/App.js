@@ -25,7 +25,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/Home', state: {from: props.location}}}
+            to={{ pathname: '/CharacterScreen'}}
           />
         )
       }
@@ -43,7 +43,7 @@ const PublicRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/Home', state: {from: props.location}}}
+            to={{ pathname: '/Home'}}
           />
         )
       }
@@ -67,7 +67,7 @@ class App extends React.Component {
   }
 
   componentWillUnmount () {
-    // this.removeListener();
+    this.removeListener();
   }
 
   wentAway = () => {
@@ -90,6 +90,11 @@ class App extends React.Component {
                   path="/register"
                   authed={this.state.authed}
                   component={Register}
+                />
+                <PublicRoute
+                  path="/Home"
+                  authed={this.state.authed}
+                  component={Home}
                 />
                 <PublicRoute
                   path="/login"
