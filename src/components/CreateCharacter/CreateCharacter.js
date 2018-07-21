@@ -1,7 +1,6 @@
 import React from 'react';
 import CharacterForm from '../../components/CharacterForm/CharacterForm';
 import './CreateCharacter.css';
-import {Redirect} from 'react-router-dom';
 import auth from '../../firebaseRequests/auth';
 import characterRequest from '../../firebaseRequests/characters';
 
@@ -13,12 +12,7 @@ class CreateCharacter extends React.Component {
   formSubmitEvent = (newCharacter) => {
     newCharacter.uid = auth.getUid();
     characterRequest.characterPostRequest(newCharacter)
-      .then(() => {
-        auth.setCharacterId(newCharacter.id);
-        return (
-          <Redirect to="/GameScreen" />
-        );
-      })
+      .then()
       .catch((err) => {
         console.error('error with Character POST', err);
       });

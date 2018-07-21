@@ -1,7 +1,7 @@
 import React from 'react';
 import ChosenCharacter from '../../components/ChosenCharacter/ChosenCharacter';
 import MyCurrentCharacters from '../../components/myCurrentCharacters/myCurrentCharacters';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import characterRequest from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
 import './CharacterScreen.css';
@@ -25,7 +25,6 @@ class CharacterScreen extends React.Component {
       .then((characters) => {
         this.setState({characters});
         if (characters.length === 0) {
-          // console.error('hi');
           return (
             <Redirect to='/CreateCharacter' />
           );
@@ -35,7 +34,6 @@ class CharacterScreen extends React.Component {
         console.error('error within Character GET', err);
       });
   }
-
   render () {
 
     const {selectedCharacterId, characters} = this.state;
@@ -52,6 +50,7 @@ class CharacterScreen extends React.Component {
           className="col-sm-6"
           character={selectedCharacter}
         />
+        <Link to="/GameScreen">Start Game</Link>
       </div>
     );
   };
