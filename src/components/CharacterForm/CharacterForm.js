@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 import dieroll from '../../helpers/dieroll';
 import './CharacterForm.css';
 
@@ -62,8 +63,7 @@ class CharacterForm extends React.Component {
   render () {
     const {newCharacter} = this.state;
     return (
-      <div>
-        <h1>Create Character</h1>
+      <div className="form-container col-sm-10 col-sm-offset-1">
         <form onSubmit={this.formSubmit}>
           <fieldset>
             <label htmlFor="name">Name:</label>
@@ -199,6 +199,7 @@ class CharacterForm extends React.Component {
           </fieldset>
           <button>Save Character</button>
         </form>
+        <Link to="CharacterSheet">Start Game</Link>
       </div>
     );
   };

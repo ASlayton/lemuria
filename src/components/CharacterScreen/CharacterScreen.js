@@ -1,7 +1,7 @@
 import React from 'react';
 import ChosenCharacter from '../../components/ChosenCharacter/ChosenCharacter';
 import MyCurrentCharacters from '../../components/myCurrentCharacters/myCurrentCharacters';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import characterRequest from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
 import './CharacterScreen.css';
@@ -16,6 +16,7 @@ class CharacterScreen extends React.Component {
     this.setState({
       selectedCharacterId: id,
     });
+    auth.setCharacterId(id);
   }
 
   componentDidMount () {
@@ -33,15 +34,6 @@ class CharacterScreen extends React.Component {
         console.error('error within Character GET', err);
       });
   }
-  setupCharacter = () => {
-    if (this.state.selectedCharacterId === '') {
-      console.error('I am doing things, I swear');
-      auth.setCharacterId(this.state.selectedCharacterId);
-      return (<Redirect to="/GameScreen" />);
-    } else {
-      alert('No Selected Character Id');
-    };
-  };
   render () {
 
     const {selectedCharacterId, characters} = this.state;
@@ -50,15 +42,15 @@ class CharacterScreen extends React.Component {
     return (
       <div>
         <MyCurrentCharacters
+          className="col-sm-6"
           characters={this.state.characters}
           onCharacterSelection = {this.characterSelectEvent}
         />
         <ChosenCharacter
+          className="col-sm-6"
           character={selectedCharacter}
         />
-        <button onClick={setupCharacter()}>
-          Start Game
-        </button>
+        <Link to="/GameScreen">Start Game</Link>
       </div>
     );
   };

@@ -5,3 +5,14 @@ img {
 li {
   list-style: none;
 }
+
+.character-card {
+  width: 30%;
+  background-color: rgba(204, 204, 204, 0.5);
+  margin: 5px;
+  padding: 5px;
+}
+
+.character-container {
+  display: flex;
+}

@@ -14,14 +14,13 @@ class CharacterItem extends React.Component {
     e.stopPropagation();
     const {character, onSelect} = this.props;
     onSelect(character.id);
-    console.error(character.id);
   };
 
   render () {
     const {character} = this.props;
 
     return (
-      <li onClick={this.characterClick}>
+      <li onClick={this.characterClick} className="character-card">
         <img src={character.profilePic} alt={character.name} className="profile-image"/>
         <h1>{character.name}</h1>
       </li>
