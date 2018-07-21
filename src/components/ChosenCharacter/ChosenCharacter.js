@@ -1,5 +1,6 @@
 import React from 'react';
 import './ChosenCharacter.css';
+import {Link} from 'react-router-dom';
 // import propTypes from 'prop-types';
 // import propz from '../../propz/characterProp';
 
@@ -37,6 +38,7 @@ class ChosenCharacter extends React.Component {
             </div>
           </div>
         </div>
+        <Link to="/GameScreen">Start Game</Link>
       </div>
     );
   };
