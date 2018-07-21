@@ -17,7 +17,7 @@ class MyCurrentCharacters extends React.Component {
     const SingleCharacterComponent = characters.map((character, index) => {
       return (
         <SingleCharacter
-          className="col-sm-6"
+          className="character-card"
           character={character}
           index={index}
           key={character.id}
@@ -29,7 +29,7 @@ class MyCurrentCharacters extends React.Component {
     return (
       <div className="currentCharacters">
         <h2>Existing Characters</h2>
-        <ul>
+        <ul className="character-container">
           {SingleCharacterComponent}
         </ul>
         <Link to="/CreateCharacter">Create New Character</Link>

@@ -62,8 +62,7 @@ class CharacterForm extends React.Component {
   render () {
     const {newCharacter} = this.state;
     return (
-      <div>
-        <h1>Create Character</h1>
+      <div className="form-container col-sm-10 col-sm-offset-1">
         <form onSubmit={this.formSubmit}>
           <fieldset>
             <label htmlFor="name">Name:</label>

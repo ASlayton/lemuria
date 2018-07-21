@@ -25,7 +25,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/CharacterScreen'}}
+            to={{ pathname: '/Home'}}
           />
         )
       }
@@ -91,7 +91,7 @@ class App extends React.Component {
                   authed={this.state.authed}
                   component={Register}
                 />
-                <PublicRoute
+                <Route
                   path="/Home"
                   authed={this.state.authed}
                   component={Home}

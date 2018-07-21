@@ -14,6 +14,7 @@ class CreateCharacter extends React.Component {
     newCharacter.uid = auth.getUid();
     characterRequest.characterPostRequest(newCharacter)
       .then(() => {
+        auth.setCharacterId(newCharacter.id);
         return (
           <Redirect to="/GameScreen" />
         );
