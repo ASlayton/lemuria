@@ -1,0 +1,497 @@
+{
+  "event01": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event02": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event03": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event04": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event05": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event06": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event07": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event08": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event09": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event10": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event11": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event12": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event13": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event14": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event15": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event16": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event17": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event18": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event19": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event20": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event21": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event22": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event23": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event24": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event25": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event26": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event27": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event28": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event29": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event30": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event31": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event32": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event33": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event34": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event35": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event36": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event37": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event38": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event39": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event40": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event41": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event42": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event43": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event44": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event45": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event46": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event47": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event48": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event49": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event50": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event51": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event52": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event53": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event54": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event55": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event56": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event57": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event58": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event59": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event60": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event61": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event62": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event63": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event64": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event65": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event66": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event67": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event68": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event69": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event70": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event71": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event72": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event73": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event74": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event75": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event76": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event77": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event78": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event79": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event80": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event81": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event82": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event83": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event84": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event85": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event86": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event87": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event88": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event89": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event90": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event91": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event92": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event93": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event94": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event95": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event96": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event97": {
+    "type": "combat",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event98": {
+    "type": "meet",
+    "eventText": "",
+    "encounter": ""
+  },
+  "event99": {
+    "type": "",
+    "eventText": "",
+    "encounter": ""
+  }
+}

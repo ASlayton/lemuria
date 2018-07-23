@@ -10,15 +10,9 @@ class GameScreen extends React.Component {
     return (
       <div>
         <h1>Main Screen</h1>
-        <MyPlayer
-          className="col-sm-6"
-        />
-        <Events
-          className="col-sm-6"
-        />
-        <StoryLine
-          className="col-sm-6"
-        />
+        <MyPlayer />
+        <Events />
+        <StoryLine />
       </div>
     );
   }
