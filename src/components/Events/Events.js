@@ -7,6 +7,8 @@ import auth from '../../firebaseRequests/auth';
 import enemyRequests from '../../firebaseRequests/enemies';
 import messageRequests from '../../firebaseRequests/combatMsg';
 import characterRequests from '../../firebaseRequests/characters';
+import {ProgressBar} from 'react-bootstrap';
+import percentageBar from '../../helpers/percentageBar';
 
 class Events extends React.Component {
   constructor () {
@@ -44,7 +46,7 @@ class Events extends React.Component {
   };
 
   componentDidMount () {
-    const myPlayerId = auth.getUid();
+    const myCharacter = auth.getCharacterId();
     eventRequests.eventGetRequest()
       .then((events) => {
         this.setState({events: events});
@@ -56,13 +58,15 @@ class Events extends React.Component {
     messageRequests.messageGetRequest()
       .then((messages) => {
         this.setState({combatMsg: messages});
+        console.error('msg: ', messages);
       })
       .catch((error) => {
         console.error('Error in get combat messages', error);
       });
-    characterRequests.getSingleCharacterRequest(myPlayerId)
-      .then((myPlayer) => {
-        this.setState({player: myPlayer});
+    characterRequests.getSingleCharacterRequest(myCharacter)
+      .then((player) => {
+        this.setState({player: player});
+        console.error('Player:', player);
       })
       .catch((err) => {
         console.error('Error in get player data in event', err);
@@ -78,15 +82,39 @@ class Events extends React.Component {
 
   getEnemy = () => {
     const enemyId = this.state.myEvent.encounter;
-    console.error('enemyId', enemyId);
     enemyRequests.getSingleFoeRequest(enemyId)
       .then((enemy) => {
         this.setState({enemy: enemy});
-        console.error('enemy:', enemy);
       })
       .catch((error) => {
         console.error('Error in getSingleFoe', error);
       });
+  };
+
+  commenceAtk = () => {
+    const attackRoll = dieroll(1, 20);
+    console.error('I attack: ', attackRoll);
+    if (attackRoll === 1) {
+      const playerDmg = dieroll(1, 6);
+      const player = Object.assign({}, this.state.player);
+      player.currentHealth = player.currentHealth - playerDmg;
+      this.setState({player});
+    } else if (attackRoll === 20) {
+      const enemyDmg = dieroll(1, 12);
+      const enemy = Object.assign({}, this.state.enemy);
+      enemy.currentHealth = enemy.currentHealth - enemyDmg;
+      this.setState({enemy});
+    } else if (attackRoll > this.state.enemy.defense) {
+      const enemyDmg = dieroll(1, 6);
+      const enemy = Object.assign({}, this.state.enemy);
+      const myMsg = this.state.combatMsg.enemyHeathHit.msg;
+      alert(myMsg);
+      enemy.currentHealth = enemy.currentHealth - enemyDmg;
+      this.setState({enemy});
+    } else {
+      const myMsg = this.state.combatMsg.playerCritHit;
+      alert(myMsg);
+    };
   };
 
   render () {
@@ -106,6 +134,8 @@ class Events extends React.Component {
           <h1>{this.state.myEvent.type}</h1>
           <div className="col-sm-6">
             <h3>{this.state.player.name}</h3>
+            <ProgressBar now={percentageBar(this.state.player.currentHealth, this.state.player.totalHealth)} />
+            <ProgressBar now={percentageBar(this.state.player.currentPsyche, this.state.player.totalPsyche)} />
           </div>
           <div className="col-sm-6">
             <div className="col-sm-6">
@@ -120,7 +150,7 @@ class Events extends React.Component {
 
           <div>
             <button  onClick={this.closeModal} className="btn btn-info">Run Away</button>
-            <button className="btn btn-danger">Attack</button>
+            <button className="btn btn-danger" onClick={this.commenceAtk}>Attack</button>
           </div>
         </Modal>
       </div>

@@ -2,7 +2,8 @@ import React from 'react';
 import './MyPlayer';
 import auth from '../../firebaseRequests/auth';
 import characterRequests from '../../firebaseRequests/characters';
-import ProgressBar from 'react-bootstrap';
+import {ProgressBar} from 'react-bootstrap';
+import percentageBar from '../../helpers/percentageBar';
 
 class MyPlayer extends React.Component {
   state = {
@@ -21,11 +22,6 @@ class MyPlayer extends React.Component {
       });
   };
 
-  percentageBar = (current, total) => {
-    const currentPercent = (current * 1 / total * 1) * 100;
-    return currentPercent;
-  };
-
   render () {
     const character = this.state;
 
@@ -39,8 +35,8 @@ class MyPlayer extends React.Component {
             <h3 className="col=sm-6">{this.state.character.name}</h3>
             <h4 className="col-sm-6">LVL {this.state.character.level}</h4>
           </div>
-          <ProgressBar now={this.percentageBar(character.currentHealth, character.totalHealth)} />
-          <ProgressBar now={this.percentageBar(character.currentPsyche, character.totalPsyche)} />
+          <ProgressBar now={percentageBar(character.currentHealth, character.totalHealth)} />
+          <ProgressBar now={percentageBar(character.currentPsyche, character.totalPsyche)} />
         </div>
       </div>
     );

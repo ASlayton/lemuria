@@ -20,7 +20,6 @@ let myCharacterId = '';
 
 const setCharacterId = (id) => {
   myCharacterId = id;
-  console.error('Character Id set to:', id);
 };
 const getCharacterId = () => {
   return (myCharacterId);
