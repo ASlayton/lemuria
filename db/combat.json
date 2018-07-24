@@ -1,41 +1,39 @@
 {
-  "combatMessages": {
-    "playerDeathMsg": "With a small gasp, you fall to your knees before falling forward. 'It cannot end like this' you think, watching your foe close upon you. Your eyes close and your last breath escapes as a sigh. Was this the peace you were seeking?",
-    "playerPsycheFail": "Before you, you see a flower of such enchanting beauty, you must have it. Your foe also sees and flees back into the dense forest. Dedira materializes above you, her face stretched into a razor sharp grin. 'Ah, now you are food' She descends on you, wrapping her long fingers around your head. Unable to defend yourself any further from this spirit, you embrace the emptiness as she devours the essence of your being. Was this the peace you were seeking?",
-    "playerHit": [
-      "Your opponent snarls as your sword finds its mark.",
-      "With a yell, your blade sinks into the flesh of your opponent",
-      "Your aim is true and you hit your opponent.",
-      "A sure hit.",
-      "Your blade flashes, cutting into the flesh of the <name of foe>.",
-      "You lunge, the <foe> leaps to the left. Your blade barely scratches it as you pass."
-    ],
-    "playerMiss": [
-      "Your swing goes wide and you miss.",
-      "The <foe> successfully dodges the attack.",
-      "Your form was good; unfortunately, you were unable to land the hit.",
-      "Your foe parries the attack.",
-      "You strike, but it was ineffective.",
-      "That was a miss.",
-      "You misjudge the hit and miss.",
-      "Though your form is good, you depth perception is not. The <name of foe> snarls as it dodges your swing."
-    ],
-    "playerCritHit": "Planting your foot firmly, you lunge forward, driving all of your weight behind the blade as it finds its mark.",
-    "playerCritMiss": "Misjudging your footing, you trip over yourself, your blade sinking into your foot.",
-    "enemyDeathMsg": "At last, the creature sinks down to the ground, ",
-    "enemyHealthHit": [
-      "A low growl escapes the throat of your foe as they swipe at you.",
-      "The <foe> crouches and springs on you, sinking its teeth into your shoulder. You shake, trying to dismantle it from your back. It springs off, preparing for another attack.",
-      "The creature strikes, you are injured."
-    ],
-    "enemyHealthMiss": [
-      "The creature leaps at you and misses.",
-      "Growling, the creature attempts a low swipe at your legs, but you leap to the side at the last minute.",
-      "You duck just in time to avoid the thing's attack"
-    ],
-    "enemyCritHit": "The <foe> screeches triumphantly as it bears down on you, dealing a mighty blow.",
-    "enemyCritMiss": "The enemy lunges, but is caught unawares by a wayward tree branch. It falls on its face, allowing you a free blow.",
-    "playerFlee": "Knowing you are bested in this fight, you swing your sword one last time to ward off your foe before turning tail and running for all you are worth through the dense trees, hoping that the creature isn't just on your tail. Running into the village, you collapse, glad to live another day.",
-    "enemyFlee": "With a yelp, the creature lunges towards you, but rather than hitting you, it runs past, disappearing into the thick vegetation. You sigh, wiping your blade and resheathing it before continuing on your way."
-  }
+  "playerDeathMsg": "With a small gasp, you fall to your knees before falling forward. 'It cannot end like this' you think, watching your foe close upon you. Your eyes close and your last breath escapes as a sigh. Was this the peace you were seeking?",
+  "playerPsycheFail": "Before you, you see a flower of such enchanting beauty, you must have it. Your foe also sees and flees back into the dense forest. Dedira materializes above you, her face stretched into a razor sharp grin. 'Ah, now you are food' She descends on you, wrapping her long fingers around your head. Unable to defend yourself any further from this spirit, you embrace the emptiness as she devours the essence of your being. Was this the peace you were seeking?",
+  "playerHit": [
+    "Your opponent snarls as your sword finds its mark.",
+    "With a yell, your blade sinks into the flesh of your opponent",
+    "Your aim is true and you hit your opponent.",
+    "A sure hit.",
+    "Your blade flashes, cutting into the flesh of the <name of foe>.",
+    "You lunge, the <foe> leaps to the left. Your blade barely scratches it as you pass."
+  ],
+  "playerMiss": [
+    "Your swing goes wide and you miss.",
+    "The <foe> successfully dodges the attack.",
+    "Your form was good; unfortunately, you were unable to land the hit.",
+    "Your foe parries the attack.",
+    "You strike, but it was ineffective.",
+    "That was a miss.",
+    "You misjudge the hit and miss.",
+    "Though your form is good, you depth perception is not. The <name of foe> snarls as it dodges your swing."
+  ],
+  "playerCritHit": "Planting your foot firmly, you lunge forward, driving all of your weight behind the blade as it finds its mark.",
+  "playerCritMiss": "Misjudging your footing, you trip over yourself, your blade sinking into your foot.",
+  "enemyDeathMsg": "At last, the creature sinks down to the ground, ",
+  "enemyHealthHit": [
+    "A low growl escapes the throat of your foe as they swipe at you.",
+    "The creature crouches and springs on you, sinking its teeth into your shoulder. You shake, trying to dismantle it from your back. It springs off, preparing for another attack.",
+    "The creature strikes, you are injured."
+  ],
+  "enemyHealthMiss": [
+    "The creature leaps at you and misses.",
+    "Growling, the creature attempts a low swipe at your legs, but you leap to the side at the last minute.",
+    "You duck just in time to avoid the thing's attack"
+  ],
+  "enemyCritHit": "The creature screeches triumphantly as it bears down on you, dealing a mighty blow.",
+  "enemyCritMiss": "The enemy lunges, but is caught unawares by a wayward tree branch. It falls on its face, allowing you a free blow.",
+  "playerFlee": "Knowing you are bested in this fight, you swing your sword one last time to ward off your foe before turning tail and running for all you are worth through the dense trees, hoping that the creature isn't just on your tail. Running into the village, you collapse, glad to live another day.",
+  "enemyFlee": "With a yelp, the creature lunges towards you, but rather than hitting you, it runs past, disappearing into the thick vegetation. You sigh, wiping your blade and resheathing it before continuing on your way."
 }
