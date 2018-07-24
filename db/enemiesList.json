@@ -233,5 +233,49 @@
     "Health": 1000,
     "Defense": 18,
     "ExperienceAwarded": 1000
+  },
+  "foe22": {
+    "name":"Jirahn",
+    "DamageType": "Psyche",
+    "Weapon": "Mind Probe",
+    "Description": "A slow, ponderous worm, be careful to not let it wrap around you.",
+    "EncounterText": "The ground beneath your feet shakes. You grab an overhanging branch to steady yourself, just in time for the ground to erupt in a spout of earth and rock. A long brown worm shoots up, arching its back to came back at you. Darting to the side, you barely miss getting squished underneath its incredible bulk.",
+    "DeathMsg": "With a last wriggle, the worm lies still. You breathe a sigh of relief.",
+    "Health": 100,
+    "Defense": 13,
+    "ExperienceAwarded": 100
+  },
+  "foe23": {
+    "name":"Fee",
+    "DamageType": "Health",
+    "Weapon": "teeth",
+    "Description": "A nimble, squirrel-like critter, intensely territorial",
+    "EncounterText": "Something drops down from the tree above you, digging its teeth into your collar. You reach up and grab it, throwing it into the bushes. You draw your sword, uncertain of what is about to leap at you.",
+    "DeathMsg": "The fee falls and is still. You wipe the blood from your cheek, uncertain if its your or the critters. ",
+    "Health": 10,
+    "Defense": 11,
+    "ExperienceAwarded": 25
+  },
+  "foe24": {
+    "name":"Loran",
+    "DamageType": "Health",
+    "Weapon": "beak",
+    "Description": "A hive mind conglomerate of millions of insect-like creatures,the Loran eats anything and everything it can possibly consume, and some things that it cannot.",
+    "EncounterText": "In the distance, you see a shadow moving through the forest. A glittering darkness, spreading and taking over the little light that remains deep within the trees. Whatever it is, it is moving fast. You need to run, but it is too quick, you draw your sword.",
+    "DeathMsg": "The glittering darkness falls apart before you, dissintegrating into the dirt. It's not defeated, but it will take some time before it messes with you again.",
+    "Health": 10,
+    "Defense": 11,
+    "ExperienceAwarded": 25
+  },
+  "foe25": {
+    "name":"Hurm",
+    "DamageType": "Health",
+    "Weapon": "Beak",
+    "Description": "A monstrous crow",
+    "EncounterText": "A screech that only be described as that of a woman echoes through the forest. You stand still, listening to see if you can tell",
+    "DeathMsg": "Letting out a final shreek, the Hurm collaspses at your feet, the wings finally still. You gingerly step over the massive bird, taking a good look of the beak that at last is done snapping. You shiver, that could have gone very badly.",
+    "Health": 100,
+    "Defense": 13,
+    "ExperienceAwarded": 1000
   }
 }

@@ -14,4 +14,4 @@ const getSingleFoeRequest = (id) => {
   });
 };
 
-export default getSingleFoeRequest;
+export default {getSingleFoeRequest};
