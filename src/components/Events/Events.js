@@ -104,7 +104,10 @@ class Events extends React.Component {
           className={this.state.myEvent.type}
         >
           <h1>{this.state.myEvent.type}</h1>
-          <div>
+          <div className="col-sm-6">
+            <h3>{this.state.player.name}</h3>
+          </div>
+          <div className="col-sm-6">
             <div className="col-sm-6">
               <h3>{this.state.enemy.name}</h3>
               <p>{this.state.enemy.description}</p>
@@ -114,6 +117,7 @@ class Events extends React.Component {
               <p>{this.state.enemy.EncounterText}</p>
             </div>
           </div>
+
           <div>
             <button  onClick={this.closeModal} className="btn btn-info">Run Away</button>
             <button className="btn btn-danger">Attack</button>
