@@ -14,13 +14,11 @@ class Register extends React.Component {
   };
 
   registerClickEvent = e => {
-    console.error(this.props.history);
     const { user } = this.state;
     e.preventDefault();
     authRequests
       .registerUser(user)
       .then(() => {
-        console.error(this.props.history);
         this.props.history.push('/Home');
       })
       .catch(error => {
