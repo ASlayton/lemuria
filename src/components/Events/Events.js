@@ -19,8 +19,10 @@ class Events extends React.Component {
       myEvent: {},
       enemy: {},
       myEnemyId: '',
-      combatMsg: [],
+      combatMsg: {},
       player: {},
+      dmgResult: 0,
+      gameMsg: '',
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -99,21 +101,33 @@ class Events extends React.Component {
       const player = Object.assign({}, this.state.player);
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
+      this.setState({dmgResult: playerDmg});
+      const gameMsg = this.state.combatMsg.playerCritMiss.msg;
+      this.setState({gameMsg});
+
     } else if (attackRoll === 20) {
       const enemyDmg = dieroll(1, 12);
       const enemy = Object.assign({}, this.state.enemy);
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
-    } else if (attackRoll > this.state.enemy.defense) {
+      this.setState({dmgResult: enemyDmg});
+      const gameMsg = this.state.combatMsg.playerCritHit.msg;
+      this.setState({gameMsg});
+
+    } else if (attackRoll >= this.state.enemy.defense) {
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);
-      const myMsg = this.state.combatMsg.enemyHeathHit.msg;
-      alert(myMsg);
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
+      this.setState({dmgResult: enemyDmg});
+      const gameMsg = this.state.combatMsg.playerHit.msg[enemyDmg];
+      this.setState({gameMsg});
+
     } else {
-      const myMsg = this.state.combatMsg.playerCritHit;
-      alert(myMsg);
+      const getRandom = dieroll(1, 10) - 1;
+      this.setState({dmgResult: 0});
+      const gameMsg = this.state.combatMsg.playerMiss.msg[getRandom];
+      this.setState({gameMsg});
     };
   };
 
@@ -147,7 +161,10 @@ class Events extends React.Component {
               <p>{this.state.enemy.EncounterText}</p>
             </div>
           </div>
-
+          <div>
+            <h1>{this.state.dmgResult}</h1>
+            <h2>{this.state.gameMsg}</h2>
+          </div>
           <div>
             <button  onClick={this.closeModal} className="btn btn-info">Run Away</button>
             <button className="btn btn-danger" onClick={this.commenceAtk}>Attack</button>
