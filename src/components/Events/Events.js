@@ -181,6 +181,7 @@ class Events extends React.Component {
   };
 
   evaluateStatus = (turn) => {
+    const myCharacter = auth.getCharacterId();
     console.error(this.state.player);
     if (this.state.player.currentHealth <= 0) {
       const gameMsg = this.state.combatMsg[8].msg;
@@ -192,13 +193,16 @@ class Events extends React.Component {
     } else if (this.state.enemy.health <= 0) {
       const gameMsg = this.state.enemy.DeathMsg;
       this.setState({gameMsg});
+      const player = Object.assign({}, this.state.player);
+      player.exp = player.exp + this.state.enemy.ExperienceAwarded;
+      this.setState({player});
       this.closeModal();
     } else {
       if (turn === 'playerTurn') {
-        this.enemyStrikeBack();
+        setTimeout(this.enemyStrikeBack(), 1500);
       };
     };
-    this.putResults(this.state.player.id, this.state.player);
+    this.putResults(myCharacter, this.state.player);
   };
 
   putResults = (id, updatedCharacter) => {
