@@ -1,8 +1,18 @@
 import React from 'react';
 import './ChosenCharacter.css';
+import characterRequests from '../../firebaseRequests/characters';
+import auth from '../../firebaseRequests/auth';
 
 class ChosenCharacter extends React.Component {
-
+  deleteCharacter = () => {
+    const firebaseId = auth.getCharacterId();
+    characterRequests
+      .characterDeleteRequest(firebaseId)
+      .then()
+      .catch(((err) => {
+        console.error('error with delete request', err);
+      }));
+  }
   render () {
     const {character} = this.props;
     if (character.nope) {
@@ -13,6 +23,7 @@ class ChosenCharacter extends React.Component {
     return (
       <div className="character-container">
         <div className="row">
+          <button onClick={this.deleteCharacter}><span>&times;</span></button>
           <div className="col-xs-6">
             <img className="profilePic" src={character.profilePic} alt="Chosen Character" />
           </div>
