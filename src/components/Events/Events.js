@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 import eventRequests from '../../firebaseRequests/events';
 import './Events.css';
 import Modal from 'react-modal';
@@ -60,7 +61,6 @@ class Events extends React.Component {
     messageRequests.messageGetRequest()
       .then((messages) => {
         this.setState({combatMsg: messages});
-        console.error('msg: ', messages);
       })
       .catch((error) => {
         console.error('Error in get combat messages', error);
@@ -68,7 +68,6 @@ class Events extends React.Component {
     characterRequests.getSingleCharacterRequest(myCharacter)
       .then((player) => {
         this.setState({player: player});
-        console.error('Player:', player);
       })
       .catch((err) => {
         console.error('Error in get player data in event', err);
@@ -95,14 +94,16 @@ class Events extends React.Component {
 
   commenceAtk = () => {
     const attackRoll = dieroll(1, 20);
-    console.error('I attack: ', attackRoll);
+    console.error('Enemy Defense: ', this.state.enemy.Defense);
+    console.error('Attack Roll:', attackRoll);
+
     if (attackRoll === 1) {
       const playerDmg = dieroll(1, 6);
       const player = Object.assign({}, this.state.player);
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
       this.setState({dmgResult: playerDmg});
-      const gameMsg = this.state.combatMsg.playerCritMiss.msg;
+      const gameMsg = this.state.combatMsg[7].msg;
       this.setState({gameMsg});
 
     } else if (attackRoll === 20) {
@@ -111,24 +112,106 @@ class Events extends React.Component {
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({dmgResult: enemyDmg});
-      const gameMsg = this.state.combatMsg.playerCritHit.msg;
+      const gameMsg = this.state.combatMsg[6].msg;
       this.setState({gameMsg});
 
-    } else if (attackRoll >= this.state.enemy.defense) {
+    } else if (attackRoll > this.state.enemy.Defense) {
+      const getRandom = dieroll(1, 10);
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({dmgResult: enemyDmg});
-      const gameMsg = this.state.combatMsg.playerHit.msg[enemyDmg];
+      const gameMsg = this.state.combatMsg[10].msg[getRandom];
       this.setState({gameMsg});
 
-    } else {
-      const getRandom = dieroll(1, 10) - 1;
+    } else if (attackRoll < this.state.enemy.Defense) {
+      const getRandom = dieroll(1, 10);
       this.setState({dmgResult: 0});
-      const gameMsg = this.state.combatMsg.playerMiss.msg[getRandom];
+      const gameMsg = this.state.combatMsg[11].msg[getRandom];
       this.setState({gameMsg});
+    } else {
+      console.error('Values are equal');
     };
+    this.evaluateStatus('playerTurn');
+  };
+
+  enemyStrikeBack = () => {
+    const attackRoll = dieroll(1, 20);
+    console.error('Player Defense: ', this.state.player.defense);
+    console.error('Attack Roll:', attackRoll);
+
+    if (attackRoll === 1) {
+      const enemyDmg = dieroll(1, 6);
+      const enemy = Object.assign({}, this.state.enemy);
+      enemy.Health = enemy.Health - enemyDmg;
+      this.setState({enemy});
+      this.setState({dmgResult: enemyDmg});
+      const gameMsg = this.state.combatMsg[1].msg;
+      this.setState({gameMsg});
+
+    } else if (attackRoll === 20) {
+      const playerDmg = dieroll(1, 12);
+      const player = Object.assign({}, this.state.player);
+      player.currentHealth = player.currentHealth - playerDmg;
+      this.setState({player});
+      this.setState({dmgResult: playerDmg});
+      const gameMsg = this.state.combatMsg[0].msg;
+      this.setState({gameMsg});
+
+    } else if (attackRoll > this.state.player.defense) {
+      const getRandom = dieroll(1, 10);
+      const playerDmg = dieroll(1, 6);
+      const player = Object.assign({}, this.state.player);
+      player.currentHealth = player.currentHealth - playerDmg;
+      this.setState({player});
+      this.setState({dmgResult: playerDmg});
+      const gameMsg = this.state.combatMsg[4].msg[getRandom];
+      this.setState({gameMsg});
+
+    } else if (attackRoll < this.state.player.defense) {
+      const getRandom = dieroll(1, 10);
+      this.setState({dmgResult: 0});
+      const gameMsg = this.state.combatMsg[5].msg[getRandom];
+      this.setState({gameMsg});
+    } else {
+      console.error('Values are equal');
+    };
+    this.evaluateStatus('enemyTurn');
+  };
+
+  evaluateStatus = (turn) => {
+    const myCharacter = auth.getCharacterId();
+    console.error(this.state.player);
+    if (this.state.player.currentHealth <= 0) {
+      const gameMsg = this.state.combatMsg[8].msg;
+      this.setState({gameMsg});
+      const player = Object.assign({}, this.state.player);
+      player.lifeSigns = false;
+      this.setState({player});
+      return <Redirect to="/Death" />;
+    } else if (this.state.enemy.health <= 0) {
+      const gameMsg = this.state.enemy.DeathMsg;
+      this.setState({gameMsg});
+      const player = Object.assign({}, this.state.player);
+      player.exp = player.exp + this.state.enemy.ExperienceAwarded;
+      this.setState({player});
+      this.closeModal();
+    } else {
+      if (turn === 'playerTurn') {
+        setTimeout(this.enemyStrikeBack(), 1500);
+      };
+    };
+    this.putResults(myCharacter, this.state.player);
+  };
+
+  putResults = (id, updatedCharacter) => {
+    characterRequests
+      .characterPutRequest(id, updatedCharacter)
+      .then()
+      .catch((err) => {
+        console.error('error in put request', err);
+      });
   };
 
   render () {
