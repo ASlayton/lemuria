@@ -21,6 +21,7 @@ const defaultCharacter = {
   constitution: dieroll(1, 20),
   exp: 0,
   level: 0,
+  lifeSigns: true,
 };
 
 class CharacterForm extends React.Component {
