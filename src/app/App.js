@@ -5,6 +5,7 @@ import {Route, BrowserRouter, Redirect, Switch}  from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
+import Death from '../components/Death/Death';
 import Home from '../components/Home/Home';
 import CharacterScreen from '../components/CharacterScreen/CharacterScreen';
 import GameScreen from '../components/GameScreen/GameScreen';
@@ -90,6 +91,11 @@ class App extends React.Component {
                   path="/register"
                   authed={this.state.authed}
                   component={Register}
+                />
+                <PublicRoute
+                  path="/Death"
+                  authed={this.state.authed}
+                  component={Death}
                 />
                 <Route
                   path="/Home"

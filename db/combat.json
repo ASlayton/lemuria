@@ -9,29 +9,35 @@
     "msg": [
       "Your opponent snarls as your sword finds its mark.",
       "With a yell, your blade sinks into the flesh of your opponent",
-      "Your aim is true and you hit your opponent.",
+      "Your aim is true and you hit your adversary.",
       "A sure hit.",
       "Your blade flashes, cutting into the flesh of the <name of foe>.",
-      "You lunge, the <foe> leaps to the left. Your blade barely scratches it as you pass."
+      "You lunge, but your assailant leaps to the left. Your blade barely scratches it as you pass.",
+      "Your blow lands true.",
+      "You hit your mark.",
+      "Your adeversary avoids the first strike, but you bring your sword back around and manage to hit.",
+      "The enemy shrieks in anger as your blade slices into it."
     ]
   },
   "playerMiss": {
     "msg": [
       "Your swing goes wide and you miss.",
-      "The <foe> successfully dodges the attack.",
+      "Your adversary successfully dodges the attack.",
       "Your form was good; unfortunately, you were unable to land the hit.",
       "Your foe parries the attack.",
       "You strike, but it was ineffective.",
       "That was a miss.",
       "You misjudge the hit and miss.",
-      "Though your form is good, you depth perception is not. The <name of foe> snarls as it dodges your swing."
+      "Though your form is good, you depth perception is not. The creature snarls as it dodges your swing.",
+      "You fail to land the blow.",
+      "Your swing was too low, your opponent is able to jump over and you miss."
     ]
   },
   "playerCritHit": {
     "msg": "Planting your foot firmly, you lunge forward, driving all of your weight behind the blade as it finds its mark."
   },
   "playerCritMiss": {
-    "msg": "Misjudging your footing, you trip over yourself, your blade sinking into your foot."
+    "msg": "Misjudging your footing, you trip over yourself, your blade slips and digs into your flesh."
   },
   "enemyDeathMsg": {
     "msg": "At last, the creature sinks down to the ground, dead"
@@ -40,7 +46,14 @@
     "msg": [
       "A low growl escapes the throat of your foe as they swipe at you.",
       "The creature crouches and springs on you, sinking its teeth into your shoulder. You shake, trying to dismantle it from your back. It springs off, preparing for another attack.",
-      "The creature strikes, you are injured."
+      "The creature strikes, you are injured.",
+      "You wince at the sudden pain that shoots through you.",
+      "You are hit.",
+      "You try to dodge the attack, but are not swift enough. Your adversary hits.",
+      "Your foe leaps at you, its weapon of choice sinking deep into your flesh",
+      "Your enemy lands its hit",
+      "You try to shake off the hit",
+      "You are damaged."
     ]
   },
   "enemyHealthMiss":  {
