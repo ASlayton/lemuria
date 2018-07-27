@@ -1,5 +1,4 @@
 import React from 'react';
-import {Redirect} from 'react-router-dom';
 import eventRequests from '../../firebaseRequests/events';
 import './Events.css';
 import Modal from 'react-modal';
@@ -93,7 +92,11 @@ class Events extends React.Component {
   };
 
   commenceAtk = () => {
-    const attackRoll = dieroll(1, 20);
+    const attackRoll = dieroll(1, 20) * 1;
+    const getRandom = dieroll(0,9) * 1;
+    const enemyDefense = this.state.enemy.defense * 1;
+    console.error('attackRoll: ', attackRoll);
+    console.error('enemy defense: ', this.state.player.defense);
     if (attackRoll === 1) {
       const playerDmg = dieroll(1, 6);
       const player = Object.assign({}, this.state.player);
@@ -112,8 +115,7 @@ class Events extends React.Component {
       const gameMsg = this.state.combatMsg[6].msg;
       this.setState({gameMsg});
       console.error(gameMsg);
-    } else if (attackRoll > this.state.enemy.Defense) {
-      const getRandom = dieroll(1, 10);
+    } else if (attackRoll >= enemyDefense) {
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
@@ -122,20 +124,23 @@ class Events extends React.Component {
       const gameMsg = this.state.combatMsg[10].msg[getRandom];
       this.setState({gameMsg});
       console.error(gameMsg);
-    } else if (attackRoll < this.state.enemy.Defense) {
-      const getRandom = dieroll(1, 10);
+    } else if (attackRoll < enemyDefense) {
       this.setState({dmgResult: 0});
       const gameMsg = this.state.combatMsg[11].msg[getRandom];
       this.setState({gameMsg});
       console.error(gameMsg);
     } else {
-      console.error('Values are equal');
+      console.error('Something is not being evaluated correctly.');
     };
     this.evaluateStatus('playerTurn');
   };
 
   enemyStrikeBack = () => {
     const attackRoll = dieroll(1, 20);
+    const getRandom = dieroll(0,9) * 1;
+    const playerDefense = this.state.enemy.defense * 1;
+    console.error('attackRoll: ', attackRoll);
+    console.error('player defense: ', playerDefense);
     if (attackRoll === 1) {
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);
@@ -154,8 +159,7 @@ class Events extends React.Component {
       const gameMsg = this.state.combatMsg[0].msg;
       this.setState({gameMsg});
       console.error(gameMsg);
-    } else if (attackRoll > this.state.player.defense) {
-      const getRandom = dieroll(1, 10);
+    } else if (attackRoll >= playerDefense) {
       const playerDmg = dieroll(1, 6);
       const player = Object.assign({}, this.state.player);
       player.currentHealth = player.currentHealth - playerDmg;
@@ -164,14 +168,13 @@ class Events extends React.Component {
       const gameMsg = this.state.combatMsg[4].msg[getRandom];
       this.setState({gameMsg});
       console.error(gameMsg);
-    } else if (attackRoll < this.state.player.defense) {
-      const getRandom = dieroll(1, 10);
+    } else if (attackRoll < playerDefense) {
       this.setState({dmgResult: 0});
       const gameMsg = this.state.combatMsg[5].msg[getRandom];
       this.setState({gameMsg});
       console.error(gameMsg);
     } else {
-      console.error('Values are equal');
+      console.error('Something is not being evaluated correctly.');
     };
     this.evaluateStatus('enemyTurn');
   };
@@ -185,8 +188,8 @@ class Events extends React.Component {
       player.lifeSigns = false;
       this.setState({player});
       this.closeModal();
-      return (<Redirect to="/Death" />);
     } else if (this.state.enemy.health <= 0) {
+      this.setState({enemy: {}});
       const gameMsg = this.state.enemy.DeathMsg;
       this.setState({gameMsg});
       const player = Object.assign({}, this.state.player);
