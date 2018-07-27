@@ -4,16 +4,13 @@ import storyRequest from '../../firebaseRequests/storyline';
 
 class StoryLine extends React.Component {
   state= {
-    story: {},
-    player: {},
   };
 
   componentDidMount () {
-    console.error('player level: ', this.state.player.level);
-    storyRequest.getSingleStoryRequest(this.state.player.level)
+    console.error('player level: ', this.props.level);
+    storyRequest.getSingleStoryRequest(this.state.level)
       .then((story) => {
         this.setState({story: story});
-        console.error('story:', story);
       })
       .catch((error) => {
         console.error('Error in getStory', error);
