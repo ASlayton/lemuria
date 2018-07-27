@@ -11,6 +11,7 @@ class MyPlayer extends React.Component {
   }
 
   componentDidMount () {
+    console.error(this.props.playerHandler());
     const myPlayerId = auth.getCharacterId();
     characterRequests.getSingleCharacterRequest(myPlayerId)
       .then((character) => {
@@ -28,7 +29,7 @@ class MyPlayer extends React.Component {
     return (
       <div className="myCharacter-container col-sm-6">
         <div className="profile-image col-sm-6">
-          <img src={this.state.character.profilePic} alt="Profile" />
+          <img src={this.state.character.profilePic} alt="Profile" className="character-profile-pic"/>
         </div>
         <div className="profile-info col-sm-6">
           <div>

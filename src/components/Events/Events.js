@@ -15,7 +15,6 @@ class Events extends React.Component {
 
   constructor () {
     super();
-    // this.parentDeathCheck().bind(this);
     this.state = {
       events: {},
       modalIsOpen: false,
@@ -184,7 +183,7 @@ class Events extends React.Component {
       const player = Object.assign({}, this.state.player);
       player.lifeSigns = false;
       this.setState({player});
-      // this.parentDeathCheck(this.state.player.currentHealth);
+      this.deathCheck(this.state.player.currentHealth);
       this.closeModal();
       return (<Redirect to="/Death" />);
     } else if (this.state.enemy.currentHealth <= 0) {

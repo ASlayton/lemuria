@@ -21,4 +21,17 @@ const storyGetRequest = () => {
   });
 };
 
-export default { storyGetRequest };
+const getSingleStoryRequest = (id) => {
+  return new Promise((resolve, reject) => {
+    axios
+      .get(`${constants.firebaseConfig.databaseURL}/storyline/${id}.json`)
+      .then(res => {
+        resolve(res.data);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+};
+
+export default { storyGetRequest, getSingleStoryRequest };
