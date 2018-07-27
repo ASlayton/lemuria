@@ -12,8 +12,10 @@ import {ProgressBar} from 'react-bootstrap';
 import percentageBar from '../../helpers/percentageBar';
 
 class Events extends React.Component {
+
   constructor () {
     super();
+    // this.parentDeathCheck().bind(this);
     this.state = {
       events: {},
       modalIsOpen: false,
@@ -23,7 +25,8 @@ class Events extends React.Component {
       combatMsg: {},
       player: {},
       dmgResult: 0,
-      gameMsg: '',
+      pGameMsg: '',
+      eGameMsg: '',
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -44,6 +47,7 @@ class Events extends React.Component {
   closeModal () {
     this.setState({modalIsOpen: false});
   }
+
   componentWillMount () {
     Modal.setAppElement('body');
   };
@@ -100,18 +104,16 @@ class Events extends React.Component {
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
       this.setState({dmgResult: playerDmg});
-      const gameMsg = this.state.combatMsg[7].msg;
-      this.setState({gameMsg});
-      console.error(gameMsg);
+      const pGameMsg = this.state.combatMsg[7].msg;
+      this.setState({pGameMsg});
     } else if (attackRoll === 20) {
       const enemyDmg = dieroll(1, 12);
       const enemy = Object.assign({}, this.state.enemy);
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({dmgResult: enemyDmg});
-      const gameMsg = this.state.combatMsg[6].msg;
-      this.setState({gameMsg});
-      console.error(gameMsg);
+      const pGameMsg = this.state.combatMsg[6].msg;
+      this.setState({pGameMsg});
     } else if (attackRoll > this.state.enemy.Defense) {
       const getRandom = dieroll(1, 10);
       const enemyDmg = dieroll(1, 6);
@@ -119,15 +121,15 @@ class Events extends React.Component {
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({dmgResult: enemyDmg});
-      const gameMsg = this.state.combatMsg[10].msg[getRandom];
-      this.setState({gameMsg});
-      console.error(gameMsg);
+      const pGameMsg = this.state.combatMsg[10].msg[getRandom];
+      this.setState({pGameMsg});
+      console.error(pGameMsg);
     } else if (attackRoll < this.state.enemy.Defense) {
       const getRandom = dieroll(1, 10);
       this.setState({dmgResult: 0});
-      const gameMsg = this.state.combatMsg[11].msg[getRandom];
-      this.setState({gameMsg});
-      console.error(gameMsg);
+      const pGameMsg = this.state.combatMsg[11].msg[getRandom];
+      this.setState({pGameMsg});
+      console.error(pGameMsg);
     } else {
       console.error('Values are equal');
     };
@@ -139,21 +141,19 @@ class Events extends React.Component {
     if (attackRoll === 1) {
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);
-      enemy.Health = enemy.Health - enemyDmg;
+      enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({dmgResult: enemyDmg});
-      const gameMsg = this.state.combatMsg[1].msg;
-      this.setState({gameMsg});
-      console.error(gameMsg);
+      const eGameMsg = this.state.combatMsg[1].msg;
+      this.setState({eGameMsg});
     } else if (attackRoll === 20) {
       const playerDmg = dieroll(1, 12);
       const player = Object.assign({}, this.state.player);
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
       this.setState({dmgResult: playerDmg});
-      const gameMsg = this.state.combatMsg[0].msg;
-      this.setState({gameMsg});
-      console.error(gameMsg);
+      const eGameMsg = this.state.combatMsg[0].msg;
+      this.setState({eGameMsg});
     } else if (attackRoll > this.state.player.defense) {
       const getRandom = dieroll(1, 10);
       const playerDmg = dieroll(1, 6);
@@ -179,20 +179,20 @@ class Events extends React.Component {
   evaluateStatus = (turn) => {
     const myCharacter = auth.getCharacterId();
     if (this.state.player.currentHealth <= 0) {
-      const gameMsg = this.state.combatMsg[8].msg;
-      this.setState({gameMsg});
+      const pGameMsg = this.state.combatMsg[8].msg;
+      this.setState({pGameMsg});
       const player = Object.assign({}, this.state.player);
       player.lifeSigns = false;
       this.setState({player});
+      // this.parentDeathCheck(this.state.player.currentHealth);
       this.closeModal();
       return (<Redirect to="/Death" />);
-    } else if (this.state.enemy.health <= 0) {
-      const gameMsg = this.state.enemy.DeathMsg;
-      this.setState({gameMsg});
+    } else if (this.state.enemy.currentHealth <= 0) {
+      const eGameMsg = this.state.enemy.DeathMsg;
+      this.setState({eGameMsg});
       const player = Object.assign({}, this.state.player);
       player.exp = player.exp + this.state.enemy.ExperienceAwarded;
       this.setState({player});
-      this.closeModal();
     } else {
       if (turn === 'playerTurn') {
         setTimeout(this.enemyStrikeBack(), 1500);
@@ -208,6 +208,27 @@ class Events extends React.Component {
       .catch((err) => {
         console.error('error in put request', err);
       });
+  };
+
+  renderButtons () {
+    if (this.state.enemy.health > 0) {
+      return (
+        <div className="btn-container">
+          <button  onClick={this.closeModal} className="btn btn-info">Run Away</button>
+          <button className="btn btn-danger" onClick={this.commenceAtk}>Attack</button>
+        </div>
+      );
+    } else if (this.state.player.currentHealth <= 0) {
+      return (
+        <div>
+          <button className="btn btn-danger" onClick={this.closeModal}>Acknowledge</button>
+        </div>
+      );
+    } else {
+      return (
+        <button onClick={this.closeModal} className="btn btn-info">Continue</button>
+      );
+    }
   };
 
   render () {
@@ -242,12 +263,10 @@ class Events extends React.Component {
           </div>
           <div>
             <h1>{this.state.dmgResult}</h1>
-            <h2>{this.state.gameMsg}</h2>
+            <h2>{this.state.pGameMsg}</h2>
+            <h1>{this.state.eGameMsg}</h1>
           </div>
-          <div>
-            <button  onClick={this.closeModal} className="btn btn-info">Run Away</button>
-            <button className="btn btn-danger" onClick={this.commenceAtk}>Attack</button>
-          </div>
+          {this.renderButtons()}
         </Modal>
       </div>
     );
