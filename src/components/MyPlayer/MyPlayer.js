@@ -23,20 +23,21 @@ class MyPlayer extends React.Component {
   };
 
   render () {
-    const character = this.state;
-
     return (
       <div className="myCharacter-container col-sm-6">
         <div className="profile-image col-sm-6">
-          <img src={this.state.character.profilePic} alt="Profile" />
+          <img src={this.state.character.profilePic} alt="Profile" className="character-profile-pic"/>
         </div>
         <div className="profile-info col-sm-6">
-          <div>
-            <h3 className="col=sm-6">{this.state.character.name}</h3>
+          <div className="col-sm-12">
+            <h3 className="col-sm-6">{this.state.character.name}</h3>
             <h4 className="col-sm-6">LVL {this.state.character.level}</h4>
           </div>
-          <ProgressBar now={percentageBar(character.currentHealth, character.totalHealth)} />
-          <ProgressBar now={percentageBar(character.currentPsyche, character.totalPsyche)} />
+          <div className="col-sm-12">
+            <ProgressBar now={percentageBar(this.state.character.currentHealth, this.state.character.totalHealth)} />
+            <ProgressBar now={percentageBar(this.state.character.currentPsyche, this.state.character.totalPsyche)} />
+          </div>
+
         </div>
       </div>
     );
