@@ -1,7 +1,7 @@
 import React from 'react';
 import ChosenCharacter from '../../components/ChosenCharacter/ChosenCharacter';
 import MyCurrentCharacters from '../../components/myCurrentCharacters/myCurrentCharacters';
-import {Redirect, Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import characterRequest from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
 import './CharacterScreen.css';
@@ -34,6 +34,13 @@ class CharacterScreen extends React.Component {
         console.error('error within Character GET', err);
       });
   }
+
+  removeFromCharacters = (key) => {
+    const newList = {...this.state.characters};
+    delete newList[key];
+    this.setState({characters: newList});
+  };
+
   render () {
 
     const {selectedCharacterId, characters} = this.state;
@@ -49,8 +56,8 @@ class CharacterScreen extends React.Component {
         <ChosenCharacter
           className="col-sm-6"
           character={selectedCharacter}
+          removeFromCharacters = {this.removeFromCharacters}
         />
-        <Link to="/GameScreen">Start Game</Link>
       </div>
     );
   };

@@ -94,7 +94,7 @@ class Events extends React.Component {
     const enemyDefense = this.state.enemy.defense * 1;
     if (attackRoll === 1) {
       const playerDmg = dieroll(1, 6);
-      const player = Object.assign({}, this.state.player);
+      const player = Object.assign({}, this.props.player);
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
       this.setState({pDmgResult: playerDmg});
@@ -141,17 +141,17 @@ class Events extends React.Component {
       this.setState({eGameMsg});
     } else if (attackRoll === 20) {
       const playerDmg = dieroll(1, 12);
-      const player = Object.assign({}, this.state.player);
+      const player = Object.assign({}, this.props.player);
       player.currentHealth = player.currentHealth - playerDmg;
-      this.setState({player});
+      this.props.playerHandler(player);
       this.setState({eDmgResult: playerDmg});
       const eGameMsg = this.state.combatMsg[0].msg;
       this.setState({eGameMsg});
     } else if (attackRoll >= playerDefense) {
       const playerDmg = dieroll(1, 6);
-      const player = Object.assign({}, this.state.player);
+      const player = Object.assign({}, this.props.player);
       player.currentHealth = player.currentHealth - playerDmg;
-      this.setState({player});
+      this.props.playerHandler(player);
       this.setState({eDmgResult: playerDmg});
       const eGameMsg = this.state.combatMsg[4].msg[getRandom];
       this.setState({eGameMsg});
@@ -170,14 +170,14 @@ class Events extends React.Component {
     if (this.state.player.currentHealth <= 0) {
       const pGameMsg = this.state.combatMsg[8].msg;
       this.setState({pGameMsg});
-      const player = Object.assign({}, this.state.player);
+      const player = Object.assign({}, this.props.player);
       player.lifeSigns = false;
       this.setState({player});
-      this.deathCheck(this.state.player.currentHealth);
+      this.props.deathCheck(this.props.player.currentHealth);
     } else if (this.state.enemy.currentHealth <= 0) {
       const eGameMsg = this.state.enemy.DeathMsg;
       this.setState({eGameMsg});
-      const player = Object.assign({}, this.state.player);
+      const player = Object.assign({}, this.props.player);
       player.exp = player.exp + this.state.enemy.ExperienceAwarded;
       this.setState({player});
     } else {
@@ -185,7 +185,7 @@ class Events extends React.Component {
         this.enemyStrikeBack();
       };
     };
-    this.putResults(myCharacter, this.state.player);
+    this.putResults(myCharacter, this.props.player);
   };
 
   putResults = (id, updatedCharacter) => {
@@ -198,7 +198,7 @@ class Events extends React.Component {
   };
 
   conditionalButtons = () => {
-    if (this.state.player.currentHealth <= 0) {
+    if (this.props.player.currentHealth <= 0) {
       return (
         <div>
           <h1>You are Dead</h1>
@@ -208,7 +208,7 @@ class Events extends React.Component {
     } else if (this.state.enemy.currentHealth <= 0) {
       return (
         <div>
-          <h1>Ypu live to fight another day.</h1>
+          <h1>You live to fight another day.</h1>
           <button onClick={this.closeModal}>Acknowledge</button>
         </div>
       );
@@ -238,9 +238,9 @@ class Events extends React.Component {
         >
           <h1>{this.state.myEvent.type}</h1>
           <div className="col-sm-6">
-            <h3>{this.state.player.name}</h3>
-            <ProgressBar now={percentageBar(this.state.player.currentHealth, this.state.player.totalHealth)} />
-            <ProgressBar now={percentageBar(this.state.player.currentPsyche, this.state.player.totalPsyche)} />
+            <h3>{this.props.player.name}</h3>
+            <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+            <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
           </div>
           <div className="col-sm-6">
             <div className="col-sm-6">

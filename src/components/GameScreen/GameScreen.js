@@ -8,20 +8,22 @@ import {Redirect} from 'react-router-dom';
 import auth from '../../firebaseRequests/auth';
 import characterRequests from '../../firebaseRequests/characters';
 class GameScreen extends React.Component {
-  constructor (props) {
-    super(props);
-    this.playerHandler = this.playerHandler.bind(this);
-    this.storyHandler = this.storyHandler.bind(this);
-    this.deathCheck = this.deathCheck.bind(this);
-    this.state = {
-      player: {},
-      events: {},
-      story: {},
-    };
-  };
-  playerHandler (player) {
+  // constructor (props) {
+  //   super(props);
+  //   // this.playerHandler = this.playerHandler.bind(this);
+  //   // this.storyHandler = this.storyHandler.bind(this);
+  //   // this.deathCheck = this.deathCheck.bind(this);
+
+  //   };
+  // };
+  state = {
+    player: {},
+    events: {},
+    story: {},
+  }
+  playerHandler = (player) => {
     this.setState({
-      player: {player},
+      player,
     });
   }
   componentDidMount () {
@@ -35,18 +37,23 @@ class GameScreen extends React.Component {
       });
   };
 
-  storyHandler (story) {
+  storyHandler = (story) => {
     this.setState({
       story: {story},
     });
   }
-  deathCheck () {
+  deathCheck = () => {
     if (this.state.player.currentHealth <= 0) {
       return (
         <Redirect to="/Death" />
       );
     };
-  }
+  };
+
+  playerLevel = (playerLevel) => {
+    this.setState({playerLevel});
+  };
+
   render () {
     return (
       <div>
@@ -57,11 +64,12 @@ class GameScreen extends React.Component {
         />
         <Events
           deathCheck={this.deathCheck}
-          playerState={this.state.player}
+          player={this.state.player}
           playerHandler={this.playerHandler}
+          playerLevel={this.playerLevel}
         />
         <StoryLine
-          playerLevel={this.state.player.story}
+          playerStatus={this.state.player}
         />
       </div>
     );

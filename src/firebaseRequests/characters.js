@@ -48,16 +48,20 @@ const getSingleCharacterRequest = (id) => {
 };
 
 const characterDeleteRequest = (characterId) => {
-  return new Promise ((resolve, reject) => {
-    axios
-      .delete(`${constants.firebaseConfig.databaseURL}/characters/${characterId}.json`)
-      .then((res) => {
-        resolve(res);
-      })
-      .catch((err) => {
-        reject(err);
-      });
-  });
+  if (characterId === undefined) {
+    console.error('characterId is undifined');
+  } else {
+    return new Promise ((resolve, reject) => {
+      axios
+        .delete(`${constants.firebaseConfig.databaseURL}/characters/${characterId}.json`)
+        .then((res) => {
+          resolve(res);
+        })
+        .catch((err) => {
+          reject(err);
+        });
+    });
+  };
 };
 
 const characterPutRequest = (characterId, updatedcharacter) => {

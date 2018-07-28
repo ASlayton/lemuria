@@ -8,7 +8,6 @@ class MyPlayer extends React.Component {
     player: {},
   }
   render () {
-    console.error(this.state);
     return (
       <div className="myPlayer-container col-sm-6">
         <div className="profile-image col-sm-6">

@@ -12,9 +12,9 @@ class MyCurrentCharacters extends React.Component {
   };
 
   render () {
-    const {characters, onCharacterSelection} = this.props;
+    const {onCharacterSelection} = this.props;
 
-    const SingleCharacterComponent = characters.map((character, index) => {
+    const SingleCharacterComponent = this.props.characters.map((character, index) => {
       return (
         <SingleCharacter
           className="character-card"
