@@ -2,16 +2,19 @@ import React from 'react';
 import './ChosenCharacter.css';
 import characterRequests from '../../firebaseRequests/characters';
 import auth from '../../firebaseRequests/auth';
+import {Link} from 'react-router-dom';
 
 class ChosenCharacter extends React.Component {
   deleteCharacter = () => {
     const firebaseId = auth.getCharacterId();
     characterRequests
       .characterDeleteRequest(firebaseId)
-      .then()
-      .catch(((err) => {
+      .then(() => {
+        window.parent.location.reload();
+      })
+      .catch((err) => {
         console.error('error with delete request', err);
-      }));
+      });
   }
   render () {
     const {character} = this.props;
@@ -45,6 +48,7 @@ class ChosenCharacter extends React.Component {
             </div>
           </div>
         </div>
+        <Link to="/GameScreen">Start Game</Link>
       </div>
     );
   };

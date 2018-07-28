@@ -12,7 +12,10 @@ class CreateCharacter extends React.Component {
   formSubmitEvent = (newCharacter) => {
     newCharacter.uid = auth.getUid();
     characterRequest.characterPostRequest(newCharacter)
-      .then()
+      .then(() => {
+        this.props.history.push('/CharacterScreen');
+      }
+      )
       .catch((err) => {
         console.error('error with Character POST', err);
       });

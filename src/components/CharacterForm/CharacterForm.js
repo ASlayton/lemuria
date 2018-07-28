@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
 import dieroll from '../../helpers/dieroll';
 import './CharacterForm.css';
 
@@ -200,7 +199,6 @@ class CharacterForm extends React.Component {
           </fieldset>
           <button>Save Character</button>
         </form>
-        <Link to="CharacterSheet">Start Game</Link>
       </div>
     );
   };
