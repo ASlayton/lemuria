@@ -70,13 +70,6 @@ class Events extends React.Component {
       });
   };
 
-  componentWillReceiveProps () {
-    console.error('i am setting prop types');
-    this.setState(this.props);
-    console.error(this.props);
-    console.error(this.state);
-  };
-
   pickAnEvent = () => {
     const eventRoll = dieroll(1,99);
     const myEvent = this.state.events[eventRoll];
@@ -136,7 +129,7 @@ class Events extends React.Component {
   enemyStrikeBack = () => {
     const attackRoll = dieroll(1, 20);
     const getRandom = dieroll(0,9) * 1;
-    const playerDefense = this.state.enemy.defense * 1;
+    const playerDefense = this.props.player.defense * 1;
     if (attackRoll === 1) {
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);

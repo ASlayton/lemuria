@@ -23,19 +23,18 @@ class GameScreen extends React.Component {
     this.setState({
       player: {player},
     });
-    console.error('Player:', player);
   }
   componentDidMount () {
     const myPlayerId = auth.getCharacterId();
     characterRequests.getSingleCharacterRequest(myPlayerId)
       .then((character) => {
-        this.props.playerHandler(character);
-        this.setState({character: character});
+        this.setState({player: character});
       })
       .catch((error) => {
         console.error('Error in getSinglePlayer', error);
       });
   };
+
   storyHandler (story) {
     this.setState({
       story: {story},
@@ -49,20 +48,21 @@ class GameScreen extends React.Component {
     };
   }
   render () {
-    console.error('My actual player is:', this.state.player.name);
-    const playerLvl = this.state.player.level;
     return (
       <div>
         <h1>Main Screen</h1>
         <MyPlayer
           playerHandler={this.playerHandler}
+          {...this.state}
         />
         <Events
           deathCheck={this.deathCheck}
           playerState={this.state.player}
           playerHandler={this.playerHandler}
         />
-        <StoryLine level={playerLvl}/>
+        <StoryLine
+          playerLevel={this.state.player.story}
+        />
       </div>
     );
   }

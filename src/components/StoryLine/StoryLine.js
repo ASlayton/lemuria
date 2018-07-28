@@ -3,13 +3,15 @@ import './StoryLine.css';
 import storyRequest from '../../firebaseRequests/storyline';
 
 class StoryLine extends React.Component {
-  state= {
-  };
-
+  state = {
+    story: {},
+  }
   componentDidMount () {
-    console.error('player level: ', this.props.level);
-    storyRequest.getSingleStoryRequest(this.state.level)
+
+    console.error(this.props.playerLevel);
+    storyRequest.getSingleStoryRequest(this.playerLevel)
       .then((story) => {
+        console.error('I am getting something returned for some reason: ', story);
         this.setState({story: story});
       })
       .catch((error) => {
