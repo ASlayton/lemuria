@@ -22,11 +22,9 @@ class StoryLine extends React.Component {
   };
 
   advanceStory = () => {
-    console.log('being called:', this.state.count);
     const myNum = this.state.count;
     const showIt = this.state.story.content[myNum];
     this.setState({showIt});
-    console.log('showing:', this.state.showIt);
     if (this.state.count <= (this.state.story.content.length - 1)) {
       const count = this.state.count + 1;
       this.setState({count});
