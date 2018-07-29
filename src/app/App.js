@@ -92,7 +92,7 @@ class App extends React.Component {
                   authed={this.state.authed}
                   component={Register}
                 />
-                <PublicRoute
+                <PrivateRoute
                   path="/Death"
                   authed={this.state.authed}
                   component={Death}

@@ -56,7 +56,7 @@
     "encounterText": "You are stopped in your tracks by what appears to be man with his back turned to you. Loud clicking and ticking emanate from his body.  It turns, its movements awkward and jerky. It has no face. It moves as though to grab you. Startled, you jump back, drawing your weapon.",
     "deathMsg": "The skirmish master screeches, falling to the ground, that infernal ticking finally falling silent.",
     "health":	20,
-    "currentHealth": 100,
+    "currentHealth": 20,
     "defense": 10,
     "xpAwarded": 50
   },
@@ -68,7 +68,7 @@
     "encounterText": "",
     "deathMsg":	"Visibly wounded, Briar spits at you, turns and runs. “You are dead”, he screams behind him as he runs. “I’ll get you yet.” Tired, you let him go.",
     "health":	20,
-    "currentHealth": 100,
+    "currentHealth": 20,
     "defense": 12,
     "xpAwarded": 50
   },
@@ -80,7 +80,7 @@
     "encounterText": "You see someone ahead. Heartened at seeing another being, you hurry forward, your hand raised in greeting. The figure crouches, their arm also goes up. They slash forward as you get within range, the katana in her hand whistling as it flashes before your face. You jump back in surprise, but just as quickly gather your wits about you as you pull your own weapon free from its sheath.",
     "deathMsg": "Feebly, Liri strikes out at you, flailing widely. With a snarl, she turns and runs into the forest. Is that laughter you hear? Disconcerted, you wipe your blade and sheath it. You get the feeling this wasn’t the last time you see Liri Whitestone.",
     "health":	50,
-    "currentHealth": 100,
+    "currentHealth": 50,
     "defense": 17,
     "xpAwarded": 50
   },
@@ -92,7 +92,7 @@
     "encounterText": "",
     "deathMsg":	"The stoneplume falls to the ground, lifeless.",
     "health": 20,
-    "currentHealth": 100,
+    "currentHealth": 20,
     "defense": 12,
     "xpAwarded": 50
   },
@@ -104,7 +104,7 @@
     "encounterText": "Unwinding from the tree above, a leafy tendril drops down, draping over your shoulder. Before you realize what is happening, the vine wraps about your neck and lifts you. Choking, you grasp the knife from your belt and swipe at the creeper, making it drop you. Another, much larger tendril drops before you.",
     "deathMsg":	"Crumpling to the ground, the nightvine thrashes about. You run your sword through it one last time to make certain it is dead. The tree above is still. Wary, you hurry on your way.",
     "health": 23,
-    "currentHealth": 100,
+    "currentHealth": 23,
     "defense": 14,
     "xpAwarded": 50
   },
@@ -118,7 +118,7 @@
     "encounterText": "",
     "deathMsg": "With a yelp, the stenchling crumples beneath your blow. In the distance you hear laughter, you need to move on.",
     "health": 25,
-    "currentHealth": 100,
+    "currentHealth": 25,
     "defense": 12,
     "xpAwarded": 50
   },
@@ -130,7 +130,7 @@
     "encounterText": "Something comes at you from the brush to the left. Startled you draw your sword, just in time as a blade swings down on you.",
     "deathMsg":	"The beast’s lips curve upwards in a smile as it drops its weapon to the ground. Is that gratitude you see in its eyes? Its flesh dissolves, dropping the shreds of its clothing to the ground in a rotten pile. You shudder, hoping to never encounter such a beast again.",
     "health":	20,
-    "currentHealth": 100,
+    "currentHealth": 20,
     "defense": 12,
     "xpAwarded": 50
   },
@@ -142,7 +142,7 @@
     "encounterText": "Ahead, you see the silhouette of a Lemurian. You rush forward, glad of company, but as you do, it turns. You are struck by its eyes. Its pupils dart back and forth, it cannot focus on anything. He snarls at you and lunges.",
     "deathMsg": "The hollow man falls to the ground. You look at the body for a moment before turning away to retch.",
     "health":	42,
-    "currentHealth": 100,
+    "currentHealth": 42,
     "defense": 13,
     "xpAwarded": 50
   },
@@ -155,7 +155,7 @@
     "deathMsg":
     "Collapsing to the ground, the haunlich’s last breath escapes with a hiss.",
     "health": 23,
-    "currentHealth": 100,
+    "currentHealth": 23,
     "defense": 10,
     "xpAwarded": 50
   },
@@ -167,7 +167,7 @@
     "encounterText": "",
     "deathMsg": "The cat yrowls at you, clearly bested. Licking its wound, it bounds off into the forest, quickly losing itself in the trees. You need to be more mindful of travelling in the dark.",
     "health": 18,
-    "currentHealth": 100,
+    "currentHealth": 18,
     "defense": 13,
     "xpAwarded": 50
   },
@@ -179,7 +179,7 @@
     "encounterText": "As you walk along, you see a glimmer in front of you. Squinting, you try to catch a glimpse of what you had just seen. Before you realize it, you feel a tickling across your face. “Ugh, spiderwebs” you wipe your face before flailing your arms around like a crazy person trying to get rid of the web. You don’t notice the figure rising above you until the venomous spittle hits the back of your neck.",
     "deathMsg": "With a hiss, the spider spasms, flipping onto its back in a death seizure. Wary of getting any closer to it, to hurry away, glad to be alive and eager to get back home where spiders are just annoying pests that like to make webs across your doorway rather than giant man-eating monsters.",
     "health": 10,
-    "currentHealth": 100,
+    "currentHealth": 10,
     "defense": 14,
     "xpAwarded": 50
   },
@@ -191,7 +191,7 @@
     "encounterText": "It doesn’t seem you get too far without some sort of beastie rushing at you. You hear twigs snapping as the Mist Claw comes charging out of the trees at you, with snapping teeth.",
     "deathMsg":"The MistClaw crumples to the ground. You sigh a sigh of relief, thanking your stars you were able to come out on the other side of this encounter.",
     "health": 15,
-    "currentHealth": 100,
+    "currentHealth": 15,
     "defense": 13,
     "xpAwarded": 50
   },
@@ -203,7 +203,7 @@
     "encounterText":"A tall humanoid creature steps out from around a tree, glowering at you with glowing yellow eyes like flame. It raises a hand, the sun that makes it through the leaves overhead glints off the talons that tip each incredibly long finger. It snarls, revealing an even-more incredible mouth with rows of small pointy teeth. You seems you cannot raise your sword fast enough before it attacks.",
     "deathMsg":"The wisp falls to the ground, crying out. The cry echoes through the trees. You glance nervously about. Where one wisp is, there are always more. You better get moving.",
     "health":34,
-    "currentHealth": 100,
+    "currentHealth": 34,
     "defense":16,
     "xpAwarded":50
   },
@@ -215,7 +215,7 @@
     "encounterText": "A creature crawls out of a hole in the ground before you. At the sight of you, the scaley spines on its back stand straight up. It eyes you for a moment before deciding it really didn’t like your smell and attacks.",
     "deathMsg": "With a sudden spasm, the Emberthorn starts thrashing in the dirt. You back up, wary of the spikes now going every which way. Dead, the body of the creature bursts into flames. You let it burn for a time, before putting the flames out. You wouldn’t want a wildfire burning at your back.",
     "health": 45,
-    "currentHealth": 100,
+    "currentHealth": 45,
     "defense": 34,
     "xpAwarded": 50
   },
@@ -227,7 +227,7 @@
     "encounterText":"You decide to rest a moment against a tree. As you lean back, you catch sight of a shadow moving toward you. You rub your eyes, unsure of what it is you are seeing. A small shadow, no larger than a young child is headed straight for you. Before you can react, it has reached you, less a shadow than a being whose very skin absorbs all light, leaving only darkness. It cocks its head to the side, its large lemurian ears twitching this way and that. It smiles. You catch your breath and it attacks.",
     "deathMsg":"Screeching, the Onyxchild drops, lying still in the debris of the forest floor. You feel sick to your stomach and turn away, unable to stand the sight of such a creature much longer.",
     "health":	23,
-    "currentHealth": 100,
+    "currentHealth": 23,
     "defense":	13,
     "xpAwarded":	50
   },
@@ -239,7 +239,7 @@
     "encounterText":"It is nearing night, you decide to hunker down in a small cavern created by a jumble of large boulders. You do not realize there is already something there, you brace to defend yourself.",
     "deathMsg":"With a warning roar, the Rustpaw takes one last swipe at you before running out of the outcropping. You move aside as two young rustpaws cry out and amble out after her. You should be ashamed of yourself. But you aren’t as you settle down into the smelly, but warm nesting in the back of the cave. Hopefully they won’t come back.",
     "health":	42,
-    "currentHealth": 100,
+    "currentHealth": 42,
     "defense": 15,
     "xpAwarded": 50
   },
@@ -251,7 +251,7 @@
     "encounterText": "",
     "deathMsg": "With one last cut, you hack through the rose, finally breaking the stem. The flower falls to the ground. A noise like a thousand sirens fills your senses, filling your head. You desperately try to hold onto your senses. The death cry overcomes you and you fall to your knees, crying yourself at the pain of it. Blessedly, you pass out. You wake some time later, confused as to what happened, but with a sense that you have just overcome a significant obstacle.",
     "health": 1000,
-    "currentHealth": 100,
+    "currentHealth": 1000,
     "defense": 18,
     "xpAwarded": 1000
   },
@@ -275,7 +275,7 @@
     "encounterText": "Something drops down from the tree above you, digging its teeth into your collar. You reach up and grab it, throwing it into the bushes. You draw your sword, uncertain of what is about to leap at you.",
     "deathMsg": "The fee falls and is still. You wipe the blood from your cheek, uncertain if its your or the critters. ",
     "health": 10,
-    "currentHealth": 100,
+    "currentHealth": 10,
     "defense": 11,
     "xpAwarded": 25
   },
@@ -287,7 +287,7 @@
     "encounterText": "In the distance, you see a shadow moving through the forest. A glittering darkness, spreading and taking over the little light that remains deep within the trees. Whatever it is, it is moving fast. You need to run, but it is too quick, you draw your sword.",
     "deathMsg": "The glittering darkness falls apart before you, dissintegrating into the dirt. It's not defeated, but it will take some time before it messes with you again.",
     "health": 10,
-    "currentHealth": 100,
+    "currentHealth": 10,
     "defense": 11,
     "xpAwarded": 25
   },

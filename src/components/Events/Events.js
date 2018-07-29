@@ -23,9 +23,9 @@ class Events extends React.Component {
       combatMsg: {},
       player: {},
 
-      eDmgResult: 0,
+      eDmgResult: 1,
       eGameMsg: '',
-      pDmgResult: 0,
+      pDmgResult: 1,
       pGameMsg: '',
     };
     this.openModal = this.openModal.bind(this);
@@ -45,6 +45,7 @@ class Events extends React.Component {
   }
 
   closeModal () {
+    this.props.deathCheck();
     this.setState({modalIsOpen: false});
   }
 
@@ -135,7 +136,6 @@ class Events extends React.Component {
       const enemy = Object.assign({}, this.state.enemy);
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
-
       this.setState({eDmgResult: enemyDmg});
       const eGameMsg = this.state.combatMsg[1].msg;
       this.setState({eGameMsg});
@@ -167,25 +167,33 @@ class Events extends React.Component {
 
   evaluateStatus = (turn) => {
     const myCharacter = auth.getCharacterId();
+    this.putResults(myCharacter, this.props.player);
+    // Player is DEAD
     if (this.state.player.currentHealth <= 0) {
       const pGameMsg = this.state.combatMsg[8].msg;
       this.setState({pGameMsg});
-      const player = Object.assign({}, this.props.player);
-      player.lifeSigns = false;
-      this.setState({player});
-      this.props.deathCheck(this.props.player.currentHealth);
+    // ENEMY IS DEAD
     } else if (this.state.enemy.currentHealth <= 0) {
       const eGameMsg = this.state.enemy.DeathMsg;
       this.setState({eGameMsg});
       const player = Object.assign({}, this.props.player);
-      player.exp = player.exp + this.state.enemy.ExperienceAwarded;
+      player.exp = (player.exp * 1) + this.state.enemy.ExperienceAwarded;
       this.setState({player});
+      this.evalXP();
     } else {
       if (turn === 'playerTurn') {
         this.enemyStrikeBack();
+      } else if (turn === 'enemyTurn') {
+        this.evalXP();
       };
     };
-    this.putResults(myCharacter, this.props.player);
+  };
+
+  evalXP = () => {
+    const playerXP = this.props.player.exp;
+    const player = Object.assign({}, this.props.player);
+    player.level = Math.floor(playerXP / 1000);
+    this.setState({player});
   };
 
   putResults = (id, updatedCharacter) => {
@@ -225,10 +233,12 @@ class Events extends React.Component {
   render () {
     return (
       <div>
-        <button className="btn btn-default" onClick={this.openModal}>Venture Forward</button>
-        <button className="btn btn-default"  onClick={this.openModal}>Veer to the left</button>
-        <button className="btn btn-default"  onClick={this.openModal}>Veer to the right</button>
-        <button className="btn btn-default"  onClick={this.openModal}>Wait</button>
+        <div className="button-container">
+          <button className="btn btn-default" onClick={this.openModal}>Venture Forward</button>
+          <button className="btn btn-default"  onClick={this.openModal}>Veer to the left</button>
+          <button className="btn btn-default"  onClick={this.openModal}>Veer to the right</button>
+          <button className="btn btn-default"  onClick={this.openModal}>Wait</button>
+        </div>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -246,6 +256,8 @@ class Events extends React.Component {
             <div className="col-sm-6">
               <h3>{this.state.enemy.name}</h3>
               <p>{this.state.enemy.description}</p>
+              <label htmlFor="">{this.state.enemy.currentHealth}/{this.state.enemy.health}</label>
+              <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
             </div>
             <div className="col-sm-6">
               <p>{this.state.events.eventText}</p>

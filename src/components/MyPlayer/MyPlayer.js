@@ -19,7 +19,9 @@ class MyPlayer extends React.Component {
             <h4 className="col-sm-6">LVL {this.props.player.level}</h4>
           </div>
           <div className="col-sm-12">
+            <h5>{this.props.player.currentHealth} / {this.props.player.totalHealth}</h5>
             <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+            <h5>{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h5>
             <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
           </div>
         </div>
