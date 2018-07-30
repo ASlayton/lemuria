@@ -48,7 +48,7 @@ class ChosenCharacter extends React.Component {
             </div>
           </div>
         </div>
-        <Link to="/GameScreen">Start Game</Link>
+        <Link className="link-style" to="/GameScreen">Start Game</Link>
       </div>
     );
   };

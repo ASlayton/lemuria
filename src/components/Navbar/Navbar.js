@@ -35,9 +35,9 @@ class Navbar extends React.Component {
                 </ul>
               ) : (
                 <ul className="nav navbar-nav navbar-right">
-                  <li>
+                  <button className="btn btn-default">
                     <Link to="/login">Login!</Link>
-                  </li>
+                  </button>
                 </ul>
               )
             }

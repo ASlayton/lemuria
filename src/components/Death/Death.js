@@ -7,7 +7,7 @@ class Death extends React.Component {
     return (
       <div className="death-container">
         <h1 className="gameOver text-center">GAME OVER</h1>
-        <Link to="/Home">Return Home</Link>
+        <Link className="link-style" to="/Home">Return Home</Link>
       </div>
     );
   }

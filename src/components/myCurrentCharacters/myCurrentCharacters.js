@@ -32,7 +32,7 @@ class MyCurrentCharacters extends React.Component {
         <ul className="col-sm-6">
           {SingleCharacterComponent}
         </ul>
-        <Link to="/CreateCharacter">Create New Character</Link>
+        <Link className="link-style" to="/CreateCharacter">Create New Character</Link>
       </div>
     );
   }
