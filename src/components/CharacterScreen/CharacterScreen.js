@@ -49,12 +49,10 @@ class CharacterScreen extends React.Component {
     return (
       <div>
         <MyCurrentCharacters
-          className="col-sm-6"
           characters={this.state.characters}
           onCharacterSelection = {this.characterSelectEvent}
         />
         <ChosenCharacter
-          className="col-sm-6"
           character={selectedCharacter}
           removeFromCharacters = {this.removeFromCharacters}
         />
