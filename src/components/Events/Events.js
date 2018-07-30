@@ -249,14 +249,16 @@ class Events extends React.Component {
           <h1>{this.state.myEvent.type}</h1>
           <div className="col-sm-6">
             <h3>{this.props.player.name}</h3>
+            <h4 className="text-right">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
             <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+            <h4 className="text-right">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
             <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
           </div>
           <div className="col-sm-6">
             <div className="col-sm-6">
               <h3>{this.state.enemy.name}</h3>
               <p>{this.state.enemy.description}</p>
-              <label htmlFor="">{this.state.enemy.currentHealth}/{this.state.enemy.health}</label>
+              <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
               <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
             </div>
             <div className="col-sm-6">
