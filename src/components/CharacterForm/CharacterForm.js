@@ -168,10 +168,10 @@ class CharacterForm extends React.Component {
     if (this.state.conRolled) {
       return (
         <div>
-          <div>
+          <div className="col-sm-6">
             <h3>Health: {this.state.newCharacter.totalHealth}</h3>
           </div>
-          <div>
+          <div className="col-sm-6">
             <h3>Constitution: {this.state.newCharacter.constitution}</h3>
             <button type="button" onClick={this.subtractConPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
             <button type="button" onClick={this.addConPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
@@ -217,11 +217,11 @@ class CharacterForm extends React.Component {
     if (this.state.fortRolled) {
       return (
         <div>
-          <div>
+          <div className="col-sm-6">
             <h3>Psyche:</h3>
             <h3>{this.state.newCharacter.totalPsyche}</h3>
           </div>
-          <div>
+          <div className="col-sm-6">
             <h3>Fortitude: {this.state.newCharacter.fortitude}</h3>
             <button type="button" onClick={this.subtractFortPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
             <button type="button" onClick={this.addFortPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
@@ -241,10 +241,10 @@ class CharacterForm extends React.Component {
     if (this.state.resRolled) {
       return (
         <div>
-          <div>
+          <div className="col-sm-6">
             <h3>Defense: {this.state.newCharacter.defense}</h3>
           </div>
-          <div>
+          <div className="col-sm-6">
             <h3>Resilience: {this.state.newCharacter.resilience}</h3>
             <button type="button" onClick={this.subtractResPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
             <button type="button" onClick={this.addResPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
@@ -264,11 +264,11 @@ class CharacterForm extends React.Component {
     if (this.state.strRolled) {
       return (
         <div>
-          <div>
+          <div className="col-sm-6">
             <h3>Attack Modifier:</h3>
             <h3>{this.state.newCharacter.attack}</h3>
           </div>
-          <div>
+          <div className="col-sm-6">
             <h3>Strength:</h3>
             <h3>{this.state.newCharacter.strength}</h3>
             <button type="button" onClick={this.subtractStrPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
@@ -285,6 +285,14 @@ class CharacterForm extends React.Component {
       );
     }
   };
+
+  submitBtn = () => {
+    if (this.state.resRolled && this.state.conRolled && this.state.fortRolled && this.state.strRolled) {
+      return (
+        <button type="submit">Save Character</button>
+      );
+    };
+  }
 
   render () {
     const {newCharacter} = this.state;
@@ -313,7 +321,7 @@ class CharacterForm extends React.Component {
               onChange={this.imageChange}
             />
           </fieldset>
-          <button type="submit">Save Character</button>
+          {this.submitBtn()}
         </form>
 
         <div className="row">
