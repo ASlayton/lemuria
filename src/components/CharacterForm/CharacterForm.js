@@ -3,21 +3,24 @@ import PropTypes from 'prop-types';
 import dieroll from '../../helpers/dieroll';
 import './CharacterForm.css';
 
-const rollHealth = dieroll(10, 25);
-const rollPsyche = dieroll(10, 25);
+const fortitude = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
+const strength = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
+const resilience = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
+const constitution = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
 
 const defaultCharacter = {
   profilePic: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Default-avatar.jpg',
   name: '',
-  totalHealth: rollHealth,
-  currentHealth: rollHealth,
-  totalPsyche: rollPsyche,
-  currentPsyche: rollPsyche,
-  defense: dieroll(1, 20),
-  strength: dieroll(1, 20),
-  fortitude: dieroll(1, 20),
-  resilience: dieroll(1, 20),
-  constitution: dieroll(1, 20),
+  totalHealth: 25,
+  currentHealth: 25,
+  totalPsyche: 25,
+  currentPsyche: 25,
+  defense: 13,
+  attack: 0,
+  strength: strength,
+  fortitude: fortitude,
+  resilience: resilience,
+  constitution: constitution,
   exp: 0,
   level: 0,
   lifeSigns: true,
@@ -29,6 +32,107 @@ class CharacterForm extends React.Component {
   }
   state = {
     newCharacter: defaultCharacter,
+    pointsPot: 12,
+    conCount: 0,
+    fortCount: 0,
+    resCount: 0,
+    strCount: 0,
+    conRolled: false,
+    resRolled: false,
+    strRolled: false,
+    fontRolled: false,
+  };
+
+  addConPoint = () => {
+    if (this.state.pointsPot > 0 && this.state.conCount < 3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.constitution = (this.state.newCharacter.constitution * 1) + 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) - 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempConCount = (this.state.conCount * 1) + 1;
+      this.setState({conCount: tempConCount});
+    }
+  };
+  subtractConPoint = () => {
+    if (this.state.conCount > -3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.constitution = (this.state.newCharacter.constitution * 1) - 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) + 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempConCount = (this.state.conCount * 1) - 1;
+      this.setState({conCount: tempConCount});
+    }
+  };
+
+  addFortPoint = () => {
+    if (this.state.pointsPot > 0 && this.state.fortCount < 3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.fortitude = (this.state.newCharacter.fortitude * 1) + 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) - 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempFortCount = (this.state.fortCount * 1) + 1;
+      this.setState({fortCount: tempFortCount});
+    }
+  };
+  subtractFortPoint = () => {
+    if (this.state.fortCount > -3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.fortitude = (this.state.newCharacter.fortitude * 1) - 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) + 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempFortCount = (this.state.fortCount * 1) - 1;
+      this.setState({fortCount: tempFortCount});
+    }
+  };
+
+  addStrPoint = () => {
+    if (this.state.pointsPot > 0 && this.state.strCount < 3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.strength = (this.state.newCharacter.strength * 1) + 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) - 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempStrCount = (this.state.strCount * 1) + 1;
+      this.setState({strCount: tempStrCount});
+    }
+  };
+  subtractStrPoint = () => {
+    if (this.state.strCount > -3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.strength = (this.state.newCharacter.strength * 1) - 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) + 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempStrCount = (this.state.strCount * 1) - 1;
+      this.setState({strCount: tempStrCount});
+    }
+  };
+
+  addResPoint = () => {
+    if (this.state.pointsPot > 0 && this.state.resCount < 3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.resilience = (this.state.newCharacter.resilience * 1) + 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) - 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempResCount = (this.state.resCount * 1) + 1;
+      this.setState({resCount: tempResCount});
+    }
+  };
+  subtractResPoint = () => {
+    if (this.state.resCount > -3) {
+      const tempCharacter = {...this.state.newCharacter};
+      tempCharacter.resilience = (this.state.newCharacter.resilience * 1) - 1;
+      this.setState({newCharacter: tempCharacter});
+      const tempPointsPot = (this.state.pointsPot * 1) + 1;
+      this.setState({pointsPot: tempPointsPot});
+      const tempResCount = (this.state.resCount * 1) - 1;
+      this.setState({resCount: tempResCount});
+    }
   };
 
   formFieldStringState = (name, e) => {
@@ -60,6 +164,136 @@ class CharacterForm extends React.Component {
     };
   }
 
+  conButtons = () => {
+    if (this.state.conRolled) {
+      return (
+        <div>
+          <div className="col-sm-6">
+            <h3>Health: {this.state.newCharacter.totalHealth}</h3>
+          </div>
+          <div className="col-sm-6">
+            <h3>Constitution: {this.state.newCharacter.constitution}</h3>
+            <button type="button" onClick={this.subtractConPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
+            <button type="button" onClick={this.addConPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h3>Roll Constitution:</h3>
+          <button onClick={this.rollTheDieCon.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+        </div>
+      );
+    }
+  };
+
+  rollTheDieCon = () => {
+    const tempCharacter = {...this.state.newCharacter};
+    tempCharacter.constitution = dieroll(5, 20);
+    this.setState({newCharacter: tempCharacter});
+    this.setState({conRolled: true});
+  };
+  rollTheDieFort = () => {
+    const tempCharacter = {...this.state.newCharacter};
+    tempCharacter.fortitude = dieroll(5, 20);
+    this.setState({newCharacter: tempCharacter});
+    this.setState({fortRolled: true});
+  };
+  rollTheDieRes = () => {
+    const tempCharacter = {...this.state.newCharacter};
+    tempCharacter.resilience = dieroll(5, 20);
+    this.setState({newCharacter: tempCharacter});
+    this.setState({resRolled: true});
+  };
+  rollTheDieStr = () => {
+    const tempCharacter = {...this.state.newCharacter};
+    tempCharacter.strength = dieroll(5, 20);
+    this.setState({newCharacter: tempCharacter});
+    this.setState({strRolled: true});
+  };
+
+  fortButtons = () => {
+    if (this.state.fortRolled) {
+      return (
+        <div>
+          <div className="col-sm-6">
+            <h3>Psyche:</h3>
+            <h3>{this.state.newCharacter.totalPsyche}</h3>
+          </div>
+          <div className="col-sm-6">
+            <h3>Fortitude: {this.state.newCharacter.fortitude}</h3>
+            <button type="button" onClick={this.subtractFortPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
+            <button type="button" onClick={this.addFortPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h3>Roll Fortitude:</h3>
+          <button onClick={this.rollTheDieFort.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+        </div>
+      );
+    }
+  };
+  resButtons = () => {
+    if (this.state.resRolled) {
+      return (
+        <div>
+          <div className="col-sm-6">
+            <h3>Defense: {this.state.newCharacter.defense}</h3>
+          </div>
+          <div className="col-sm-6">
+            <h3>Resilience: {this.state.newCharacter.resilience}</h3>
+            <button type="button" onClick={this.subtractResPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
+            <button type="button" onClick={this.addResPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h3>Roll Resilience:</h3>
+          <button onClick={this.rollTheDieRes.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+        </div>
+      );
+    }
+  };
+  strButtons = () => {
+    if (this.state.strRolled) {
+      return (
+        <div>
+          <div className="col-sm-6">
+            <h3>Attack Modifier:</h3>
+            <h3>{this.state.newCharacter.attack}</h3>
+          </div>
+          <div className="col-sm-6">
+            <h3>Strength:</h3>
+            <h3>{this.state.newCharacter.strength}</h3>
+            <button type="button" onClick={this.subtractStrPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
+            <button type="button" onClick={this.addStrPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <h3>Roll Strength:</h3>
+          <button onClick={this.rollTheDieStr.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+        </div>
+      );
+    }
+  };
+
+  submitBtn = () => {
+    if (this.state.resRolled && this.state.conRolled && this.state.fortRolled && this.state.strRolled) {
+      return (
+        <button type="submit">Save Character</button>
+      );
+    };
+  }
+
   render () {
     const {newCharacter} = this.state;
     return (
@@ -87,118 +321,26 @@ class CharacterForm extends React.Component {
               onChange={this.imageChange}
             />
           </fieldset>
-          <fieldset>
-            <label htmlFor="currentHealth">Health:</label>
-            <br/>
-            <h3
-              type="text"
-              id="totalHealth"
-              placeholder="Health"
-            >
-              {defaultCharacter.totalHealth}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="totalPsyche">Psyche:</label>
-            <br/>
-            <h3
-              type="text"
-              id="totalPsyche"
-              placeholder="Psyche"
-            >
-              {defaultCharacter.totalPsyche}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="attackModifier">Attack Modifier:</label>
-            <br/>
-            <h3
-              type="text"
-              id="attackModifier"
-              placeholder="Modifier"
-            >
-              {defaultCharacter.attackModifier}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="defense">Defense:</label>
-            <br/>
-            <h3
-              type="text"
-              id="defense"
-              placeholder=" URL"
-            >
-              {defaultCharacter.defense}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="strength">Strength:</label>
-            <br/>
-            <h3
-              type="text"
-              id="strength"
-              placeholder="Strength"
-            >
-              {defaultCharacter.strength}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="fortitude">Fortitude:</label>
-            <br/>
-            <h3
-              type="text"
-              id="fortitude"
-              placeholder="Fortitude"
-            >
-              {defaultCharacter.fortitude}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="resilience">Resilience:</label>
-            <br/>
-            <h3
-              type="text"
-              id="resilience"
-              placeholder="resilience"
-            >
-              {defaultCharacter.resilience}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="constitution">Constitution:</label>
-            <br/>
-            <h3
-              type="text"
-              id="constitution"
-              placeholder="Constitution"
-            >
-              {defaultCharacter.constitution}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="exp">Experience:</label>
-            <br/>
-            <h3
-              type="text"
-              id="exp"
-              placeholder="experience"
-            >
-              {defaultCharacter.exp}
-            </h3>
-          </fieldset>
-          <fieldset>
-            <label htmlFor="level">Level:</label>
-            <br/>
-            <h3
-              type="text"
-              id="level"
-              placeholder="Level"
-            >
-              {newCharacter.level}
-            </h3>
-          </fieldset>
-          <button>Save Character</button>
+          {this.submitBtn()}
         </form>
+
+        <div className="row">
+          <h3>Points Pot: {this.state.pointsPot}</h3>
+        </div>
+        <div>
+          <div className="row">
+            {this.conButtons()}
+          </div>
+          <div className="row">
+            {this.fortButtons()}
+          </div>
+          <div className="row">
+            {this.strButtons()}
+          </div>
+          <div className="row">
+            {this.resButtons()}
+          </div>
+        </div>
       </div>
     );
   };
