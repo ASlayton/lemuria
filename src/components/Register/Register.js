@@ -77,7 +77,7 @@ class Register extends React.Component {
             </div>
             <div className="form-group">
               <div className="col-sm-12 text-center">
-                <Link to="/login">Already Registered?</Link>
+                <Link className="link-style" to="/login">Already Registered?</Link>
               </div>
             </div>
             <div className="form-group">
