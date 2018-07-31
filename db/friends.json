@@ -1,52 +1,54 @@
 {
-  "friend01": {
-    "name": "Graeme",
-    "text": "As you go about your way, you notice something rustling behind you. You stop and listen, prepared to draw your sword. The rustling continues from behind a bush. You leap over and part the leaves of the bush. Hello? ",
-    "bonus": "psyche"
-  },
-  "friend02": {
-    "name": "",
-    "text": "",
-    "bonus": "psyche"
-  },
-  "friend03": {
-    "name": "",
-    "text": "",
-    "bonus": "psyche"
-  },
-  "friend04": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
-  },
-  "friend05": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
-  },
-  "friend06": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
-  },
-  "friend07": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
-  },
-  "friend08": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
-  },
-  "friend09": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
-  },
-  "friend10": {
-    "name": "",
-    "text": "",
-    "bonus": "health"
+  "friends" : {
+    "friend01" : {
+      "bonus" : "psyche",
+      "name" : "Graeme",
+      "text" : "As you go about your way, you notice something rustling behind you. You stop and listen, prepared to draw your sword. The rustling continues from behind a bush. You leap over and part the leaves of the bush. A grey stone on the other side of the buhs unfolds itsself and looks at you with gemstone eyes. As you look at it, you feel as though a great weight is lifting from your mind. You wake some time later, the creature is gone."
+    },
+    "friend02" : {
+      "bonus" : "health",
+      "name" : "Penelope Featherstone",
+      "text" : "As you journey on, you hear a strange mumbling ahead of you. Wary, you draw your sword and hold it defensively ahead of you as you approach. You see a small, hunched over figure, bony fingers darting from under a thick cloak to pluck plump purple berries from a bush. She looks up at you as you approach, her thick eyelids blinking lazily at you. To your surprise, she isn't Lemurian, she is very much human. Surprised at the sight of you, she drops the berries she has been collecting and runs away, surprisingly fast for one who appears so old. You taste one of the berries she had dropped. You feel better."
+    },
+    "friend03" : {
+      "bonus" : "health",
+      "name" : "Lily Chittendon",
+      "text" : "You come across a yound lemurian girl sitting by a small creek, dipping her toes into the water. Though you clearly frighten her, she does not run away. She offers you some of the crawling creatures she had plucked from beneath the stones in the creek. You feel rejuvenated. Thanking her, you take your leave."
+    },
+    "friend04" : {
+      "bonus" : "health",
+      "name" : "Charity Bashford",
+      "text" : "A figure steps out before you brandishing a rather flashy sword, challenging you. Holding up your hands, you explain that you are on your way to find the Daedalus. She cocks her head to the side and nods before resheathing her weapon. Pulling out a compass, she points. You thank her and continue on."
+    },
+    "friend05" : {
+      "bonus" : "health",
+      "name" : "Irisia Grove",
+      "text" : "A lovely patch of flowers covers the ground before you. As you walk through them, you feel lighter, stronger. You are sorry to leave them behind but the effects of thier sweet scent stay with you."
+    },
+    "friend06" : {
+      "bonus" : "psyche",
+      "name" : "Waef",
+      "text" : "You hear the sound of water in the distance. Feeling your waterskin, you realize you should probably refill it so you head towards the stream edge. As you dip your waterskin into the freezing flow, your gaze is captured by a movement beneath the water. The longer you look, the more convinced you are that you see something. Suddenly the water rises up before you in the form of a lemurian and its eyes open. You open your mouth as though to speak when it leaps at you. You wake some time later, much further downstream than you had been. Soaked and freezing, you gather your belongings together and hurry on your way."
+    },
+    "friend07" : {
+      "bonus" : "Health",
+      "name" : "Lemurian Scout",
+      "text" : "You come across a young, lanky lemurian man sitting by a campfire in a shady glen. He invites you to sit with him and share his supper. You are glad for the company and join him. The food is good and the conversation better. Refreshed, you bid farewell and head on your way."
+    },
+    "friend08" : {
+      "bonus" : "psyche",
+      "name" : "Aerie",
+      "text" : "As you walk, you feel a strange sense of calm. Around you, the forest grows silent and still. Without warning, a rush of wind blows around you, lifting you up and carrying you forward, dumping you into the bushes at the base of a very large tree. You pick yourself up. The term mother tree comes to mind. Putting a hand on the trunk, a feeling of well being comes over you. All fears erased. Alien as it seems to you, you are compelled to thank the tree and head on your way."
+    },
+    "friend09" : {
+      "bonus" : "psyche",
+      "name" : "Kalayo",
+      "text" : "You have been travelling for many hours, the day is beginning to wan. You decide to set camp for the night. Gathering brush together, you make yourself a fire. Sitting at its side, your imagination is captured by the individual licks of flame as they take on form. How much time has passed since you started watching as the figures danced together, spinning and whirling in an ecstasy of warmth. When you finally come to in the morning, you feel as though you can take on any obstacle."
+    },
+    "friend10" : {
+      "bonus" : "health",
+      "name" : "Jothan Featherstone",
+      "text" : "You come across a weathered lemurian scout. After exchanging greetings, he hands you a packet of dried and ground root saying that it looks like you needed it. You thank him and head on your way."
+    }
   }
 }
