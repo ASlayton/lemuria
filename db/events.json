@@ -1,497 +1,414 @@
 {
   "event01": {
     "type": "combat",
-    "eventText": "Combat Text",
     "encounter": "foe01"
   },
   "event02": {
     "type": "combat",
-    "eventText": "Combat Text",
     "encounter": "foe14"
   },
   "event03": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe25"
   },
   "event04": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe02"
   },
   "event05": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe24"
   },
   "event06": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe19"
   },
   "event07": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe03"
   },
   "event08": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe04"
+    "encounterText": "",
+    "encounter": "friend01"
   },
   "event09": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe19"
   },
   "event10": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe04"
   },
   "event11": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe11"
   },
   "event12": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe05"
   },
   "event13": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe06"
   },
   "event14": {
-    "type": "meet",
-    "eventTExt": "Combat TExt",
+    "type": "combat",
     "encounter": "foe10"
   },
   "event15": {
-    "type": "combat",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe12"
+    "type": "meet",
+    "encounterText": "",
+    "encounter": "friend02"
   },
   "event16": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe07"
   },
   "event17": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe15"
   },
   "event18": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe17"
   },
   "event19": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe08"
   },
   "event20": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe24"
+    "encounterText": "",
+    "encounter": "friend03"
   },
   "event21": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe25"
   },
   "event22": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe09"
   },
   "event23": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe17"
   },
   "event24": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe18"
   },
   "event25": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe10"
   },
   "event26": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe11"
+    "encounterText": "",
+    "encounter": "friend04"
   },
   "event27": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe13"
   },
   "event28": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe11"
   },
   "event29": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe22"
   },
   "event30": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe23"
   },
   "event31": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe12"
   },
   "event32": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe25"
+    "encounterText": "",
+    "encounter": "friend05"
   },
   "event33": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe20"
   },
   "event34": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe13"
   },
   "event35": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe21"
   },
   "event36": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe15"
   },
   "event37": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe14"
   },
   "event38": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe13"
+    "encounterText": "",
+    "encounter": "friend05"
   },
   "event39": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe05"
   },
   "event40": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe15"
   },
   "event41": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe06"
   },
   "event42": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe07"
   },
   "event43": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe16"
   },
   "event44": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe19"
+    "encounterText": "",
+    "encounter": "friend06"
   },
   "event45": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe20"
   },
   "event46": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe17"
   },
   "event47": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe01"
   },
   "event48": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe02"
   },
   "event49": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe18"
   },
   "event50": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe17"
+    "encounterText": "",
+    "encounter": "friend07"
   },
   "event51": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe19"
   },
   "event52": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe19"
   },
   "event53": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe20"
   },
   "event54": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe07"
   },
   "event55": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe20"
   },
   "event56": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe08"
+    "encounterText": "",
+    "encounter": "friend08"
   },
   "event57": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe08"
   },
   "event58": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe21"
   },
   "event59": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe10"
   },
   "event60": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe11"
   },
   "event61": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe23"
   },
   "event62": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe04"
+    "encounterText": "",
+    "encounter": "friend09"
   },
   "event63": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe05"
   },
   "event64": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe22"
   },
   "event65": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe06"
   },
   "event66": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe07"
   },
   "event67": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe24"
   },
   "event68": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe08"
+    "encounterText": "",
+    "encounter": "friend10"
   },
   "event69": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe09"
   },
   "event70": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe25"
   },
   "event71": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe09"
   },
   "event72": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe10"
   },
   "event73": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe26"
   },
   "event74": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe07"
+    "encounterText": "",
+    "encounter": "friend01"
   },
   "event75": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe08"
   },
   "event76": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe22"
   },
   "event77": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe01"
   },
   "event78": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe02"
   },
   "event79": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe25"
   },
   "event80": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe03"
+    "encounterText": "",
+    "encounter": "friend02"
   },
   "event81": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe04"
   },
   "event82": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe22"
   },
   "event83": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "fie05"
   },
   "event84": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe06"
   },
   "event85": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe20"
   },
   "event86": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe10"
+    "encounterText": "",
+    "encounter": "friend03"
   },
   "event87": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe08"
   },
   "event88": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe18"
   },
   "event89": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe09"
   },
   "event90": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe10"
   },
   "event91": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe19"
   },
   "event92": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe11"
+    "encounterText": "",
+    "encounter": "friend04"
   },
   "event93": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe12"
   },
   "event94": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe19"
   },
   "event95": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe20"
   },
   "event96": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe13"
   },
   "event97": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe01"
   },
   "event98": {
     "type": "meet",
-    "eventTExt": "Combat TExt",
-    "encounter": "foe09"
+    "encounterText": "",
+    "encounter": "friend05"
   },
   "event99": {
     "type": "combat",
-    "eventTExt": "Combat TExt",
     "encounter": "foe02"
   }
 }

@@ -1,7 +1,12 @@
 .navbar {
-  background-image: url('../../images/image\ \(8\).png');
-  background-size: cover;
+  background-image: url('https://i.pinimg.com/736x/36/cd/85/36cd859532ac1fdbdaa2c2e360ebd68d--steampunk-background-steampunk-wallpaper.jpg');
+  // background-size: cover;
   box-shadow: 3px 7px 10px 0px rgba(0,0,0,0.75);
+
+  h1 {
+    font-family: 'Ewert', cursive;
+    color: antiquewhite;
+  }
 
   .btn {
     margin-top: 15px;
