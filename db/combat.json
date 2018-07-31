@@ -15,7 +15,7 @@
       "You lunge, but your assailant leaps to the left. Your blade barely scratches it as you pass.",
       "Your blow lands true.",
       "You hit your mark.",
-      "Your adeversary avoids the first strike, but you bring your sword back around and manage to hit.",
+      "Your adversary avoids the first strike, but you bring your sword back around and manage to hit.",
       "The enemy shrieks in anger as your blade slices into it."
     ]
   },
@@ -60,14 +60,14 @@
     "msg": [
       "The creature leaps at you and misses.",
       "Growling, the creature attempts a low swipe at your legs, but you leap to the side at the last minute.",
-      "You duck just in time to avoid the thing's attack",
-      "You wince as the creature's weapon of choice digs into your flesh.",
-      "You grunt under the weight of the creatures attack.",
-      "You are hit.",
-      "The creature lands its attack.",
-      "The air is knocked out of you as your adversary lands its attack.",
-      "With a mighty roar, your foe is able to hit home.",
-      "Ouch."
+      "You duck just in time to avoid the thing's attack.",
+      "You parry the blow.",
+      "You grunt under the weight of the creatures attack, but manage to throw it off.",
+      "You dodge the attack",
+      "You parry your adversaries attack.",
+      "The air is knocked out of you as your adversary lands its attack, but its blow does no damage.",
+      "With a mighty roar, your foe leaps and misses.",
+      "The attack misses"
     ]
   },
   "enemyCritHit": {

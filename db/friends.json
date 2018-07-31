@@ -1,0 +1,52 @@
+{
+  "friend01": {
+    "name": "Graeme",
+    "text": "As you go about your way, you notice something rustling behind you. You stop and listen, prepared to draw your sword. The rustling continues from behind a bush. You leap over and part the leaves of the bush. Hello? ",
+    "bonus": "psyche"
+  },
+  "friend02": {
+    "name": "",
+    "text": "",
+    "bonus": "psyche"
+  },
+  "friend03": {
+    "name": "",
+    "text": "",
+    "bonus": "psyche"
+  },
+  "friend04": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  },
+  "friend05": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  },
+  "friend06": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  },
+  "friend07": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  },
+  "friend08": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  },
+  "friend09": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  },
+  "friend10": {
+    "name": "",
+    "text": "",
+    "bonus": "health"
+  }
+}
