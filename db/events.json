@@ -29,7 +29,6 @@
   },
   "event08": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend01"
   },
   "event09": {
@@ -58,7 +57,6 @@
   },
   "event15": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend02"
   },
   "event16": {
@@ -79,7 +77,6 @@
   },
   "event20": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend03"
   },
   "event21": {
@@ -104,7 +101,6 @@
   },
   "event26": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend04"
   },
   "event27": {
@@ -129,7 +125,6 @@
   },
   "event32": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend05"
   },
   "event33": {
@@ -154,7 +149,6 @@
   },
   "event38": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend05"
   },
   "event39": {
@@ -179,7 +173,6 @@
   },
   "event44": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend06"
   },
   "event45": {
@@ -204,7 +197,6 @@
   },
   "event50": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend07"
   },
   "event51": {
@@ -229,7 +221,6 @@
   },
   "event56": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend08"
   },
   "event57": {
@@ -254,7 +245,6 @@
   },
   "event62": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend09"
   },
   "event63": {
@@ -279,7 +269,6 @@
   },
   "event68": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend10"
   },
   "event69": {
@@ -304,7 +293,6 @@
   },
   "event74": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend01"
   },
   "event75": {
@@ -329,7 +317,6 @@
   },
   "event80": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend02"
   },
   "event81": {
@@ -354,7 +341,6 @@
   },
   "event86": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend03"
   },
   "event87": {
@@ -379,7 +365,6 @@
   },
   "event92": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend04"
   },
   "event93": {
@@ -404,7 +389,6 @@
   },
   "event98": {
     "type": "meet",
-    "encounterText": "",
     "encounter": "friend05"
   },
   "event99": {
