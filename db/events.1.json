@@ -28,9 +28,9 @@
     "encounter": "foe03"
   },
   "event08": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe03"
+    "encounter": "friend01"
   },
   "event09": {
     "type": "combat",
@@ -57,9 +57,9 @@
     "encounter": "foe10"
   },
   "event15": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe02"
+    "encounter": "friend02"
   },
   "event16": {
     "type": "combat",
@@ -78,9 +78,9 @@
     "encounter": "foe08"
   },
   "event20": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe03"
+    "encounter": "friend03"
   },
   "event21": {
     "type": "combat",
@@ -103,9 +103,9 @@
     "encounter": "foe10"
   },
   "event26": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe04"
+    "encounter": "friend04"
   },
   "event27": {
     "type": "combat",
@@ -128,9 +128,9 @@
     "encounter": "foe12"
   },
   "event32": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe05"
+    "encounter": "friend05"
   },
   "event33": {
     "type": "combat",
@@ -153,9 +153,9 @@
     "encounter": "foe14"
   },
   "event38": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe05"
+    "encounter": "friend05"
   },
   "event39": {
     "type": "combat",
@@ -178,9 +178,9 @@
     "encounter": "foe16"
   },
   "event44": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe06"
+    "encounter": "friend06"
   },
   "event45": {
     "type": "combat",
@@ -203,9 +203,9 @@
     "encounter": "foe18"
   },
   "event50": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe07"
+    "encounter": "friend07"
   },
   "event51": {
     "type": "combat",
@@ -228,9 +228,9 @@
     "encounter": "foe20"
   },
   "event56": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe08"
+    "encounter": "friend08"
   },
   "event57": {
     "type": "combat",
@@ -253,9 +253,9 @@
     "encounter": "foe23"
   },
   "event62": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe09"
+    "encounter": "friend09"
   },
   "event63": {
     "type": "combat",
@@ -278,9 +278,9 @@
     "encounter": "foe24"
   },
   "event68": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe10"
+    "encounter": "friend10"
   },
   "event69": {
     "type": "combat",
@@ -303,9 +303,9 @@
     "encounter": "foe26"
   },
   "event74": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe01"
+    "encounter": "friend01"
   },
   "event75": {
     "type": "combat",
@@ -328,9 +328,9 @@
     "encounter": "foe25"
   },
   "event80": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe02"
+    "encounter": "friend02"
   },
   "event81": {
     "type": "combat",
@@ -353,9 +353,9 @@
     "encounter": "foe20"
   },
   "event86": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe03"
+    "encounter": "friend03"
   },
   "event87": {
     "type": "combat",
@@ -378,9 +378,9 @@
     "encounter": "foe19"
   },
   "event92": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe04"
+    "encounter": "friend04"
   },
   "event93": {
     "type": "combat",
@@ -403,9 +403,9 @@
     "encounter": "foe01"
   },
   "event98": {
-    "type": "combat",
+    "type": "meet",
     "encounterText": "",
-    "encounter": "foe05"
+    "encounter": "friend05"
   },
   "event99": {
     "type": "combat",
