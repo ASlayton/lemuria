@@ -7,6 +7,7 @@ import auth from '../../firebaseRequests/auth';
 import enemyRequests from '../../firebaseRequests/enemies';
 import messageRequests from '../../firebaseRequests/combatMsg';
 import characterRequests from '../../firebaseRequests/characters';
+import friendRequests from '../../firebaseRequests/friends';
 import {ProgressBar} from 'react-bootstrap';
 import percentageBar from '../../helpers/percentageBar';
 
@@ -19,6 +20,11 @@ class Events extends React.Component {
       modalIsOpen: false,
       myEvent: {},
       enemy: {},
+      friend: {
+        name: '',
+        text: '',
+        bonus: '',
+      },
       myEnemyId: '',
       combatMsg: {},
       player: {},
@@ -57,7 +63,8 @@ class Events extends React.Component {
     eventRequests.eventGetRequest()
       .then((events) => {
         this.setState({events: events});
-        this.pickAnEvent();
+        this.getEnemy('foe01');
+        this.getFriend('friend01');
       })
       .catch((error) => {
         console.error('Error in get events', error);
@@ -75,17 +82,37 @@ class Events extends React.Component {
     const eventRoll = dieroll(1,99);
     const myEvent = this.state.events[eventRoll];
     this.setState({myEvent: myEvent});
-    this.getEnemy();
+    this.whoAmICalling();
   };
 
-  getEnemy = () => {
-    const enemyId = this.state.myEvent.encounter;
+  whoAmICalling = () => {
+    const myEventType = this.state.myEvent.type;
+    if (myEventType === 'meet') {
+      this.getFriend(this.state.myEvent.encounter);
+    } else if (myEventType === 'combat') {
+      this.getEnemy(this.state.myEvent.encounter);
+    };
+  };
+
+  getEnemy = (enemyId) => {
     enemyRequests.getSingleFoeRequest(enemyId)
       .then((enemy) => {
         this.setState({enemy: enemy});
+        console.log('Enemy:', enemy);
       })
       .catch((error) => {
         console.error('Error in getSingleFoe', error);
+      });
+  };
+
+  getFriend = (friendId) => {
+    friendRequests.getSingleFriendRequest(friendId)
+      .then((friend) => {
+        this.setState({friend: friend});
+        console.log('Friend: ', friend);
+      })
+      .catch((error) => {
+        console.error('Error in getSingleFriend', error);
       });
   };
 
@@ -177,7 +204,7 @@ class Events extends React.Component {
       const eGameMsg = this.state.enemy.DeathMsg;
       this.setState({eGameMsg});
       const player = Object.assign({}, this.props.player);
-      player.exp = (player.exp * 1) + this.state.enemy.ExperienceAwarded;
+      player.exp = (player.exp * 1) + (this.state.enemy.ExperienceAwarded * 1);
       this.setState({player});
       this.evalXP();
     } else {
@@ -191,9 +218,9 @@ class Events extends React.Component {
 
   evalXP = () => {
     const playerXP = this.props.player.exp;
-    const player = Object.assign({}, this.props.player);
-    player.level = Math.floor(playerXP / 1000);
-    this.setState({player});
+    const tempPlayer = {...this.props.player};
+    tempPlayer.level = Math.floor(playerXP * 1 / 1000);
+    this.setState({player: tempPlayer});
   };
 
   putResults = (id, updatedCharacter) => {
@@ -231,6 +258,12 @@ class Events extends React.Component {
   };
 
   render () {
+    let friendly;
+    if (this.state.myEvent.type === 'meet') {
+      friendly = true;
+    } else {
+      friendly = false;
+    };
     return (
       <div>
         <div className="button-container">
@@ -246,40 +279,52 @@ class Events extends React.Component {
           contentLabel="Example Modal"
           className={this.state.myEvent.type}
         >
-          <h1>{this.state.myEvent.type}</h1>
-          <div className="col-sm-6">
-            <h3>{this.props.player.name}</h3>
-            <h4 className="text-right">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
-            <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
-            <h4 className="text-right">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
-            <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
-          </div>
-          <div className="col-sm-6">
-            <div className="col-sm-6">
-              <h3>{this.state.enemy.name}</h3>
-              <p>{this.state.enemy.description}</p>
-              <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
-              <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
+          {friendly ? (
+            <div>
+              <h1>{this.state.myEvent.type}</h1>
+              <h3>{this.state.friend.name}</h3>
+              <p>{this.state.friend.text}</p>
             </div>
-            <div className="col-sm-6">
-              <p>{this.state.events.eventText}</p>
-              <p>{this.state.enemy.EncounterText}</p>
-            </div>
-          </div>
-          <div className="col-sm-12">
-            <div className="col-sm-6">
-              <h1>{this.state.pDmgResult} dmg</h1>
-              <h2>{this.state.pGameMsg}</h2>
-            </div>
-            <div className="col-sm-6">
-              <h1>{this.state.eDmgResult} dmg</h1>
-              <h2>{this.state.eGameMsg}</h2>
-            </div>
-          </div>
+          ) : (
+            <div>
+              <h1>{this.state.myEvent.type}</h1>
+              <h4>{this.state.enemy.encounterText}</h4>
+              <div className="col-sm-6">
+                <h3>{this.props.player.name}</h3>
+                <h4 className="text-right">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
+                <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+                <h4 className="text-right">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
+                <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
+              </div>
+              <div className="col-sm-6">
+                <div className="col-sm-6">
+                  <h3>{this.state.enemy.name}</h3>
+                  <p>{this.state.enemy.description}</p>
+                  <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
+                  <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
+                </div>
+                <div className="col-sm-6">
+                  <p>{this.state.events.eventText}</p>
+                  <p>{this.state.enemy.EncounterText}</p>
+                </div>
+              </div>
+              <div className="col-sm-12">
+                <div className="col-sm-6">
+                  <h1>{this.state.pDmgResult} dmg</h1>
+                  <h2>{this.state.pGameMsg}</h2>
+                </div>
+                <div className="col-sm-6">
+                  <h1>{this.state.eDmgResult} dmg</h1>
+                  <h2>{this.state.eGameMsg}</h2>
+                </div>
+              </div>
 
-          <div className="col-sm-12">
-            {this.conditionalButtons()}
-          </div>
+              <div className="col-sm-12">
+                {this.conditionalButtons()}
+              </div>
+            </div>
+          )}
+
         </Modal>
       </div>
     );

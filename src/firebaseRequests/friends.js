@@ -6,6 +6,7 @@ const getSingleFriendRequest = (id) => {
     axios
       .get(`${constants.firebaseConfig.databaseURL}/friends/${id}.json`)
       .then(res => {
+        console.log('Look at my friend:', res.data);
         resolve(res.data);
       })
       .catch(err => {
