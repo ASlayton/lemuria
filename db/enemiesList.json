@@ -1,7 +1,7 @@
 {
   "foe01": {
     "name":"Flaeme",
-    "damageType": "Psyche",
+    "damageType": "psyche",
     "weapon": "Flame Whip",
     "description": "A humanoid spirit that wraps its itself in lava rock, this foe is capable of driving the stoutest minded being into madness",
     "encounterText": "You stop, there is a flickering light in the distance. Stealthily, you make your way forward, hoping to find a scout or friendly being. The flickering is moving, coming toward you. Hiding is no use, this thing is clearly coming for you. Stepping out of the brush, you are face to face with what looks to be a burning corpse. On closer look, this thing was never Lemurian. You draw your sword.",
@@ -13,7 +13,7 @@
   },
   "foe02": {
     "name": "Aef",
-    "damageType": "Psyche",
+    "damageType": "psyche",
     "weapon":	"Branch Blade",
     "description": "An air spirit that forms from any debris it can wrap itself in, Aef are formidable foes with a daunting attack.",
     "encounterText": "You are tired and decide to rest. You find a nice, dry fallen tree to sit on when suddenly the wind picks up around you. Not a single leaf is moving in the canopy above, but the sticks and debris scattered about the forest floor are being picked up. Covering your eyes, you glance the debris coming together to form a humanoid figure. It is clearly not happy at your presence. You prepare for attack.",
@@ -25,7 +25,7 @@
   },
   "foe03": {
     "name": "Gnollem",
-    "damageType": "Psyche",
+    "damageType": "psyche",
     "weapon": "Club",
     "description": "A stout spirit that has gathered a body of stone and dirt, the Gnollem is in general a peaceful spirit, unless disturbed from its rest, In which case, is a frightful foe with incredible defenses.",
     "encounterText": "As you walk, the ground beneath your feet begins to shake. You stop, looking about you. The dirt and stones you are standing on rise, shifting and joining. You jump back. Before you is a mighty Gnollem, your heart sinks as it lets loose a roar like a landslide.",
@@ -38,7 +38,7 @@
   },
   "foe04": {
     "name": "Dewdora",
-    "damageType":	"Psyche",
+    "damageType":	"psyche",
     "weapon":	"Sharp stick",
     "description": "Dewdora are water spirits that dwell within trees. Hardly malicious in nature, they are fiercly territorial.",
     "encounterText": "You decide to sleep for the night. All is uneventful. As you stretch in the sunlight, you catch something stirring out of the corner of your eye. Did that bush just move. You gather your bedroll up and prepare to set off, to find yourself surrounded by bush which seems to be growing by the second. A muttering like the groaning of wood fills your ears. You prepare for attack.",
@@ -110,10 +110,8 @@
   },
   "foe10": {
     "name": "Stenchling",
-    "damageType":
-    "health",
-    "weapon":
-    "teeth",
+    "damageType": "health",
+    "weapon": "teeth",
     "description": "A small swamp imp-like creature. It likes to drag Lemurians into its swampy lair for its dinner.",
     "encounterText": "This section of the forest has a stench to it that you will not soon forget. You hurry on, anxious to get out of this area when suddenly the fetor gets much, much worse. Retching, you lose the little food you had in you. Wiping your mouth, you look up to see a small shadow creature with shining green eyes and a very large drooping tongue. You barely manage to draw your blade before it hits you.",
     "deathMsg": "With a yelp, the stenchling crumples beneath your blow. In the distance you hear laughter, you need to move on.",
@@ -245,7 +243,7 @@
   },
   "foe21": {
     "name":"Dedira",
-    "damageType": "Psyche",
+    "damageType": "psyche",
     "weapon": "Spirit Drain",
     "description": "A nature spirit that thrives on the souls of Lemurians, Dedira is fascinated by you. Your soul is different from that of the Lemurians, older. Though currently less palatable, she preys on you throughout your journey, a beautiful and deadly siren.",
     "encounterText": "There is a beautiful exotic flower waving gently before you. You approach, wrapping your fingers about the slender stem. Just as you are about to pull, a great shrieking wind blows up around you, knocking you back. A bewitching figure forms before you, her eyes catch yours and she looks at you, her head cocked to the side. A sharp pain courses through your head. \"You are not food, not yet.\"",
@@ -257,7 +255,7 @@
   },
   "foe22": {
     "name":"Jirahn",
-    "damageType": "Psyche",
+    "damageType": "psyche",
     "weapon": "Mind Probe",
     "description": "A slow, ponderous worm, be careful to not let it wrap around you.",
     "encounterText": "The ground beneath your feet shakes. You grab an overhanging branch to steady yourself, just in time for the ground to erupt in a spout of earth and rock. A long brown worm shoots up, arching its back to came back at you. Darting to the side, you barely miss getting squished underneath its incredible bulk.",
