@@ -257,6 +257,13 @@ class Events extends React.Component {
     }
   };
 
+  gimmeHealth = () => {
+    const player = {...this.props.player};
+    player.currentHealth = this.props.player.totalHealth;
+    this.props.playerHandler(player);
+    this.closeModal();
+  };
+
   render () {
     let friendly;
     if (this.state.myEvent.type === 'meet') {
@@ -284,6 +291,7 @@ class Events extends React.Component {
               <h1>{this.state.myEvent.type}</h1>
               <h3>{this.state.friend.name}</h3>
               <p>{this.state.friend.text}</p>
+              <button onClick={this.gimmeHealth.bind()} className="btn btn-info">Acknowledge</button>
             </div>
           ) : (
             <div>
