@@ -88,8 +88,10 @@ class Events extends React.Component {
   whoAmICalling = () => {
     const myEventType = this.state.myEvent.type;
     if (myEventType === 'meet') {
+      console.log('My friend Id:', this.state.myEvent.encounter);
       this.getFriend(this.state.myEvent.encounter);
     } else if (myEventType === 'combat') {
+      console.log('My enemy ID:', this.state.myEvent.encounter);
       this.getEnemy(this.state.myEvent.encounter);
     };
   };
@@ -98,7 +100,6 @@ class Events extends React.Component {
     enemyRequests.getSingleFoeRequest(enemyId)
       .then((enemy) => {
         this.setState({enemy: enemy});
-        console.log('Enemy:', enemy);
       })
       .catch((error) => {
         console.error('Error in getSingleFoe', error);
@@ -109,7 +110,6 @@ class Events extends React.Component {
     friendRequests.getSingleFriendRequest(friendId)
       .then((friend) => {
         this.setState({friend: friend});
-        console.log('Friend: ', friend);
       })
       .catch((error) => {
         console.error('Error in getSingleFriend', error);
@@ -294,8 +294,14 @@ class Events extends React.Component {
 
   gimmeHealth = () => {
     const player = {...this.props.player};
-    player.currentHealth = this.props.player.totalHealth;
-    this.props.playerHandler(player);
+    if (this.state.friend.bonus === 'health') {
+      player.currentHealth = this.props.player.totalHealth;
+      this.props.playerHandler(player);
+    } else if (this.state.friend.bonus === 'psyche') {
+      player.currentPsyche = this.props.player.totalPsyche;
+      this.props.playerHandler(player);
+    };
+
     this.closeModal();
   };
 
