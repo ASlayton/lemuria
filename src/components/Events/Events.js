@@ -88,8 +88,10 @@ class Events extends React.Component {
   whoAmICalling = () => {
     const myEventType = this.state.myEvent.type;
     if (myEventType === 'meet') {
+      console.log('My friend Id:', this.state.myEvent.encounter);
       this.getFriend(this.state.myEvent.encounter);
     } else if (myEventType === 'combat') {
+      console.log('My enemy ID:', this.state.myEvent.encounter);
       this.getEnemy(this.state.myEvent.encounter);
     };
   };
@@ -98,7 +100,6 @@ class Events extends React.Component {
     enemyRequests.getSingleFoeRequest(enemyId)
       .then((enemy) => {
         this.setState({enemy: enemy});
-        console.log('Enemy:', enemy);
       })
       .catch((error) => {
         console.error('Error in getSingleFoe', error);
@@ -109,7 +110,6 @@ class Events extends React.Component {
     friendRequests.getSingleFriendRequest(friendId)
       .then((friend) => {
         this.setState({friend: friend});
-        console.log('Friend: ', friend);
       })
       .catch((error) => {
         console.error('Error in getSingleFriend', error);
@@ -158,36 +158,71 @@ class Events extends React.Component {
     const attackRoll = dieroll(1, 20);
     const getRandom = dieroll(0,9) * 1;
     const playerDefense = this.props.player.defense * 1;
-    if (attackRoll === 1) {
-      const enemyDmg = dieroll(1, 6);
-      const enemy = Object.assign({}, this.state.enemy);
-      enemy.currentHealth = enemy.currentHealth - enemyDmg;
-      this.setState({enemy});
-      this.setState({eDmgResult: enemyDmg});
-      const eGameMsg = this.state.combatMsg[1].msg;
-      this.setState({eGameMsg});
-    } else if (attackRoll === 20) {
-      const playerDmg = dieroll(1, 12);
-      const player = Object.assign({}, this.props.player);
-      player.currentHealth = player.currentHealth - playerDmg;
-      this.props.playerHandler(player);
-      this.setState({eDmgResult: playerDmg});
-      const eGameMsg = this.state.combatMsg[0].msg;
-      this.setState({eGameMsg});
-    } else if (attackRoll >= playerDefense) {
-      const playerDmg = dieroll(1, 6);
-      const player = Object.assign({}, this.props.player);
-      player.currentHealth = player.currentHealth - playerDmg;
-      this.props.playerHandler(player);
-      this.setState({eDmgResult: playerDmg});
-      const eGameMsg = this.state.combatMsg[4].msg[getRandom];
-      this.setState({eGameMsg});
-    } else if (attackRoll < playerDefense) {
-      this.setState({eDmgResult: 0});
-      const eGameMsg = this.state.combatMsg[5].msg[getRandom];
-      this.setState({eGameMsg});
-    } else {
-      console.error('Something is not being evaluated correctly.');
+    if (this.state.enemy.damageType === 'health') {
+      if (attackRoll === 1) {
+        const enemyDmg = dieroll(1, 6);
+        const enemy = Object.assign({}, this.state.enemy);
+        enemy.currentHealth = enemy.currentHealth - enemyDmg;
+        this.setState({enemy});
+        this.setState({eDmgResult: enemyDmg});
+        const eGameMsg = this.state.combatMsg[1].msg;
+        this.setState({eGameMsg});
+      } else if (attackRoll === 20) {
+        const playerDmg = dieroll(1, 12);
+        const player = Object.assign({}, this.props.player);
+        player.currentHealth = player.currentHealth - playerDmg;
+        this.props.playerHandler(player);
+        this.setState({eDmgResult: playerDmg});
+        const eGameMsg = this.state.combatMsg[0].msg;
+        this.setState({eGameMsg});
+      } else if (attackRoll >= playerDefense) {
+        const playerDmg = dieroll(1, 6);
+        const player = Object.assign({}, this.props.player);
+        player.currentHealth = player.currentHealth - playerDmg;
+        this.props.playerHandler(player);
+        this.setState({eDmgResult: playerDmg});
+        const eGameMsg = this.state.combatMsg[4].msg[getRandom];
+        this.setState({eGameMsg});
+      } else if (attackRoll < playerDefense) {
+        this.setState({eDmgResult: 0});
+        const eGameMsg = this.state.combatMsg[5].msg[getRandom];
+        this.setState({eGameMsg});
+      } else {
+        console.error('Something is not being evaluated correctly.');
+      };
+    } else if (this.state.enemy.damageType === 'psyche') {
+      if (attackRoll === 1) {
+        const enemyDmg = dieroll(1, 6);
+        const enemy = Object.assign({}, this.state.enemy);
+        enemy.currentHealth = enemy.currentHealth - enemyDmg;
+        this.setState({enemy});
+        this.setState({eDmgResult: enemyDmg});
+        const eGameMsg = this.state.combatMsg[1].msg;
+        this.setState({eGameMsg});
+      } else if (attackRoll === 20) {
+        const playerDmg = dieroll(1, 12);
+        const player = Object.assign({}, this.props.player);
+        player.currentPsyche = player.currentPsyche - playerDmg;
+        this.props.playerHandler(player);
+        this.setState({eDmgResult: playerDmg});
+        const eGameMsg = this.state.combatMsg[0].msg;
+        this.setState({eGameMsg});
+      } else if (attackRoll >= playerDefense) {
+        const playerDmg = dieroll(1, 6);
+        const player = Object.assign({}, this.props.player);
+        player.currentPsyche = player.currentPsyche - playerDmg;
+        this.props.playerHandler(player);
+        this.setState({eDmgResult: playerDmg});
+        const eGameMsg = this.state.combatMsg[4].msg[getRandom];
+        this.setState({eGameMsg});
+      } else if (attackRoll < playerDefense) {
+        this.setState({eDmgResult: 0});
+        const eGameMsg = this.state.combatMsg[5].msg[getRandom];
+        this.setState({eGameMsg});
+      } else {
+        console.error('Something is not being evaluated correctly.');
+      };
+
     };
     this.evaluateStatus('enemyTurn');
   };
@@ -259,8 +294,14 @@ class Events extends React.Component {
 
   gimmeHealth = () => {
     const player = {...this.props.player};
-    player.currentHealth = this.props.player.totalHealth;
-    this.props.playerHandler(player);
+    if (this.state.friend.bonus === 'health') {
+      player.currentHealth = this.props.player.totalHealth;
+      this.props.playerHandler(player);
+    } else if (this.state.friend.bonus === 'psyche') {
+      player.currentPsyche = this.props.player.totalPsyche;
+      this.props.playerHandler(player);
+    };
+
     this.closeModal();
   };
 
