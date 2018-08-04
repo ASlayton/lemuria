@@ -33,18 +33,14 @@ class StoryLine extends React.Component {
   render () {
     return (
       <div>
-        <div class='page odd' id='cover'><h1>Lemuria - A Tale</h1></div>
-        <div class='page even' id='cover_back'></div>
-        <div class='page odd' id='content'>
-          <h1>The Tale Thus Far</h1>
-          <div>
-            <h3>{this.state.story.title}</h3>
-            <p>{this.state.showIt}</p>
-          </div>
-          {this.state.count < 11 &&
-            <button onClick={this.advanceStory} className="btn btn-info">Next</button>
-          }
+        <h1>The Tale Thus Far</h1>
+        <div>
+          <h3>{this.state.story.title}</h3>
+          <p>{this.state.showIt}</p>
         </div>
+        {this.state.count < 11 &&
+          <button onClick={this.advanceStory} className="btn btn-info">Next</button>
+        }
       </div>
     );
   };
