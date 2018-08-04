@@ -8,6 +8,7 @@
 }
 
 .button-container {
+  padding-top: 50px;
   width: 250px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -16,14 +17,11 @@
 
   .event-btn {
     font-family: 'Special Elite', cursive;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
     box-shadow: 3px 7px 10px 0px rgba(0,0,0,0.75);
-    background-color: goldenrod;
+    background-image: url("https://thumbs.dreamstime.com/t/gold-metal-plaque-nameboard-rivets-background-54120817.jpg");
     border: 5px solid darkgoldenrod;
     font-weight: bolder;
-    margin: 5px;
+    margin-top: 10px;
   }
 }
 

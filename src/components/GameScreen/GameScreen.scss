@@ -20,7 +20,9 @@ body {
     -webkit-perspective: 1600px;
   font-family: Open sans, sans-serif;
 }
-
+.book-shadow {
+  box-shadow: 2px 3px 15px 0px rgba(0,0,0,0.5);
+}
 .page {
   display: inline-block;
   position: fixed;
@@ -76,6 +78,7 @@ body {
 }
 
 .page.even {
+  padding-top: 10px;
   margin-left: -690px; /* 1,5 * width to position it left of odd pages */
 
   /* even pages flip along right side, and with positive degree rotation */
@@ -122,11 +125,27 @@ body {
 
 /* Put cover pages in front of content page */
 #cover {
-  background-image: url("data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw%3D%3D");
+  background-image: url("../../images/6107394084_09dde7a9fc_o.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   z-index: 3;
+
+  .cover-title {
+    font-family: "Ewert", cursive;
+    font-size: 4em;
+    padding: 75px;
+  }
+  .cover-content {
+    font-weight: bold;
+    color: #f7c942;
+  }
 }
 #cover_back {
   z-index: 2;
+  background-image: url("https://lambton.ogs.on.ca/wp-content/uploads/sites/19/2017/10/OldPaper.jpg");
+  .Player-profile-pic {
+    padding-top: 15px;
+  }
 }
 
 /* Unset animation on content page (it shouldn't turn) */
@@ -139,7 +158,7 @@ body {
   /* Some styling */
   padding: 10px 25px;
   overflow-y: auto;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/84/Parchment.00.jpg");
+  background-image: url("https://lambton.ogs.on.ca/wp-content/uploads/sites/19/2017/10/OldPaper.jpg");;
 }
 
 /* Setting up the animations */
