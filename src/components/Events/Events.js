@@ -11,6 +11,22 @@ import friendRequests from '../../firebaseRequests/friends';
 import {ProgressBar} from 'react-bootstrap';
 import percentageBar from '../../helpers/percentageBar';
 
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    backgroundColor: 'rgba(0,0,0,1)',
+    zIndex: 9999,
+    // transform: 'translate(-50%, -50%)',
+  },
+  overlay: {
+    zIndex: 9999,
+    backgroundColor: 'rgb(212,156,100,0.95)',
+  },
+};
 class Events extends React.Component {
 
   constructor () {
@@ -324,56 +340,59 @@ class Events extends React.Component {
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
-          contentLabel="Example Modal"
+          contentLabel="Events Modal"
+          style={customStyles}
           className={this.state.myEvent.type}
         >
-          {friendly ? (
-            <div>
-              <h1>{this.state.myEvent.type}</h1>
-              <h3>{this.state.friend.name}</h3>
-              <p>{this.state.friend.text}</p>
-              <button onClick={this.gimmeHealth.bind()} className="btn btn-info">Acknowledge</button>
-            </div>
-          ) : (
-            <div>
-              <h1>{this.state.myEvent.type}</h1>
-              <h4>{this.state.enemy.encounterText}</h4>
-              <div className="col-sm-6">
-                <h3>{this.props.player.name}</h3>
-                <h4 className="text-right">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
-                <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
-                <h4 className="text-right">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
-                <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
+          <div>
+            {friendly ? (
+              <div className="col-sm-8">
+                <h1>{this.state.myEvent.type}</h1>
+                <h3>{this.state.friend.name}</h3>
+                <p>{this.state.friend.text}</p>
+                <button onClick={this.gimmeHealth.bind()} className="btn btn-info">Acknowledge</button>
               </div>
-              <div className="col-sm-6">
+            ) : (
+              <div className="col-sm-8">
+                <h1>{this.state.myEvent.type}</h1>
+                <h4>{this.state.enemy.encounterText}</h4>
                 <div className="col-sm-6">
-                  <h3>{this.state.enemy.name}</h3>
-                  <p>{this.state.enemy.description}</p>
-                  <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
-                  <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
+                  <h3>{this.props.player.name}</h3>
+                  <h4 className="text-right">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
+                  <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+                  <h4 className="text-right">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
+                  <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
                 </div>
                 <div className="col-sm-6">
-                  <p>{this.state.events.eventText}</p>
-                  <p>{this.state.enemy.EncounterText}</p>
+                  <div className="col-sm-6">
+                    <h3>{this.state.enemy.name}</h3>
+                    <p>{this.state.enemy.description}</p>
+                    <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
+                    <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
+                  </div>
+                  <div className="col-sm-6">
+                    <p>{this.state.events.eventText}</p>
+                    <p>{this.state.enemy.EncounterText}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-sm-12">
-                <div className="col-sm-6">
-                  <h1>{this.state.pDmgResult} dmg</h1>
-                  <h2>{this.state.pGameMsg}</h2>
+                <div className="col-sm-12">
+                  <div className="col-sm-6">
+                    <h1>{this.state.pDmgResult} dmg</h1>
+                    <h2>{this.state.pGameMsg}</h2>
+                  </div>
+                  <div className="col-sm-6">
+                    <h1>{this.state.eDmgResult} dmg</h1>
+                    <h2>{this.state.eGameMsg}</h2>
+                  </div>
                 </div>
-                <div className="col-sm-6">
-                  <h1>{this.state.eDmgResult} dmg</h1>
-                  <h2>{this.state.eGameMsg}</h2>
-                </div>
-              </div>
 
-              <div className="col-sm-12">
-                {this.conditionalButtons()}
+                <div className="col-sm-12">
+                  {this.conditionalButtons()}
+                </div>
               </div>
-            </div>
-          )}
-
+            )
+            }
+          </div>
         </Modal>
       </div>
     );
