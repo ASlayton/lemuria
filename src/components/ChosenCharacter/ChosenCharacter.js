@@ -27,10 +27,10 @@ class ChosenCharacter extends React.Component {
       <div className="character-container">
         <div className="row">
           <button onClick={this.deleteCharacter}><span>&times;</span></button>
-          <div className="col-xs-6">
+          <div className="col-sm-6">
             <img className="profilePic" src={character.profilePic} alt="Chosen Character" />
           </div>
-          <div className="col-xs-6">
+          <div className="col-sm-6">
             <h1>{character.name}</h1>
             <p>{character.currentHealth} / {character.totalHealth}</p>
             <p>{character.currentPsyche} / {character.totalPsyche}</p>
