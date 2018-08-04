@@ -313,12 +313,12 @@ class Events extends React.Component {
       friendly = false;
     };
     return (
-      <div>
+      <div className="col-sm-2 col-sm-offset-9">
         <div className="button-container">
-          <button className="btn btn-default" onClick={this.openModal}>Venture Forward</button>
-          <button className="btn btn-default"  onClick={this.openModal}>Veer to the left</button>
-          <button className="btn btn-default"  onClick={this.openModal}>Veer to the right</button>
-          <button className="btn btn-default"  onClick={this.openModal}>Wait</button>
+          <button className="btn btn-default event-btn" onClick={this.openModal}>Venture Forward</button>
+          <button className="btn btn-default event-btn"  onClick={this.openModal}>Veer to the left</button>
+          <button className="btn btn-default event-btn"  onClick={this.openModal}>Veer to the right</button>
+          <button className="btn btn-default event-btn"  onClick={this.openModal}>Wait</button>
         </div>
         <Modal
           isOpen={this.state.modalIsOpen}

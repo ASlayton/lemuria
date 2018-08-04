@@ -50,20 +50,27 @@ class GameScreen extends React.Component {
       return <Redirect to="/Death" />;
     }
     return (
-      <div>
-        <h1>Main Screen</h1>
-        <MyPlayer
-          playerHandler={this.playerHandler}
-          {...this.state}
-        />
+      <div classname="book-shadow">
+        <div className='page odd' id='cover'>
+          <h1 className="cover-title text-center cover-content">Lemuria</h1>
+          <h2 className="text-center cover-content">A Tale</h2>
+        </div>
+        <div className='page even' id='cover_back'>
+          <MyPlayer
+            playerHandler={this.playerHandler}
+            {...this.state}
+          />
+        </div>
+        <div className='page odd' id='content'>
+          <StoryLine
+            playerStatus={this.state.player}
+          />
+        </div>
         <Events
           deathCheck={this.deathCheck}
           player={this.state.player}
           playerHandler={this.playerHandler}
           playerLevel={this.playerLevel}
-        />
-        <StoryLine
-          playerStatus={this.state.player}
         />
       </div>
     );
