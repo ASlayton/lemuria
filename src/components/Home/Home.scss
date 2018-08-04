@@ -1,4 +1,18 @@
 .introParagraph {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Parchment.00.jpg/797px-Parchment.00.jpg");
-  background-size: cover;
+  margin-top: 25px;
+  border-radius: 10px 50px;
+  padding: 80px 50px 75px 50px;
+  box-shadow: 3px 7px 10px 0px rgba(0,0,0,0.75);
+  background-image: url("https://www.publicdomainpictures.net/pictures/40000/velka/background-1366644919rfW.jpg");
+  background-size: 100% 100%;
+  font-family: 'Special Elite', cursive;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-indent: 2em;
+}
+
+.link-style {
+  color: antiquewhite;
+  box-shadow: 3px 7px 10px 0px rgba(0,0,0,0.75);
+  font-size: 2em;
 }
