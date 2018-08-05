@@ -9,7 +9,7 @@ const resilience = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
 const constitution = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
 
 const defaultCharacter = {
-  profilePic: 'https://orig00.deviantart.net/aeb1/f/2013/197/4/f/chica_robot_oxidada___oxidized_robot_woman_by_carfaj-d6dtdnz.jpg',
+  profilePic: 'https://1.bp.blogspot.com/-UZ7nppqpMxM/WAFaW_1k1fI/AAAAAAAAC-U/LPuHKq3eBycOQLnRawQOlrpc8KERAkyHwCLcB/s320/e3f2f42421a1e56ffc94be0e42ad63b8.jpg',
   name: '',
   totalHealth: 25,
   currentHealth: 25,

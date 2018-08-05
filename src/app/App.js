@@ -12,6 +12,7 @@ import GameScreen from '../components/GameScreen/GameScreen';
 import fbConnection from '../firebaseRequests/connection';
 import './App.css';
 import CreateCharacter from '../components/CreateCharacter/CreateCharacter';
+import LandingPage from '../components/LandingPage/LandingPage';
 
 // START FIREBASE CONNECTION
 fbConnection();
@@ -26,7 +27,7 @@ const PrivateRoute = ({ component: Component, authed, ...rest}) => {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: '/Home'}}
+            to={{ pathname: '/LandingPage'}}
           />
         )
       }
@@ -86,7 +87,12 @@ class App extends React.Component {
             />
             <div>
               <Switch>
-                <Route path="/" exact component={Home} />
+                <Route path="/" exact component={LandingPage} />
+                <PublicRoute
+                  path="/LandingPage"
+                  authed={this.state.authed}
+                  component={LandingPage}
+                />
                 <PublicRoute
                   path="/register"
                   authed={this.state.authed}
@@ -97,7 +103,7 @@ class App extends React.Component {
                   authed={this.state.authed}
                   component={Death}
                 />
-                <Route
+                <PrivateRoute
                   path="/Home"
                   authed={this.state.authed}
                   component={Home}

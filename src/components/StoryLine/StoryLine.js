@@ -34,7 +34,7 @@ class StoryLine extends React.Component {
     return (
       <div>
         <h1>The Tale Thus Far</h1>
-        <div>
+        <div className="story-container">
           <h3>{this.state.story.title}</h3>
           <p>{this.state.showIt}</p>
         </div>
