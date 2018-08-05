@@ -50,7 +50,7 @@ class GameScreen extends React.Component {
       return <Redirect to="/Death" />;
     }
     return (
-      <div classname="book-shadow">
+      <div className="book-shadow">
         <div className='page odd' id='cover'>
           <h1 className="cover-title text-center cover-content">Lemuria</h1>
           <h2 className="text-center cover-content">A Tale</h2>
