@@ -1,4 +1,11 @@
 .logo-container {
-  width: 100%;
-  height: 100%;
+  background-size: 100% 100%;
+  background-image: url(../../images/logo.png);
+  opacity:0.8;
+  background-color:#ccc;
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:70px;
+  left:0px;
 }
