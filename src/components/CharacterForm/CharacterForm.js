@@ -182,7 +182,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Constitution:</h3>
-          <button onClick={this.rollTheDieCon.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieCon.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -218,8 +218,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <div className="col-sm-6">
-            <h3>Psyche:</h3>
-            <h3>{this.state.newCharacter.totalPsyche}</h3>
+            <h3>Psyche: {this.state.newCharacter.totalPsyche}</h3>
           </div>
           <div className="col-sm-6">
             <h3>Fortitude: {this.state.newCharacter.fortitude}</h3>
@@ -232,7 +231,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Fortitude:</h3>
-          <button onClick={this.rollTheDieFort.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieFort.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -255,7 +254,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Resilience:</h3>
-          <button onClick={this.rollTheDieRes.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieRes.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -265,12 +264,10 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <div className="col-sm-6">
-            <h3>Attack Modifier:</h3>
-            <h3>{this.state.newCharacter.attack}</h3>
+            <h3>Attack Modifier: {this.state.newCharacter.attack}</h3>
           </div>
           <div className="col-sm-6">
-            <h3>Strength:</h3>
-            <h3>{this.state.newCharacter.strength}</h3>
+            <h3>Strength: {this.state.newCharacter.strength}</h3>
             <button type="button" onClick={this.subtractStrPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-minus"></span></button>
             <button type="button" onClick={this.addStrPoint.bind()} className="btn btn-default"><span className="glyphicon glyphicon-plus"></span></button>
           </div>
@@ -280,7 +277,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Strength:</h3>
-          <button onClick={this.rollTheDieStr.bind()}><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieStr.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -289,7 +286,7 @@ class CharacterForm extends React.Component {
   submitBtn = () => {
     if (this.state.resRolled && this.state.conRolled && this.state.fortRolled && this.state.strRolled) {
       return (
-        <button type="submit">Save Character</button>
+        <button type="submit" className="btn btn-info col-sm-4 col-sm-offset-4">Save Character</button>
       );
     };
   }
@@ -299,7 +296,7 @@ class CharacterForm extends React.Component {
     return (
       <div className="form-container col-sm-10 col-sm-offset-1">
         <form onSubmit={this.formSubmit}>
-          <fieldset>
+          <fieldset className="text-center">
             <label htmlFor="name">Name:</label>
             <br/>
             <input
@@ -310,7 +307,7 @@ class CharacterForm extends React.Component {
               onChange={this.nameChange}
             />
           </fieldset>
-          <fieldset>
+          <fieldset className="text-center">
             <label htmlFor="profilePic">Avatar:</label>
             <br/>
             <input
@@ -321,24 +318,29 @@ class CharacterForm extends React.Component {
               onChange={this.imageChange}
             />
           </fieldset>
+          <br/>
           {this.submitBtn()}
         </form>
 
         <div className="row">
-          <h3>Points Pot: {this.state.pointsPot}</h3>
+          <h3 className="text-center">Points Pot: {this.state.pointsPot}</h3>
         </div>
         <div>
           <div className="row">
-            {this.conButtons()}
+            <div className="col-sm-6">
+              {this.conButtons()}
+            </div>
+            <div className="col-sm-6">
+              {this.fortButtons()}
+            </div>
           </div>
           <div className="row">
-            {this.fortButtons()}
-          </div>
-          <div className="row">
-            {this.strButtons()}
-          </div>
-          <div className="row">
-            {this.resButtons()}
+            <div className="col-sm-6">
+              {this.strButtons()}
+            </div>
+            <div className="col-sm-6">
+              {this.resButtons()}
+            </div>
           </div>
         </div>
       </div>
