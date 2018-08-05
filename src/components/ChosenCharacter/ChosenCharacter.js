@@ -26,27 +26,31 @@ class ChosenCharacter extends React.Component {
     return (
       <div className="character-container">
         <div className="row">
-          <button onClick={this.deleteCharacter}><span>&times;</span></button>
-          <div className="col-xs-6">
+          <button className="btn btn-danger text-center" onClick={this.deleteCharacter}><span>Delete Character</span></button>
+          <div className="col-sm-6">
             <img className="profilePic" src={character.profilePic} alt="Chosen Character" />
           </div>
-          <div className="col-xs-6">
+          <div className="col-sm-6">
             <h1>{character.name}</h1>
+            <h3>Health:</h3>
             <p>{character.currentHealth} / {character.totalHealth}</p>
+            <h3>Psyche:</h3>
             <p>{character.currentPsyche} / {character.totalPsyche}</p>
+            <h3>Attributes:</h3>
             <div className="row">
-              <p>ATK: {character.attackModifier}</p>
-              <p>STR: {character.strength}</p>
+              <p className="col-sm-6">ATK: {character.attackModifier}</p>
+              <p className="col-sm-6">STR: {character.strength}</p>
             </div>
             <div className="row">
-              <p>DEF: {character.defense}</p>
-              <p>RES: {character.resilience}</p>
+              <p className="col-sm-6">DEF: {character.defense}</p>
+              <p className="col-sm-6">RES: {character.resilience}</p>
             </div>
             <div className="row">
-              <p>CON: {character.constitution}</p>
-              <p>FOR: {character.fortitude}</p>
+              <p className="col-sm-6">CON: {character.constitution}</p>
+              <p className="col-sm-6">FOR: {character.fortitude}</p>
             </div>
           </div>
+
         </div>
         <Link className="link-style" to="/GameScreen">Start Game</Link>
       </div>

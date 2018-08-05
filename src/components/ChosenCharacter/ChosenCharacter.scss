@@ -1,4 +1,11 @@
 .character-container {
+  width: 50%;
+  float: right;
+
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Parchment.00.jpg/797px-Parchment.00.jpg");
-  background-size: cover;
+  background-size: 100% 100%;
+  .profilePic {
+    padding: 10px 0 0 10px;
+    width: 200px;
+  }
 }

@@ -5,8 +5,11 @@ body {
 }
 
 .link-style {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
   font-family: "Gaegu", cursive;
-  font-size: 1.2em;
-  color: black;
+  font-size: 1.5em;
+  color: navy;
   font-weight: bold;
 }

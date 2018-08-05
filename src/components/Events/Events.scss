@@ -1,14 +1,5 @@
-.fading-value {
-  opacity: 0;
-  animation: fade 2s forwards;
-}
-
-@keyframes fade {
-  50% { opacity: 1 }
-}
-
 .button-container {
-  padding-top: 50px;
+  padding-top: 150px;
   width: 250px;
   background-size: contain;
   background-repeat: no-repeat;
@@ -25,22 +16,6 @@
   }
 }
 
-.Modal {
-  z-index: 10;
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  right: 40px;
-  bottom: 40px;
-  background-color: papayawhip;
-}
-
-.Overlay {
-  z-index: 9;
-  background-color: rgba(0,0,0,0.7);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+.ReactModal__Overlay .ReactModal__Overlay--after-open {
+  z-index: 0;
 }

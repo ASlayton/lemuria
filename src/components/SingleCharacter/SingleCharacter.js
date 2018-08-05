@@ -20,10 +20,15 @@ class CharacterItem extends React.Component {
     const {character} = this.props;
 
     return (
-      <li onClick={this.characterClick} className="character-card col-sm-3">
-        <img src={character.profilePic} alt={character.name} className="profile-image"/>
+      <li onClick={this.characterClick} className="character-card col-sm-4">
+        <div className="image-container">
+          <img src={character.profilePic} alt={character.name} className="profile-image text-center"/>
+          <div className="char-img-frame">
+          </div>
+        </div>
         <h1>{character.name}</h1>
       </li>
+
     );
   };
 };
