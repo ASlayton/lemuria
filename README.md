@@ -1,7 +1,7 @@
 # Lemuria - A Tale
 
 ## Description
-Lemuria is a text-based RPG built around a Jules Verne-esque landscape. In a space-exploration voyage gone wrong, you have crash landed in the Land of Lemuria - a land being reclaimed by the natural realm after its inhabitants have self-destructed in a technological apocalypse. You must make your way through the treacherous landscape to find someone who may be able to send you back to your own world. Basic idea of gameplay - you can create a character, choose a character you have already played, delete character. Once in the game, you can accept events in order to gain experience. Once you gain so much experience, the story advances.
+Lemuria is a text-based RPG built around a Jules Verne-esque landscape. In a space-exploration voyage gone wrong, you have crash landed in the Land of Lemuria - a land being reclaimed by the natural realm after its inhabitants have self-destructed in a technological apocalypse. You must make your way through the treacherous landscape to find someone who may be able to send you back to your own world. Basic idea of game play - you can create a character, choose a character you have already played, delete character. Once in the game, you can accept events in order to gain experience. Once you gain so much experience, the story advances.
 
 ## Features
 1. Users can have multiple characters
