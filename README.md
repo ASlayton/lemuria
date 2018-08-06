@@ -9,6 +9,17 @@ Lemuria is a text-based RPG built around a Jules Verne-esque landscape. In a spa
 1. Random read of combat messages in response to event happenings
 1. Random events - combat or meet
 
+## Screenshots
+![Landing Page](https://github.com/ASlayton/lemuria/blob/master/screenshots/LandingPage.png?raw=true)
+
+![Register](https://github.com/ASlayton/lemuria/blob/master/screenshots/register.png?raw=true)
+
+![Character Screen](https://github.com/ASlayton/lemuria/blob/master/screenshots/CharacterScreen.png?raw=true)
+
+![Character Form](https://github.com/ASlayton/lemuria/blob/master/screenshots/CreateCharacterForm.png?raw=true)
+
+![Game Screen](https://github.com/ASlayton/lemuria/blob/master/screenshots/GameScreen.png?raw=true)
+
 ## Coming Soon
 - Inventory System
 - Wider variety of events
@@ -19,8 +30,6 @@ Lemuria is a text-based RPG built around a Jules Verne-esque landscape. In a spa
 - SASS
 - Bootstrap
 - React Modal
-
-## Screenshots
 
 ## How to Run
 1. Clone repo down from GitHub.com
