@@ -1,11 +1,11 @@
 .character-card {
     list-style: none;
-    background-color: ghostwhite;
-    box-shadow: 0 0 5px 10px ghostwhite;
+    background-color: antiquewhite;
+    box-shadow: 0 0 5px 10px antiquewhite;
 
     .image-container {
-      width: 100px;
-      height: 100px;
+      width: 100%;
+      height: 150px;
       position: relative;
     }
     .profile-image, .char-img-frame {
@@ -18,6 +18,7 @@
   .profile-image {
     width: 100%;
     overflow: hidden;
+    margin: auto;
   }
   .char-img-frame {
     background-image: url("https://i.pinimg.com/originals/c2/4c/3b/c24c3b8b9736830196a12d19096b1c31.png");

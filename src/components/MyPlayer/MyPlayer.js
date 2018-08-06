@@ -9,11 +9,8 @@ class MyPlayer extends React.Component {
   }
   render () {
     return (
-      <div className="myPlayer-container">
-        <div className="profile-image-container text-center">
-          <img src={this.props.player.profilePic} alt="Profile" className="player-profile-pic text-center"/>
-          <div className="picture-frame"></div>
-        </div>
+      <div className="myPlayer-container text-center">
+        <img src={this.props.player.profilePic} alt="Profile" className="player-profile-pic text-center"/>
         <div className="profile-info">
           <div className="col-sm-12">
             <h3 className="col-sm-6">{this.props.player.name}</h3>
