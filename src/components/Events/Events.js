@@ -13,18 +13,19 @@ import percentageBar from '../../helpers/percentageBar';
 
 const customStyles = {
   content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    backgroundColor: 'rgba(0,0,0,1)',
+    margin: '150px 50px',
+    // top: '50%',
+    // left: '50%',
+    // right: 'auto',
+    // bottom: 'auto',
+    // marginRight: '-50%',
+    backgroundColor: 'white',
     zIndex: 9999,
     // transform: 'translate(-50%, -50%)',
   },
   overlay: {
     zIndex: 9999,
-    backgroundColor: 'rgb(212,156,100,0.95)',
+    backgroundColor: 'rgb(0,0,0,0.75)',
   },
 };
 class Events extends React.Component {
@@ -342,18 +343,17 @@ class Events extends React.Component {
           onRequestClose={this.closeModal}
           contentLabel="Events Modal"
           style={customStyles}
-          className={this.state.myEvent.type}
         >
           <div>
             {friendly ? (
               <div className="col-sm-8">
-                <h1>{this.state.myEvent.type}</h1>
+                <h1 className="">{this.state.myEvent.type}</h1>
                 <h3>{this.state.friend.name}</h3>
-                <p>{this.state.friend.text}</p>
+                <h4>{this.state.friend.text}</h4>
                 <button onClick={this.gimmeHealth.bind()} className="btn btn-info">Acknowledge</button>
               </div>
             ) : (
-              <div className="col-sm-8">
+              <div className="col-sm-8 col-sm-offset-2">
                 <h1>{this.state.myEvent.type}</h1>
                 <h4>{this.state.enemy.encounterText}</h4>
                 <div className="col-sm-6">
@@ -364,9 +364,9 @@ class Events extends React.Component {
                   <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
                 </div>
                 <div className="col-sm-6">
+                  <h3>{this.state.enemy.name}</h3>
+                  <h4>{this.state.enemy.description}</h4>
                   <div className="col-sm-6">
-                    <h3>{this.state.enemy.name}</h3>
-                    <p>{this.state.enemy.description}</p>
                     <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
                     <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
                   </div>
