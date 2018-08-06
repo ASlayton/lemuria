@@ -342,7 +342,7 @@
   },
   "event83": {
     "type": "combat",
-    "encounter": "fie05"
+    "encounter": "foe05"
   },
   "event84": {
     "type": "combat",
