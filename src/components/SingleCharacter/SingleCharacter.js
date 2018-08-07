@@ -21,10 +21,10 @@ class CharacterItem extends React.Component {
 
     return (
       <li onClick={this.characterClick} className="character-card col-sm-4">
-        <div className="image-container text-center">
+        <div className="image-container col-sm-12">
+          <div></div>
           <img src={character.profilePic} alt={character.name} className="profile-image"/>
-          <div className="char-img-frame">
-          </div>
+          <div className="img-frame"></div>
         </div>
         <h1>{character.name}</h1>
       </li>

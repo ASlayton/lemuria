@@ -1,27 +1,8 @@
 .character-card {
-    list-style: none;
-    background-color: antiquewhite;
-    box-shadow: 0 0 5px 10px antiquewhite;
-
-    .image-container {
-      width: 100%;
-      height: 150px;
-      position: relative;
-    }
-    .profile-image, .char-img-frame {
-      height: 100%;
-      margin: auto;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  .profile-image {
-    width: 100%;
-    overflow: hidden;
-    margin: auto;
-  }
-  .char-img-frame {
-    background-image: url("https://i.pinimg.com/originals/c2/4c/3b/c24c3b8b9736830196a12d19096b1c31.png");
-    background-size: 100% 100%;
-  }
+  list-style: none;
+  background-color: antiquewhite;
+  box-shadow: 0 0 5px 10px antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
