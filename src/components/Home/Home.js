@@ -2,6 +2,7 @@ import './Home.css';
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+// THIS IS A LANDING PAGE IF YOU ARE ALREADY SIGNED IN
 class Home extends React.Component {
   render () {
     return (

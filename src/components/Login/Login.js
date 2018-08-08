@@ -13,6 +13,7 @@ class Login extends React.Component {
     },
   };
 
+  // LOGIN BUTTON IS CLICKED, FIREBASE METHOD IS USED
   loginClickEvent = (e) => {
     const { user } = this.state;
     e.preventDefault();
@@ -26,12 +27,14 @@ class Login extends React.Component {
       });
   };
 
+  // ALLOW EMAIL INPUT FIELD TO CHANGE
   emailChange = e => {
     const tempUser = { ...this.state.user };
     tempUser.email = e.target.value;
     this.setState({ user: tempUser });
   };
 
+  // ALLOW PASSWORD INPUT FIELD TO CHANGE
   passwordChange = e => {
     const tempUser = { ...this.state.user };
     tempUser.password = e.target.value;
