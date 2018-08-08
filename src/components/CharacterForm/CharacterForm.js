@@ -188,7 +188,7 @@ class CharacterForm extends React.Component {
       this.setState({pointsPot: tempPointsPot});
       const tempResCount = (this.state.resCount * 1) + 1;
       this.setState({resCount: tempResCount});
-    }
+    };
   };
   subtractResPoint = () => {
     if (this.state.resCount > -3) {
@@ -199,22 +199,22 @@ class CharacterForm extends React.Component {
       this.setState({pointsPot: tempPointsPot});
       const tempResCount = (this.state.resCount * 1) - 1;
       this.setState({resCount: tempResCount});
-    }
+    };
   };
   evalDefenseAmt = () => {
     const resAmt = this.state.newCharacter.resilience;
     const tempCharacter = {...this.state.newCharacter};
     if (resAmt >= 18) {
-      tempCharacter.defense = 30;
+      tempCharacter.defense = 16;
       this.setState({newCharacter: tempCharacter});
     } else if (resAmt < 18 && resAmt >= 14) {
-      tempCharacter.defense = 25;
+      tempCharacter.defense = 15;
       this.setState({newCharacter: tempCharacter});
     } else if (resAmt < 14 && resAmt >= 9) {
-      tempCharacter.defense = 20;
+      tempCharacter.defense = 14;
       this.setState({newCharacter: tempCharacter});
     } else if (resAmt < 9 && resAmt >= 5) {
-      tempCharacter.defense = 15;
+      tempCharacter.defense = 12;
       this.setState({newCharacter: tempCharacter});
     } else {
       tempCharacter.defense = 10;

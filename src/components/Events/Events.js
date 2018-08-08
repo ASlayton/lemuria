@@ -46,9 +46,9 @@ class Events extends React.Component {
       combatMsg: {},
       player: {},
 
-      eDmgResult: 1,
+      eDmgResult: 0,
       eGameMsg: '',
-      pDmgResult: 1,
+      pDmgResult: 0,
       pGameMsg: '',
     };
     this.openModal = this.openModal.bind(this);
@@ -105,10 +105,8 @@ class Events extends React.Component {
   whoAmICalling = () => {
     const myEventType = this.state.myEvent.type;
     if (myEventType === 'meet') {
-      console.log('My friend Id:', this.state.myEvent.encounter);
       this.getFriend(this.state.myEvent.encounter);
     } else if (myEventType === 'combat') {
-      console.log('My enemy ID:', this.state.myEvent.encounter);
       this.getEnemy(this.state.myEvent.encounter);
     };
   };
@@ -259,9 +257,13 @@ class Events extends React.Component {
       player.exp = (player.exp * 1) + (this.state.enemy.ExperienceAwarded * 1);
       this.setState({player});
       this.evalXP();
+      // PLAYER GOES MAD
+    } else if (this.state.player.currentPsyche <= 0) {
+      const pGameMsg = this.state.combatMsg[12].msg;
+      this.setState({pGameMsg});
     } else {
       if (turn === 'playerTurn') {
-        this.enemyStrikeBack();
+        setTimeout(this.enemyStrikeBack.bind(), 1500);
       } else if (turn === 'enemyTurn') {
         this.evalXP();
       };
@@ -285,7 +287,7 @@ class Events extends React.Component {
   };
 
   conditionalButtons = () => {
-    if (this.props.player.currentHealth <= 0) {
+    if (this.props.player.currentHealth <= 0 || this.props.player.currentPsyche <= 0) {
       return (
         <div>
           <h1>You are Dead</h1>
@@ -329,6 +331,8 @@ class Events extends React.Component {
     } else {
       friendly = false;
     };
+    const didPDamage = this.state.pDmgResult > 0;
+    const didEDamage = this.state.eDmgResult > 0;
     return (
       <div className="col-sm-2 col-sm-offset-9">
         <div className="button-container">
@@ -347,14 +351,12 @@ class Events extends React.Component {
           <div>
             {friendly ? (
               <div className="col-sm-8">
-                <h1 className="">{this.state.myEvent.type}</h1>
                 <h3>{this.state.friend.name}</h3>
                 <h4>{this.state.friend.text}</h4>
                 <button onClick={this.gimmeHealth.bind()} className="btn btn-info">Acknowledge</button>
               </div>
             ) : (
               <div className="col-sm-8 col-sm-offset-2">
-                <h1>{this.state.myEvent.type}</h1>
                 <h4>{this.state.enemy.encounterText}</h4>
                 <div className="col-sm-6">
                   <h3>{this.props.player.name}</h3>
@@ -377,11 +379,18 @@ class Events extends React.Component {
                 </div>
                 <div className="col-sm-12">
                   <div className="col-sm-6">
-                    <h1>{this.state.pDmgResult} dmg</h1>
+                    {
+                      didPDamage ?
+                        <h1 className="itsAHit">{this.state.pDmgResult} dmg</h1> : <div></div>
+                    }
+
                     <h2>{this.state.pGameMsg}</h2>
                   </div>
                   <div className="col-sm-6">
-                    <h1>{this.state.eDmgResult} dmg</h1>
+                    {
+                      didEDamage ?
+                        <h1 className="itsAHit">{this.state.eDmgResult} dmg</h1> : <div></div>
+                    }
                     <h2>{this.state.eGameMsg}</h2>
                   </div>
                 </div>
