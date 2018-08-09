@@ -11,10 +11,12 @@ class ChosenCharacter extends React.Component {
       .characterDeleteRequest(firebaseId)
       .then(() => {
         window.parent.location.reload();
+        // this.props.removeFromCharacters(firebaseId);
       })
       .catch((err) => {
         console.error('error with delete request', err);
       });
+
   }
   render () {
     const {character} = this.props;

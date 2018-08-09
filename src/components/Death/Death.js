@@ -1,3 +1,5 @@
+// SCREEN SHOWN WHEN PLAYER DIES OR GOES MAD
+
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Death.css';
