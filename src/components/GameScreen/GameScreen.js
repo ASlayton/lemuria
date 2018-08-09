@@ -19,7 +19,9 @@ class GameScreen extends React.Component {
     });
   }
   componentDidMount () {
+    // FIND PLAYER ID
     const myPlayerId = auth.getCharacterId();
+    // GET DATA FOR SPECIFIC CHARACTER
     characterRequests.getSingleCharacterRequest(myPlayerId)
       .then((character) => {
         this.setState({player: character});
@@ -29,18 +31,21 @@ class GameScreen extends React.Component {
       });
   };
 
+  // SET THE STORY STATE ON PARENT CONTAINER
   storyHandler = (story) => {
     this.setState({
       story: {story},
     });
   }
 
+  // CHECK IF THE PLAYER HAS DIED OR GONE MAD
   deathCheck = () => {
-    if (this.state.player.currentHealth <= 0) {
+    if (this.state.player.currentHealth <= 0 || this.state.player.currentPsyche <= 0) {
       this.setState({redirect: true});
     }
   };
 
+  // SET THE PLAYER LEVEL ON PARENT CONTAINER
   playerLevel = (playerLevel) => {
     this.setState({playerLevel});
   };

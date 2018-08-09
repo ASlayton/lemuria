@@ -1,5 +1,7 @@
 import './LandingPage.css';
 import React from 'react';
+
+// IF NOT SIGNED IN, USER IS DIRECTED HERE
 class LandingPage extends React.Component {
   render () {
     return (

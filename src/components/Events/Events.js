@@ -11,17 +11,12 @@ import friendRequests from '../../firebaseRequests/friends';
 import {ProgressBar} from 'react-bootstrap';
 import percentageBar from '../../helpers/percentageBar';
 
+// STYLING FOR THE REACT MODAL
 const customStyles = {
   content: {
     margin: '150px 50px',
-    // top: '50%',
-    // left: '50%',
-    // right: 'auto',
-    // bottom: 'auto',
-    // marginRight: '-50%',
     backgroundColor: 'white',
     zIndex: 9999,
-    // transform: 'translate(-50%, -50%)',
   },
   overlay: {
     zIndex: 9999,
@@ -29,7 +24,7 @@ const customStyles = {
   },
 };
 class Events extends React.Component {
-
+// SET DEFAULT STATE
   constructor () {
     super();
     this.state = {
@@ -52,30 +47,29 @@ class Events extends React.Component {
       pGameMsg: '',
     };
     this.openModal = this.openModal.bind(this);
-    this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.pickAnEvent = this.pickAnEvent.bind(this);
     this.getEnemy = this.getEnemy.bind(this);
   }
 
+  // CALLED WHEN AN EVENT BUTTON IS PUSHED
   openModal () {
     this.setState({modalIsOpen: true});
     this.pickAnEvent();
   }
 
-  afterOpenModal () {
-    // this.subtitle.style.color = '#f00';
-  }
-
+  // ON MODAL CLOSE
   closeModal () {
     this.props.deathCheck();
     this.setState({modalIsOpen: false});
   }
 
+  // DEFINE WHERE MODAL IS
   componentWillMount () {
     Modal.setAppElement('body');
   };
 
+  // WHEN EVENTS COMPONENT MOUNTS, GET EVENT AND GAME MESSAGE DATA FROM FIREBASE TO USE. SET THE INITIAL FOE AND FRIEND SO DATA IS NOT BLANK THE FIRST TIME MODAL IS OPEN.
   componentDidMount () {
     eventRequests.eventGetRequest()
       .then((events) => {
@@ -95,6 +89,7 @@ class Events extends React.Component {
       });
   };
 
+  // WHEN MODAL OPENS, PICK A RANDOM EVENT AND SET IT TO STATE
   pickAnEvent = () => {
     const eventRoll = dieroll(1,99);
     const myEvent = this.state.events[eventRoll];
@@ -102,6 +97,7 @@ class Events extends React.Component {
     this.whoAmICalling();
   };
 
+  // GET DATA OF FRIEND OR FOE DEPENDING ON THE TYPE OF EVENT CHOSEN
   whoAmICalling = () => {
     const myEventType = this.state.myEvent.type;
     if (myEventType === 'meet') {
@@ -111,6 +107,7 @@ class Events extends React.Component {
     };
   };
 
+  // GET DATA OF SPECIFIC ENEMY CALLED
   getEnemy = (enemyId) => {
     enemyRequests.getSingleFoeRequest(enemyId)
       .then((enemy) => {
@@ -121,6 +118,7 @@ class Events extends React.Component {
       });
   };
 
+  // GET DATA OF SPECIFIC FRIEND CALLED
   getFriend = (friendId) => {
     friendRequests.getSingleFriendRequest(friendId)
       .then((friend) => {
@@ -131,10 +129,15 @@ class Events extends React.Component {
       });
   };
 
+  // WHEN PLAYER PRESSES ATTACK BUTTON
   commenceAtk = () => {
+    // PLAYER ROLLS ATTACK
     const attackRoll = dieroll(1, 20) * 1;
+    // GET RANDOM NUMBER TO PICK MESSAGE
     const getRandom = dieroll(0,9) * 1;
+    // GET ENEMY DEFENSE
     const enemyDefense = this.state.enemy.defense * 1;
+    // PLAYER ROLLS CRITICAL MISS - DAMAGES SELF
     if (attackRoll === 1) {
       const playerDmg = dieroll(1, 6);
       const player = Object.assign({}, this.props.player);
@@ -143,6 +146,7 @@ class Events extends React.Component {
       this.setState({pDmgResult: playerDmg});
       const pGameMsg = this.state.combatMsg[7].msg;
       this.setState({pGameMsg});
+    // PLAYER ROLLS CRITICAL HIT, DOES DOUBLE DAMAGE
     } else if (attackRoll === 20) {
       const enemyDmg = dieroll(1, 12);
       const enemy = Object.assign({}, this.state.enemy);
@@ -151,6 +155,7 @@ class Events extends React.Component {
       this.setState({pDmgResult: enemyDmg});
       const pGameMsg = this.state.combatMsg[6].msg;
       this.setState({pGameMsg});
+    // PLAYER ATTACK IS >= ENEMY DEFENSE = SUCCESSFUL HIT
     } else if (attackRoll >= enemyDefense) {
       const enemyDmg = dieroll(1, 6);
       const enemy = Object.assign({}, this.state.enemy);
@@ -159,6 +164,7 @@ class Events extends React.Component {
       this.setState({pDmgResult: enemyDmg});
       const pGameMsg = this.state.combatMsg[10].msg[getRandom];
       this.setState({pGameMsg});
+    // PLAYER ATTACK IS < ENEMY DEFENSE = PLAYER MISSES
     } else if (attackRoll < enemyDefense) {
       this.setState({pDmgResult: 0});
       const pGameMsg = this.state.combatMsg[11].msg[getRandom];
@@ -166,14 +172,22 @@ class Events extends React.Component {
     } else {
       console.error('Something is not being evaluated correctly.');
     };
+    // NOW IT IS THE ENEMIES TURN
     this.evaluateStatus('playerTurn');
   };
 
+  // THE ENEMY STRIKES BACK AT THE PLAYER
   enemyStrikeBack = () => {
+    // ROLL FOR ENEMY ATTACK
     const attackRoll = dieroll(1, 20);
+    // GET RANDOM NUMBER TO CALL MESSAGE
     const getRandom = dieroll(0,9) * 1;
+    // GET PLAYER DEFENSE VALUE
     const playerDefense = this.props.player.defense * 1;
+    const playerPsycheDef = this.props.player.fortitude;
+    // THERE ARE 2 TYPES OF ENEMIES, THOSE THAT STRIKE HEALTH AND THOSE THAT STRIKE PSYCHE.
     if (this.state.enemy.damageType === 'health') {
+      // ENEMY ROLLS CRITICAL MISS, DAMAGES SELF
       if (attackRoll === 1) {
         const enemyDmg = dieroll(1, 6);
         const enemy = Object.assign({}, this.state.enemy);
@@ -182,6 +196,7 @@ class Events extends React.Component {
         this.setState({eDmgResult: enemyDmg});
         const eGameMsg = this.state.combatMsg[1].msg;
         this.setState({eGameMsg});
+      // ENEMY ROLLS CRITICAL HIT, DOES DOUBLE DAMAGE
       } else if (attackRoll === 20) {
         const playerDmg = dieroll(1, 12);
         const player = Object.assign({}, this.props.player);
@@ -190,6 +205,7 @@ class Events extends React.Component {
         this.setState({eDmgResult: playerDmg});
         const eGameMsg = this.state.combatMsg[0].msg;
         this.setState({eGameMsg});
+      // ENEMY ATTACK ROLL >= PLAYERS DEFENSE
       } else if (attackRoll >= playerDefense) {
         const playerDmg = dieroll(1, 6);
         const player = Object.assign({}, this.props.player);
@@ -198,6 +214,7 @@ class Events extends React.Component {
         this.setState({eDmgResult: playerDmg});
         const eGameMsg = this.state.combatMsg[4].msg[getRandom];
         this.setState({eGameMsg});
+      // ENEMY ATTACK IS LESS THAN PLAYERS DEFENSE = ENEMY MISS
       } else if (attackRoll < playerDefense) {
         this.setState({eDmgResult: 0});
         const eGameMsg = this.state.combatMsg[5].msg[getRandom];
@@ -205,7 +222,9 @@ class Events extends React.Component {
       } else {
         console.error('Something is not being evaluated correctly.');
       };
+    // IF ENEMY IS PSYCHE TYPE
     } else if (this.state.enemy.damageType === 'psyche') {
+      // ENEMY ROLLS CRITICAL MISS - DAMAGES SELF
       if (attackRoll === 1) {
         const enemyDmg = dieroll(1, 6);
         const enemy = Object.assign({}, this.state.enemy);
@@ -214,6 +233,7 @@ class Events extends React.Component {
         this.setState({eDmgResult: enemyDmg});
         const eGameMsg = this.state.combatMsg[1].msg;
         this.setState({eGameMsg});
+      // ENEMY ROLLS CRITICAL HIT - DOUBLE DAMAGE
       } else if (attackRoll === 20) {
         const playerDmg = dieroll(1, 12);
         const player = Object.assign({}, this.props.player);
@@ -222,7 +242,8 @@ class Events extends React.Component {
         this.setState({eDmgResult: playerDmg});
         const eGameMsg = this.state.combatMsg[0].msg;
         this.setState({eGameMsg});
-      } else if (attackRoll >= playerDefense) {
+      // ENEMY ATTACK ROLL IS >= PLAYER FORTITUDE = SUCCESSFUL HIT
+      } else if (attackRoll >= playerPsycheDef) {
         const playerDmg = dieroll(1, 6);
         const player = Object.assign({}, this.props.player);
         player.currentPsyche = player.currentPsyche - playerDmg;
@@ -230,7 +251,8 @@ class Events extends React.Component {
         this.setState({eDmgResult: playerDmg});
         const eGameMsg = this.state.combatMsg[4].msg[getRandom];
         this.setState({eGameMsg});
-      } else if (attackRoll < playerDefense) {
+      // ENEMY ATTACK ROLL IS < PLAYER FORTITUDE = MISS
+      } else if (attackRoll < playerPsycheDef) {
         this.setState({eDmgResult: 0});
         const eGameMsg = this.state.combatMsg[5].msg[getRandom];
         this.setState({eGameMsg});
@@ -239,10 +261,12 @@ class Events extends React.Component {
       };
 
     };
+    // CHECK STATUS OF PLAYER AND ENEMY TO DETERMINE NEXT MOVE
     this.evaluateStatus('enemyTurn');
   };
 
   evaluateStatus = (turn) => {
+    // SAVE PLAYER DATA TO FIREBASE
     const myCharacter = auth.getCharacterId();
     this.putResults(myCharacter, this.props.player);
     // Player is DEAD
@@ -256,12 +280,14 @@ class Events extends React.Component {
       const player = Object.assign({}, this.props.player);
       player.exp = (player.exp * 1) + (this.state.enemy.ExperienceAwarded * 1);
       this.setState({player});
+      // ADVANCE PLAYER LEVEL IF ENOUGH XP GAINED
       this.evalXP();
       // PLAYER GOES MAD
     } else if (this.state.player.currentPsyche <= 0) {
       const pGameMsg = this.state.combatMsg[12].msg;
       this.setState({pGameMsg});
     } else {
+      // IF THIS WAS CALLED DURING THE PLAYERS TURN, IT IS NOW THE ENEMIES TURN
       if (turn === 'playerTurn') {
         setTimeout(this.enemyStrikeBack.bind(), 1500);
       } else if (turn === 'enemyTurn') {
@@ -269,7 +295,7 @@ class Events extends React.Component {
       };
     };
   };
-
+  // ADVANCE PLAYER LEVEL IF HAVE ENOUGH XP
   evalXP = () => {
     const playerXP = this.props.player.exp;
     const tempPlayer = {...this.props.player};
@@ -277,6 +303,7 @@ class Events extends React.Component {
     this.setState({player: tempPlayer});
   };
 
+  // SAVE PLAYER DATA TO FIREBASE
   putResults = (id, updatedCharacter) => {
     characterRequests
       .characterPutRequest(id, updatedCharacter)
@@ -286,6 +313,7 @@ class Events extends React.Component {
       });
   };
 
+  // DECIDE WHICH BUTTONS SHOW BASED ON CHARACTER OR ENEMY HEALTH STATUS
   conditionalButtons = () => {
     if (this.props.player.currentHealth <= 0 || this.props.player.currentPsyche <= 0) {
       return (
@@ -311,6 +339,7 @@ class Events extends React.Component {
     }
   };
 
+  // IF YOU MEET A FRIEND IN THE FOREST - YOU GAIN EITHER HEALTH OR PSYCHE
   gimmeHealth = () => {
     const player = {...this.props.player};
     if (this.state.friend.bonus === 'health') {
@@ -320,7 +349,6 @@ class Events extends React.Component {
       player.currentPsyche = this.props.player.totalPsyche;
       this.props.playerHandler(player);
     };
-
     this.closeModal();
   };
 

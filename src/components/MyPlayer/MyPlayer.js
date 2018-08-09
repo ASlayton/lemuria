@@ -10,15 +10,20 @@ class MyPlayer extends React.Component {
   render () {
     return (
       <div className="myPlayer-container text-center">
-        <img src={this.props.player.profilePic} alt="Profile" className="player-profile-pic text-center"/>
+        <div className="picture-container">
+          <img src={this.props.player.profilePic} alt="Profile" className="player-profile-pic" />
+        </div>
         <div className="profile-info">
           <div className="col-sm-12">
             <h3 className="col-sm-6">{this.props.player.name}</h3>
             <h4 className="col-sm-6">LVL {this.props.player.level}</h4>
+            <h4>EXP {this.props.player.exp}</h4>
           </div>
           <div className="col-sm-12">
+            <h4>Health</h4>
             <h5>{this.props.player.currentHealth} / {this.props.player.totalHealth}</h5>
             <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+            <h4>Psyche</h4>
             <h5>{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h5>
             <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
           </div>
