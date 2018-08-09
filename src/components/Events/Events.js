@@ -61,6 +61,10 @@ class Events extends React.Component {
   // ON MODAL CLOSE
   closeModal () {
     this.props.deathCheck();
+    this.setState({eDmgResult: 0});
+    this.setState({pDmgResult: 0});
+    this.setState({eGameMsg: ''});
+    this.setState({pGameMsg: ''});
     this.setState({modalIsOpen: false});
   }
 
@@ -278,8 +282,8 @@ class Events extends React.Component {
       const eGameMsg = this.state.enemy.DeathMsg;
       this.setState({eGameMsg});
       const player = Object.assign({}, this.props.player);
-      player.exp = (player.exp * 1) + (this.state.enemy.ExperienceAwarded * 1);
-      this.setState({player});
+      player.exp = (player.exp * 1) + (this.state.enemy.xpAwarded * 1);
+      this.props.playerHandler(player);
       // ADVANCE PLAYER LEVEL IF ENOUGH XP GAINED
       this.evalXP();
       // PLAYER GOES MAD
@@ -298,9 +302,9 @@ class Events extends React.Component {
   // ADVANCE PLAYER LEVEL IF HAVE ENOUGH XP
   evalXP = () => {
     const playerXP = this.props.player.exp;
-    const tempPlayer = {...this.props.player};
-    tempPlayer.level = Math.floor(playerXP * 1 / 1000);
-    this.setState({player: tempPlayer});
+    const player = Object.assign({}, this.props.player);
+    player.level = Math.floor(playerXP * 1 / 1000);
+    this.props.playerHandler(player);
   };
 
   // SAVE PLAYER DATA TO FIREBASE
@@ -326,7 +330,7 @@ class Events extends React.Component {
       return (
         <div>
           <h1>You live to fight another day.</h1>
-          <button onClick={this.closeModal}>Acknowledge</button>
+          <button className="btn btn-info" onClick={this.closeModal}>Acknowledge</button>
         </div>
       );
     } else {
@@ -388,17 +392,19 @@ class Events extends React.Component {
                 <h4>{this.state.enemy.encounterText}</h4>
                 <div className="col-sm-6">
                   <h3>{this.props.player.name}</h3>
-                  <h4 className="text-right">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
-                  <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
-                  <h4 className="text-right">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
-                  <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
+                  <h4 className="col-sm-6">Health</h4>
+                  <h4 className="text-right col-sm-6">{this.props.player.currentHealth} / {this.props.player.totalHealth}</h4>
+                  <ProgressBar className="col-sm-12" bsStyle="warning" now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+                  <h4 className="col-sm-6">Psyche:</h4>
+                  <h4 className="text-right col-sm-6">{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h4>
+                  <ProgressBar className="col-sm-12" bsStyle="warning" now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
                 </div>
                 <div className="col-sm-6">
                   <h3>{this.state.enemy.name}</h3>
                   <h4>{this.state.enemy.description}</h4>
-                  <div className="col-sm-6">
-                    <h4 className="text-right">{this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
-                    <ProgressBar now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
+                  <div>
+                    <h4 className="text-right">Health: {this.state.enemy.currentHealth}/{this.state.enemy.health}</h4>
+                    <ProgressBar  bsStyle="warning" now={percentageBar(this.state.enemy.currentHealth, this.state.enemy.health)}/>
                   </div>
                   <div className="col-sm-6">
                     <p>{this.state.events.eventText}</p>

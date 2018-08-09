@@ -5,3 +5,12 @@ h1, h2, h3, h4, h5, h6 {
 p, label {
   font-family: 'Special Elite';
 }
+
+button {
+  font-family: 'Special Elite', cursive;
+  box-shadow: 3px 7px 10px 0px rgba(0,0,0,0.75);
+  background-image: url("https://thumbs.dreamstime.com/t/gold-metal-plaque-nameboard-rivets-background-54120817.jpg");
+  border: 5px solid darkgoldenrod;
+  font-weight: bolder;
+  margin-top: 10px;
+}

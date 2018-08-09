@@ -298,7 +298,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Constitution:</h3>
-          <button onClick={this.rollTheDieCon.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieCon.bind()} className="btn btn-default diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -322,7 +322,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Fortitude:</h3>
-          <button onClick={this.rollTheDieFort.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieFort.bind()} className="btn btn-default diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -345,7 +345,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Resilience:</h3>
-          <button onClick={this.rollTheDieRes.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieRes.bind()} className="btn btn-default diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }
@@ -368,7 +368,7 @@ class CharacterForm extends React.Component {
       return (
         <div>
           <h3>Roll Strength:</h3>
-          <button onClick={this.rollTheDieStr.bind()} className="diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
+          <button onClick={this.rollTheDieStr.bind()} className="btn btn-default diceBtn"><span><img src="https://www.spreadshirt.ca/image-server/v1/mp/designs/1005275915,width=178,height=178/d20.png" alt="die"/></span></button>
         </div>
       );
     }

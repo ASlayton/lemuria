@@ -22,10 +22,10 @@ class MyPlayer extends React.Component {
           <div className="col-sm-12">
             <h4>Health</h4>
             <h5>{this.props.player.currentHealth} / {this.props.player.totalHealth}</h5>
-            <ProgressBar now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
+            <ProgressBar  bsStyle="warning" now={percentageBar(this.props.player.currentHealth, this.props.player.totalHealth)} />
             <h4>Psyche</h4>
             <h5>{this.props.player.currentPsyche} / {this.props.player.totalPsyche}</h5>
-            <ProgressBar now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
+            <ProgressBar  bsStyle="warning" now={percentageBar(this.props.player.currentPsyche, this.props.player.totalPsyche)} />
           </div>
         </div>
       </div>
