@@ -6,8 +6,8 @@
     "description": "A humanoid spirit that wraps its itself in lava rock, this foe is capable of driving the stoutest minded being into madness",
     "encounterText": "You stop, there is a flickering light in the distance. Stealthily, you make your way forward, hoping to find a scout or friendly being. The flickering is moving, coming toward you. Hiding is no use, this thing is clearly coming for you. Stepping out of the brush, you are face to face with what looks to be a burning corpse. On closer look, this thing was never Lemurian. You draw your sword.",
     "deathMsg": "Giving a last flare, the flame engulfing the being before you extinguishes and is still. Panting, you clean your weapon and gather yourself together before heading on your way, hoping you never encounter another one of those spirits again.",
-    "health": 100,
-    "currentHealth": 100,
+    "health": 50,
+    "currentHealth": 50,
     "defense": 15,
     "xpAwarded":100
   },
@@ -18,8 +18,8 @@
     "description": "An air spirit that forms from any debris it can wrap itself in, Aef are formidable foes with a daunting attack.",
     "encounterText": "You are tired and decide to rest. You find a nice, dry fallen tree to sit on when suddenly the wind picks up around you. Not a single leaf is moving in the canopy above, but the sticks and debris scattered about the forest floor are being picked up. Covering your eyes, you glance the debris coming together to form a humanoid figure. It is clearly not happy at your presence. You prepare for attack.",
     "deathMsg": "With that last strike, the spirit drops the debris it had gathered into a form and swooshes past you with an angry whistle. That was far from pleasant and you feel worse for the wear. You continue on.",
-    "health": 100,
-    "currentHealth": 100,
+    "health": 50,
+    "currentHealth": 50,
     "defense": 15,
     "xpAwarded": 100
   },
@@ -31,8 +31,8 @@
     "encounterText": "As you walk, the ground beneath your feet begins to shake. You stop, looking about you. The dirt and stones you are standing on rise, shifting and joining. You jump back. Before you is a mighty Gnollem, your heart sinks as it lets loose a roar like a landslide.",
     "deathMsg":
     "The rocks making up the Gnollem fall apart, leaving no trace other than an oddly shaped stack of rocks and dirt. Angrily, you grab the rocks and throw them into the forest in opposite directions as hard as you can. You know it accomplishes nothing, but makes you feel better anyway. You continue on.",
-    "health":	100,
-    "currentHealth": 100,
+    "health":	50,
+    "currentHealth": 50,
     "defense": 15,
     "xpAwarded": 100
   },
@@ -43,8 +43,8 @@
     "description": "Dewdora are water spirits that dwell within trees. Hardly malicious in nature, they are fiercly territorial.",
     "encounterText": "You decide to sleep for the night. All is uneventful. As you stretch in the sunlight, you catch something stirring out of the corner of your eye. Did that bush just move. You gather your bedroll up and prepare to set off, to find yourself surrounded by bush which seems to be growing by the second. A muttering like the groaning of wood fills your ears. You prepare for attack.",
     "deathMsg": "With a last cut, you notice the bush is no longer growing back or striking back at you. You give the remaining brush a whack with your sword, just to make sure that it is gone. Gathering your things together, you hurry out of that area. You will eat your rations on the move.",
-    "health":	100,
-    "currentHealth": 100,
+    "health":	50,
+    "currentHealth": 50,
     "defense": 15,
     "xpAwarded": 100
   },
@@ -242,16 +242,16 @@
     "xpAwarded": 50
   },
   "foe21": {
-    "name":"Dedira",
+    "name":"Draame",
     "damageType": "psyche",
     "weapon": "Spirit Drain",
-    "description": "A nature spirit that thrives on the souls of Lemurians, Dedira is fascinated by you. Your soul is different from that of the Lemurians, older. Though currently less palatable, she preys on you throughout your journey, a beautiful and deadly siren.",
-    "encounterText": "There is a beautiful exotic flower waving gently before you. You approach, wrapping your fingers about the slender stem. Just as you are about to pull, a great shrieking wind blows up around you, knocking you back. A bewitching figure forms before you, her eyes catch yours and she looks at you, her head cocked to the side. A sharp pain courses through your head. \"You are not food, not yet.\"",
-    "deathMsg": "With one last cut, you hack through the rose, finally breaking the stem. The flower falls to the ground. A noise like a thousand sirens fills your senses, filling your head. You desperately try to hold onto your senses. The death cry overcomes you and you fall to your knees, crying yourself at the pain of it. Blessedly, you pass out. You wake some time later, confused as to what happened, but with a sense that you have just overcome a significant obstacle.",
-    "health": 1000,
-    "currentHealth": 1000,
-    "defense": 18,
-    "xpAwarded": 1000
+    "description": "A strange beast that resides within the trees, drawing the life energy of lost travellers",
+    "encounterText": "As you walk your steps get heavier and slower, until it takes nearly everything in you to so much as lift your foot. Just as you are about to collapse to the ground, the fog about your mind clears and you see a small shadow figure skirting behind a low bush. The spell upon you is broken and you dash forward, knowing full well that this being is the cause of your weakness.",
+    "deathMsg": "The Draame's form dissapates into mist. Though weaker, you are wiser for the experience.",
+    "health": 40,
+    "currentHealth": 40,
+    "defense": 10,
+    "xpAwarded": 100
   },
   "foe22": {
     "name":"Jirahn",
@@ -260,8 +260,8 @@
     "description": "A slow, ponderous worm, be careful to not let it wrap around you.",
     "encounterText": "The ground beneath your feet shakes. You grab an overhanging branch to steady yourself, just in time for the ground to erupt in a spout of earth and rock. A long brown worm shoots up, arching its back to came back at you. Darting to the side, you barely miss getting squished underneath its incredible bulk.",
     "deathMsg": "With a last wriggle, the worm lies still. You breathe a sigh of relief.",
-    "health": 100,
-    "currentHealth": 100,
+    "health": 50,
+    "currentHealth": 50,
     "defense": 13,
     "xpAwarded": 100
   },
@@ -296,9 +296,9 @@
     "description": "A monstrous crow",
     "encounterText": "A screech that only be described as that of a woman echoes through the forest. You stand still, listening to see if you can tell which direction it comes from. You continue on, drawing your sword just in case. A magnificent monsterous crow bears down from above, its talons clutching at you.",
     "deathMsg": "Letting out a final shreek, the Hurm collaspses at your feet, the wings finally still. You gingerly step over the massive bird, taking a good look of the beak that at last is done snapping. You shiver, that could have gone very badly.",
-    "health": 100,
-    "currentHealth": 100,
+    "health": 10,
+    "currentHealth": 10,
     "defense": 13,
-    "xpAwarded": 1000
+    "xpAwarded": 50
   }
 }
