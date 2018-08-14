@@ -1,11 +1,22 @@
 .character-container {
   width: 50%;
   float: right;
-
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Parchment.00.jpg/797px-Parchment.00.jpg");
   background-size: 100% 100%;
   .profilePic {
     padding: 10px 0 0 10px;
     width: 200px;
   }
+}
+
+.no-go {
+  font-weight: bolder;
+  border-radius: 4px;
+  padding: 5px 2px;
+  color: red;
+  font-family: 'Special Elite', cursive;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.7;
 }

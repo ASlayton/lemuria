@@ -18,22 +18,21 @@ class CharacterItem extends React.Component {
 
   render () {
     const {character} = this.props;
-
+    console.log(character.lifeSigns);
     return (
       <li onClick={this.characterClick} className="character-card col-sm-4">
         <div className="image-container col-sm-12">
-          {character.lifeSigns ? (
+          {!character.lifeSigns ? (
             <div className="dead-character">DEAD</div>
           ) : (
             <div></div>
-          )};
+          )}
 
           <img src={character.profilePic} alt={character.name} className="profile-image"/>
           <div className="img-frame"></div>
         </div>
         <h1>{character.name}</h1>
       </li>
-
     );
   };
 };
