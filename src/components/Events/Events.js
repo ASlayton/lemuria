@@ -148,7 +148,7 @@ class Events extends React.Component {
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
       this.setState({pDmgResult: playerDmg});
-      const pGameMsg = this.state.combatMsg[7].msg;
+      const pGameMsg = this.state.combatMsg[1].msg;
       this.setState({pGameMsg});
     // PLAYER ROLLS CRITICAL HIT, DOES DOUBLE DAMAGE
     } else if (attackRoll === 20) {
@@ -157,7 +157,7 @@ class Events extends React.Component {
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({pDmgResult: enemyDmg});
-      const pGameMsg = this.state.combatMsg[6].msg;
+      const pGameMsg = this.state.combatMsg[0].msg;
       this.setState({pGameMsg});
     // PLAYER ATTACK IS >= ENEMY DEFENSE = SUCCESSFUL HIT
     } else if (attackRoll >= enemyDefense) {
@@ -166,12 +166,12 @@ class Events extends React.Component {
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({pDmgResult: enemyDmg});
-      const pGameMsg = this.state.combatMsg[10].msg[getRandom];
+      const pGameMsg = this.state.combatMsg[12].msg[getRandom];
       this.setState({pGameMsg});
     // PLAYER ATTACK IS < ENEMY DEFENSE = PLAYER MISSES
     } else if (attackRoll < enemyDefense) {
       this.setState({pDmgResult: 0});
-      const pGameMsg = this.state.combatMsg[11].msg[getRandom];
+      const pGameMsg = this.state.combatMsg[13].msg[getRandom];
       this.setState({pGameMsg});
     } else {
       console.error('Something is not being evaluated correctly.');
@@ -253,12 +253,12 @@ class Events extends React.Component {
         player.currentPsyche = player.currentPsyche - playerDmg;
         this.props.playerHandler(player);
         this.setState({eDmgResult: playerDmg});
-        const eGameMsg = this.state.combatMsg[4].msg[getRandom];
+        const eGameMsg = this.state.combatMsg[6].msg[getRandom];
         this.setState({eGameMsg});
       // ENEMY ATTACK ROLL IS < PLAYER FORTITUDE = MISS
       } else if (attackRoll < playerPsycheDef) {
         this.setState({eDmgResult: 0});
-        const eGameMsg = this.state.combatMsg[5].msg[getRandom];
+        const eGameMsg = this.state.combatMsg[7].msg[getRandom];
         this.setState({eGameMsg});
       } else {
         console.error('Something is not being evaluated correctly.');
@@ -272,7 +272,7 @@ class Events extends React.Component {
   evaluateStatus = (turn) => {
     // Player is DEAD
     if (this.props.player.currentHealth <= 0) {
-      const pGameMsg = this.state.combatMsg[8].msg;
+      const pGameMsg = this.state.combatMsg[10].msg;
       this.setState({pGameMsg});
       const player = Object.assign({}, this.props.player);
       player.lifeSigns = false;
@@ -288,7 +288,7 @@ class Events extends React.Component {
       this.evalXP();
       // PLAYER GOES MAD
     } else if (this.props.player.currentPsyche <= 0) {
-      const pGameMsg = this.state.combatMsg[12].msg;
+      const pGameMsg = this.state.combatMsg[14].msg;
       this.setState({pGameMsg});
       const player = Object.assign({}, this.props.player);
       player.lifeSigns = false;
@@ -330,7 +330,7 @@ class Events extends React.Component {
       return (
         <div>
           <h1>You are Dead</h1>
-          <button onClick={this.closeModal}>Acknowledge</button>
+          <button onClick={this.closeModal} className="btn btn-info">Acknowledge</button>
         </div>
       );
     } else if (this.state.enemy.currentHealth <= 0) {
