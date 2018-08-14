@@ -18,7 +18,6 @@ class CharacterItem extends React.Component {
 
   render () {
     const {character} = this.props;
-    console.log(character.lifeSigns);
     return (
       <li onClick={this.characterClick} className="character-card col-sm-4">
         <div className="image-container col-sm-12">

@@ -47,6 +47,22 @@ class CharacterForm extends React.Component {
     if (this.state.pointsPot > 0 && this.state.conCount < 3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.constitution = (this.state.newCharacter.constitution * 1) + 1;
+      if (tempCharacter.constitution >= 18) {
+        tempCharacter.currentHealth = 30;
+        tempCharacter.totalHealth = 30;
+      } else if (tempCharacter.constitution < 18 && tempCharacter.constitution >= 14) {
+        tempCharacter.currentHealth = 25;
+        tempCharacter.totalHealth = 25;
+      } else if (tempCharacter.constitution < 14 && tempCharacter.constitution >= 9) {
+        tempCharacter.currentHealth = 20;
+        tempCharacter.totalHealth = 20;
+      } else if (tempCharacter.constitution < 9 && tempCharacter.constitution >= 5) {
+        tempCharacter.currentHealth = 15;
+        tempCharacter.totalHealth = 15;
+      } else {
+        tempCharacter.currentHealth = 10;
+        tempCharacter.totalHealth = 10;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) - 1;
       this.setState({pointsPot: tempPointsPot});
@@ -58,6 +74,22 @@ class CharacterForm extends React.Component {
     if (this.state.conCount > -3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.constitution = (this.state.newCharacter.constitution * 1) - 1;
+      if (tempCharacter.constitution >= 18) {
+        tempCharacter.currentHealth = 30;
+        tempCharacter.totalHealth = 30;
+      } else if (tempCharacter.constitution < 18 && tempCharacter.constitution >= 14) {
+        tempCharacter.currentHealth = 25;
+        tempCharacter.totalHealth = 25;
+      } else if (tempCharacter.constitution < 14 && tempCharacter.constitution >= 9) {
+        tempCharacter.currentHealth = 20;
+        tempCharacter.totalHealth = 20;
+      } else if (tempCharacter.constitution < 9 && tempCharacter.constitution >= 5) {
+        tempCharacter.currentHealth = 15;
+        tempCharacter.totalHealth = 15;
+      } else {
+        tempCharacter.currentHealth = 10;
+        tempCharacter.totalHealth = 10;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) + 1;
       this.setState({pointsPot: tempPointsPot});
@@ -71,29 +103,41 @@ class CharacterForm extends React.Component {
     if (conAmt >= 18) {
       tempEvalCharacter.currentHealth = 30;
       tempEvalCharacter.totalHealth = 30;
-      this.setState({newCharacter: tempEvalCharacter});
     } else if (conAmt < 18 && conAmt >= 14) {
       tempEvalCharacter.currentHealth = 25;
       tempEvalCharacter.totalHealth = 25;
-      this.setState({newCharacter: tempEvalCharacter});
     } else if (conAmt < 14 && conAmt >= 9) {
       tempEvalCharacter.currentHealth = 20;
       tempEvalCharacter.totalHealth = 20;
-      this.setState({newCharacter: tempEvalCharacter});
     } else if (conAmt < 9 && conAmt >= 5) {
       tempEvalCharacter.currentHealth = 15;
       tempEvalCharacter.totalHealth = 15;
-      this.setState({newCharacter: tempEvalCharacter});
     } else {
       tempEvalCharacter.currentHealth = 10;
       tempEvalCharacter.totalHealth = 10;
-      this.setState({newCharacter: tempEvalCharacter});
     };
+    this.setState({newCharacter: tempEvalCharacter});
   };
   addFortPoint = () => {
     if (this.state.pointsPot > 0 && this.state.fortCount < 3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.fortitude = (this.state.newCharacter.fortitude * 1) + 1;
+      if (tempCharacter.fortitude >= 18) {
+        tempCharacter.currentPsyche = 30;
+        tempCharacter.totalPsyche = 30;
+      } else if (tempCharacter.fortitude < 18 && tempCharacter.fortitude >= 14) {
+        tempCharacter.currentPsyche = 25;
+        tempCharacter.totalPsyche = 25;
+      } else if (tempCharacter.fortitude < 14 && tempCharacter.fortitude >= 9) {
+        tempCharacter.currentPsyche = 20;
+        tempCharacter.totalPsyche = 20;
+      } else if (tempCharacter.fortitude < 9 && tempCharacter.fortitude >= 5) {
+        tempCharacter.currentPsyche = 15;
+        tempCharacter.totalPsyche = 15;
+      } else {
+        tempCharacter.currentPsyche = 10;
+        tempCharacter.totalPsyche = 10;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) - 1;
       this.setState({pointsPot: tempPointsPot});
@@ -105,6 +149,22 @@ class CharacterForm extends React.Component {
     if (this.state.fortCount > -3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.fortitude = (this.state.newCharacter.fortitude * 1) - 1;
+      if (tempCharacter.fortitude >= 18) {
+        tempCharacter.currentPsyche = 30;
+        tempCharacter.totalPsyche = 30;
+      } else if (tempCharacter.fortitude < 18 && tempCharacter.fortitude >= 14) {
+        tempCharacter.currentPsyche = 25;
+        tempCharacter.totalPsyche = 25;
+      } else if (tempCharacter.fortitude < 14 && tempCharacter.fortitude >= 9) {
+        tempCharacter.currentPsyche = 20;
+        tempCharacter.totalPsyche = 20;
+      } else if (tempCharacter.fortitude < 9 && tempCharacter.fortitude >= 5) {
+        tempCharacter.currentPsyche = 15;
+        tempCharacter.totalPsyche = 15;
+      } else {
+        tempCharacter.currentPsyche = 10;
+        tempCharacter.totalPsyche = 10;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) + 1;
       this.setState({pointsPot: tempPointsPot});
@@ -118,29 +178,36 @@ class CharacterForm extends React.Component {
     if (fortAmt >= 18) {
       tempCharacter.currentPsyche = 30;
       tempCharacter.totalPsyche = 30;
-      this.setState({newCharacter: tempCharacter});
     } else if (fortAmt < 18 && fortAmt >= 14) {
       tempCharacter.currentPsyche = 25;
       tempCharacter.totalPsyche = 25;
-      this.setState({newCharacter: tempCharacter});
     } else if (fortAmt < 14 && fortAmt >= 9) {
       tempCharacter.currentPsyche = 20;
       tempCharacter.totalPsyche = 20;
-      this.setState({newCharacter: tempCharacter});
     } else if (fortAmt < 9 && fortAmt >= 5) {
       tempCharacter.currentPsyche = 15;
       tempCharacter.totalPsyche = 15;
-      this.setState({newCharacter: tempCharacter});
     } else {
       tempCharacter.currentPsyche = 10;
       tempCharacter.totalPsyche = 10;
-      this.setState({newCharacter: tempCharacter});
     };
+    this.setState({newCharacter: tempCharacter});
   };
   addStrPoint = () => {
     if (this.state.pointsPot > 0 && this.state.strCount < 3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.strength = (this.state.newCharacter.strength * 1) + 1;
+      if (tempCharacter.strength >= 18) {
+        tempCharacter.attack = 2;
+      } else if (tempCharacter.strength < 18 && tempCharacter.strength >= 14) {
+        tempCharacter.attack = 1;
+      } else if (tempCharacter.strength < 14 && tempCharacter.strength >= 9) {
+        tempCharacter.attack = 0;
+      } else if (tempCharacter.strength < 9 && tempCharacter.strength >= 5) {
+        tempCharacter.attack = -1;
+      } else {
+        tempCharacter.attack = -2;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) - 1;
       this.setState({pointsPot: tempPointsPot});
@@ -152,6 +219,17 @@ class CharacterForm extends React.Component {
     if (this.state.strCount > -3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.strength = (this.state.newCharacter.strength * 1) - 1;
+      if (tempCharacter.strength >= 18) {
+        tempCharacter.attack = 2;
+      } else if (tempCharacter.strength < 18 && tempCharacter.strength >= 14) {
+        tempCharacter.attack = 1;
+      } else if (tempCharacter.strength < 14 && tempCharacter.strength >= 9) {
+        tempCharacter.attack = 0;
+      } else if (tempCharacter.strength < 9 && tempCharacter.strength >= 5) {
+        tempCharacter.attack = -1;
+      } else {
+        tempCharacter.attack = -2;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) + 1;
       this.setState({pointsPot: tempPointsPot});
@@ -164,25 +242,32 @@ class CharacterForm extends React.Component {
     const tempEvalCharacter = {...this.state.newCharacter};
     if (strAmt >= 18) {
       tempEvalCharacter.attack = 2;
-      this.setState({newCharacter: tempEvalCharacter});
     } else if (strAmt < 18 && strAmt >= 14) {
       tempEvalCharacter.attack = 1;
-      this.setState({newCharacter: tempEvalCharacter});
     } else if (strAmt < 14 && strAmt >= 9) {
       tempEvalCharacter.attack = 0;
-      this.setState({newCharacter: tempEvalCharacter});
     } else if (strAmt < 9 && strAmt >= 5) {
       tempEvalCharacter.attack = -1;
-      this.setState({newCharacter: tempEvalCharacter});
     } else {
       tempEvalCharacter.attack = -2;
-      this.setState({newCharacter: tempEvalCharacter});
     };
+    this.setState({newCharacter: tempEvalCharacter});
   };
   addResPoint = () => {
     if (this.state.pointsPot > 0 && this.state.resCount < 3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.resilience = (this.state.newCharacter.resilience * 1) + 1;
+      if (tempCharacter.resilience >= 18) {
+        tempCharacter.defense = 16;
+      } else if (tempCharacter.resilience < 18 && tempCharacter.resilience >= 14) {
+        tempCharacter.defense = 15;
+      } else if (tempCharacter.resilience < 14 && tempCharacter.resilience >= 9) {
+        tempCharacter.defense = 14;
+      } else if (tempCharacter.resilience < 9 && tempCharacter.resilience >= 5) {
+        tempCharacter.defense = 12;
+      } else {
+        tempCharacter.defense = 10;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) - 1;
       this.setState({pointsPot: tempPointsPot});
@@ -194,6 +279,17 @@ class CharacterForm extends React.Component {
     if (this.state.resCount > -3) {
       const tempCharacter = {...this.state.newCharacter};
       tempCharacter.resilience = (this.state.newCharacter.resilience * 1) - 1;
+      if (tempCharacter.resilience >= 18) {
+        tempCharacter.defense = 16;
+      } else if (tempCharacter.resilience < 18 && tempCharacter.resilience >= 14) {
+        tempCharacter.defense = 15;
+      } else if (tempCharacter.resilience < 14 && tempCharacter.resilience >= 9) {
+        tempCharacter.defense = 14;
+      } else if (tempCharacter.resilience < 9 && tempCharacter.resilience >= 5) {
+        tempCharacter.defense = 12;
+      } else {
+        tempCharacter.defense = 10;
+      };
       this.setState({newCharacter: tempCharacter});
       const tempPointsPot = (this.state.pointsPot * 1) + 1;
       this.setState({pointsPot: tempPointsPot});
@@ -206,20 +302,16 @@ class CharacterForm extends React.Component {
     const tempCharacter = {...this.state.newCharacter};
     if (resAmt >= 18) {
       tempCharacter.defense = 16;
-      this.setState({newCharacter: tempCharacter});
     } else if (resAmt < 18 && resAmt >= 14) {
       tempCharacter.defense = 15;
-      this.setState({newCharacter: tempCharacter});
     } else if (resAmt < 14 && resAmt >= 9) {
       tempCharacter.defense = 14;
-      this.setState({newCharacter: tempCharacter});
     } else if (resAmt < 9 && resAmt >= 5) {
       tempCharacter.defense = 12;
-      this.setState({newCharacter: tempCharacter});
     } else {
       tempCharacter.defense = 10;
-      this.setState({newCharacter: tempCharacter});
     };
+    this.setState({newCharacter: tempCharacter});
   };
 
   formFieldStringState = (name, e) => {
@@ -245,7 +337,7 @@ class CharacterForm extends React.Component {
       newCharacter.profilePic
     ) {
       onSubmit(this.state.newCharacter);
-      this.setState({newCharacter: defaultCharacter});
+      this.setState({newCharacter});
     } else {
       alert('Fill all fields.');
     };
