@@ -28,7 +28,7 @@
       "You strike, but it was ineffective.",
       "That was a miss.",
       "You misjudge the hit and miss.",
-      "Though your form is good, you depth perception is not. The creature snarls as it dodges your swing.",
+      "Though your form is good, your depth perception is not. The creature snarls as it dodges your swing.",
       "You fail to land the blow.",
       "Your swing was too low, your opponent is able to jump over and you miss."
     ]
@@ -40,7 +40,7 @@
     "msg": "Misjudging your footing, you trip over yourself, your blade slips and digs into your flesh."
   },
   "enemyDeathMsg": {
-    "msg": "At last, the creature sinks down to the ground, dead"
+    "msg": "At last, the creature sinks down to the ground, dead."
   },
   "enemyHealthHit": {
     "msg": [
@@ -68,6 +68,34 @@
       "The air is knocked out of you as your adversary lands its attack, but its blow does no damage.",
       "With a mighty roar, your foe leaps and misses.",
       "The attack misses"
+    ]
+  },
+  "enemyPsycheHit": {
+    "msg": [
+      "The weight of your adversary upon your mind is too great, you feel your sanity start to slip",
+      "Your grip on reality wavers.",
+      "Is this actually happening? You start to question what is before you.",
+      "Your opponent licks its lips as it takes a bite of your mind.",
+      "Reality appears to be more of a suggestion at this point.",
+      "You start to think that perhaps it would be best to give in.",
+      "Perhaps you should just lie down for a bit.",
+      "The air about gets thick, you can scarce breathe.",
+      "You must give in, this land is not meant for you",
+      "Laughter dances at the edges of your mind, urging you to give in to it."
+    ]
+  },
+  "enemyPsycheMiss":  {
+    "msg": [
+      "Your resolve strenthens as you feel the weight of your enemies attack upon your mind.",
+      "The attack upon your mind is great, but you are greater.",
+      "Laughter dances in the corner of your mind, but you are able to push it aside for now",
+      "You feel yourself being drawn into this being, but you resist its glamour.",
+      "You are able to withstand the attack",
+      "Your adversary growls as it pushes against the barrier in your mind. Wouldn't you rather just give up?",
+      "You hold your own against your adversary.",
+      "Your enemy is unable to push past your defenses.",
+      "As much as you want to give in, you hold your own.",
+      "The attack misses."
     ]
   },
   "enemyCritHit": {
