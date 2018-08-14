@@ -54,7 +54,12 @@ class ChosenCharacter extends React.Component {
           </div>
 
         </div>
-        <Link className="link-style" to="/GameScreen">Start Game</Link>
+        {character.lifeSigns ? (
+          <Link className="link-style" to="/GameScreen">Start Game</Link>
+        ) : (
+          <h4 className="no-go text-center">DEAD</h4>
+        )}
+
       </div>
     );
   };

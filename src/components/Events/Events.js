@@ -270,13 +270,13 @@ class Events extends React.Component {
   };
 
   evaluateStatus = (turn) => {
-    // SAVE PLAYER DATA TO FIREBASE
-    const myCharacter = auth.getCharacterId();
-    this.putResults(myCharacter, this.props.player);
     // Player is DEAD
-    if (this.state.player.currentHealth <= 0) {
+    if (this.props.player.currentHealth <= 0) {
       const pGameMsg = this.state.combatMsg[8].msg;
       this.setState({pGameMsg});
+      const player = Object.assign({}, this.props.player);
+      player.lifeSigns = false;
+      this.props.playerHandler(player);
     // ENEMY IS DEAD
     } else if (this.state.enemy.currentHealth <= 0) {
       const eGameMsg = this.state.enemy.DeathMsg;
@@ -287,9 +287,12 @@ class Events extends React.Component {
       // ADVANCE PLAYER LEVEL IF ENOUGH XP GAINED
       this.evalXP();
       // PLAYER GOES MAD
-    } else if (this.state.player.currentPsyche <= 0) {
+    } else if (this.props.player.currentPsyche <= 0) {
       const pGameMsg = this.state.combatMsg[12].msg;
       this.setState({pGameMsg});
+      const player = Object.assign({}, this.props.player);
+      player.lifeSigns = false;
+      this.props.playerHandler(player);
     } else {
       // IF THIS WAS CALLED DURING THE PLAYERS TURN, IT IS NOW THE ENEMIES TURN
       if (turn === 'playerTurn') {
@@ -298,6 +301,10 @@ class Events extends React.Component {
         this.evalXP();
       };
     };
+
+    // SAVE PLAYER DATA TO FIREBASE
+    const myCharacter = auth.getCharacterId();
+    this.putResults(myCharacter, this.props.player);
   };
   // ADVANCE PLAYER LEVEL IF HAVE ENOUGH XP
   evalXP = () => {
