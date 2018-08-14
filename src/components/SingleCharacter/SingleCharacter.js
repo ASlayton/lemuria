@@ -22,7 +22,12 @@ class CharacterItem extends React.Component {
     return (
       <li onClick={this.characterClick} className="character-card col-sm-4">
         <div className="image-container col-sm-12">
-          <div></div>
+          {character.lifeSigns ? (
+            <div className="dead-character">DEAD</div>
+          ) : (
+            <div></div>
+          )};
+
           <img src={character.profilePic} alt={character.name} className="profile-image"/>
           <div className="img-frame"></div>
         </div>
