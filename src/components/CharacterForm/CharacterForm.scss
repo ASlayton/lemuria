@@ -5,10 +5,15 @@
 
 }
 .diceBtn {
-  width: 50px;
+  width: 60px;
   height: 50px;
   span img {
     width: 100%;
     height: 100%;
+    transition: transform .8s ease-in-out;
+  }
+
+  span img:hover {
+    transform: rotate(360deg);
   }
 }

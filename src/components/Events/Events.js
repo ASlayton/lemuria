@@ -375,7 +375,7 @@ class Events extends React.Component {
     return (
       <div className="col-sm-2 col-sm-offset-9">
         <div className="button-container">
-          <img src="" alt=""/>
+          <h1 className="text-center event-btn-head">Choose your path carefully</h1>
           <button className="btn btn-default event-btn" onClick={this.openModal}>Venture Forward</button>
           <button className="btn btn-default event-btn"  onClick={this.openModal}>Veer to the left</button>
           <button className="btn btn-default event-btn"  onClick={this.openModal}>Veer to the right</button>
