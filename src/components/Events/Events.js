@@ -20,7 +20,7 @@ const customStyles = {
   },
   overlay: {
     zIndex: 9999,
-    backgroundColor: 'rgb(0,0,0,0.75)',
+    backgroundColor: 'rgb(0,0,0,0.7)',
   },
 };
 class Events extends React.Component {
@@ -136,7 +136,7 @@ class Events extends React.Component {
   // WHEN PLAYER PRESSES ATTACK BUTTON
   commenceAtk = () => {
     // PLAYER ROLLS ATTACK
-    const attackRoll = dieroll(1, 20) * 1;
+    const attackRoll = (dieroll(1, 20) * 1) + (this.props.player.attack * 1);
     // GET RANDOM NUMBER TO PICK MESSAGE
     const getRandom = dieroll(0,9) * 1;
     // GET ENEMY DEFENSE
@@ -279,7 +279,7 @@ class Events extends React.Component {
       this.props.playerHandler(player);
     // ENEMY IS DEAD
     } else if (this.state.enemy.currentHealth <= 0) {
-      const eGameMsg = this.state.enemy.DeathMsg;
+      const eGameMsg = this.state.enemy.deathMsg;
       this.setState({eGameMsg});
       const player = Object.assign({}, this.props.player);
       player.exp = (player.exp * 1) + (this.state.enemy.xpAwarded * 1);
@@ -310,7 +310,12 @@ class Events extends React.Component {
   evalXP = () => {
     const playerXP = this.props.player.exp;
     const player = Object.assign({}, this.props.player);
-    player.level = Math.floor(playerXP * 1 / 1000);
+    player.level = Math.floor(playerXP * 1 / 100);
+    if (player.level > this.props.player.level) {
+      player.health = player.health + dieroll(1,6);
+      player.defense = player.defense + 1;
+      player.psyche = player.psyche + dieroll(1,6);
+    }
     this.props.playerHandler(player);
   };
 
