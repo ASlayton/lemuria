@@ -342,7 +342,7 @@ class Events extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className="actionbtn-container">
           <button  onClick={this.closeModal} className="btn btn-info">Run Away</button>
           <button className="btn btn-danger" onClick={this.commenceAtk}>Attack</button>
         </div>
@@ -375,6 +375,7 @@ class Events extends React.Component {
     return (
       <div className="col-sm-2 col-sm-offset-9">
         <div className="button-container">
+          <img src="" alt=""/>
           <button className="btn btn-default event-btn" onClick={this.openModal}>Venture Forward</button>
           <button className="btn btn-default event-btn"  onClick={this.openModal}>Veer to the left</button>
           <button className="btn btn-default event-btn"  onClick={this.openModal}>Veer to the right</button>
@@ -425,18 +426,18 @@ class Events extends React.Component {
                         <h1 className="itsAHit">{this.state.pDmgResult} dmg</h1> : <div></div>
                     }
 
-                    <h2>{this.state.pGameMsg}</h2>
+                    <h3>{this.state.pGameMsg}</h3>
                   </div>
                   <div className="col-sm-6">
                     {
                       didEDamage ?
                         <h1 className="itsAHit">{this.state.eDmgResult} dmg</h1> : <div></div>
                     }
-                    <h2>{this.state.eGameMsg}</h2>
+                    <h3>{this.state.eGameMsg}</h3>
                   </div>
                 </div>
 
-                <div className="col-sm-12">
+                <div className="col-sm-12 modal-btn-container">
                   {this.conditionalButtons()}
                 </div>
               </div>

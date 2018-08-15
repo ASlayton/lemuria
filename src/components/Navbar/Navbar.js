@@ -27,7 +27,7 @@ class Navbar extends React.Component {
                   <li>
                     <button
                       onClick={logoutClickEvent}
-                      className="btn btn-default"
+                      className="btn btn-warning"
                     >
                       Logout
                     </button>
@@ -35,8 +35,8 @@ class Navbar extends React.Component {
                 </ul>
               ) : (
                 <ul className="nav navbar-nav navbar-right">
-                  <button className="btn btn-default">
-                    <Link to="/login">Login!</Link>
+                  <button className="btn btn-warning">
+                    <Link to="/login" className="login-btn">Login!</Link>
                   </button>
                 </ul>
               )
