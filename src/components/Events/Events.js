@@ -148,7 +148,7 @@ class Events extends React.Component {
       player.currentHealth = player.currentHealth - playerDmg;
       this.setState({player});
       this.setState({pDmgResult: playerDmg});
-      const pGameMsg = this.state.combatMsg[1].msg;
+      const pGameMsg = this.state.combatMsg[9].msg;
       this.setState({pGameMsg});
     // PLAYER ROLLS CRITICAL HIT, DOES DOUBLE DAMAGE
     } else if (attackRoll === 20) {
@@ -157,7 +157,7 @@ class Events extends React.Component {
       enemy.currentHealth = enemy.currentHealth - enemyDmg;
       this.setState({enemy});
       this.setState({pDmgResult: enemyDmg});
-      const pGameMsg = this.state.combatMsg[0].msg;
+      const pGameMsg = this.state.combatMsg[8].msg;
       this.setState({pGameMsg});
     // PLAYER ATTACK IS >= ENEMY DEFENSE = SUCCESSFUL HIT
     } else if (attackRoll >= enemyDefense) {
