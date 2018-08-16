@@ -3,6 +3,9 @@
   background-image: url("https://img00.deviantart.net/968d/i/2016/360/f/f/printed_antique_paper_frame_2_by_victorian_lady-dagzxuh.png");
 }
 
-.picture-container > img {
-  width: 150px;
-}
+  .player-profile-pic {
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    width: auto;
+    max-height: 350px; }
