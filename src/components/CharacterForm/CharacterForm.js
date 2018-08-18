@@ -9,7 +9,7 @@ const resilience = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
 const constitution = dieroll(1,6) + dieroll(1,6) + dieroll(1,6);
 
 const defaultCharacter = {
-  profilePic: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/JaneAustenSilhouette.svg/200px-JaneAustenSilhouette.svg.png',
+  profilePic: 'https://pbs.twimg.com/profile_images/1808643120/Brian_Lindahl_SteamPunk_Avatar.jpg',
   name: '',
   totalHealth: 25,
   currentHealth: 25,

@@ -16,6 +16,7 @@ const customStyles = {
   content: {
     margin: '150px 50px',
     backgroundColor: 'white',
+    backgroundImage: 'url("https://www.publicdomainpictures.net/pictures/170000/velka/florish-background-1461870265w5P.jpg")',
     zIndex: 9999,
   },
   overlay: {
